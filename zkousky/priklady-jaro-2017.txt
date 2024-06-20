@@ -1,0 +1,195 @@
+Bakalářské zkoušky (příklady otázek)
+
+jaro 2017
+
+1
+
+SQL
+
+Uvažujte následující schéma: Komodita (IdK, Název), Obchodník (Kód, Jméno, Adresa), ObchodniTransakce (Id, IdK, Kód,
+Cena, Rok), kde ObchodniTransakce.IdK je cizí klíč odkazující do tabulky Komodita a ObchodniTransakce.Kód je cizí klíč
+odkazující do tabulky Obchodník. Zapište v jazyce SQL následující dotazy:
+1. Kteří obchodníci neobchodovali v roce 2016 s pšenicí ?
+2. Kódy obchodníků, kteří měli v roce 2016 obrat všech transakcí větší než 10 miliónů ?
+Popište úrovně izolace definované v SQL 92 a jak mohou být v DBMS řešeny.
+
+2
+
+Kódy
+1. Napište definici vzdálenosti samoopravného kódu a určete vzdálenost kódu {001, 010, 100}. Jak vzdálenost kódu souvisí s
+počtem chyb, které je v přeneseném slově možné opravit ?
+2. Nalezněte největší binární kód délky 3 a vzdálenosti 2. Může takový kód být lineární ?
+3. Zformulujte a dokažte Hammingův odhad na velikost kódu dané délky a vzdálenosti.
+
+3
+
+Morfologie
+1. Definujte pojmy morfologická analýza, morfologické značkování, lemmatizace.
+2. Vysvětlete problém morfologické víceznačnosti (ambiguity), uveďte příklad.
+3. Popište princip algoritmu pro morfologické značkování a lemmatizaci.
+
+4
+
+TCP a NAT
+1. Standard TCP definuje následující hlavičku:
+0
+1
+2
+3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Source Port
+|
+Destination Port
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Sequence Number
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Acknowledgment Number
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| Data |
+|U|A|P|R|S|F|
+|
+| Offset| Reserved |R|C|S|S|Y|I|
+Window
+|
+|
+|
+|G|K|H|T|N|N|
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Checksum
+|
+Urgent Pointer
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+|
+Options
+|
+Padding
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+data
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Napište význam a postup nastavení polí „source port“, „destination port“, „sequence number“ a „acknowledgment number“
+z hlavičky.
+2. Standard IP definuje následující hlavičku:
+0
+1
+2
+3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|Version| IHL |Type of Service|
+Total Length
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Identification
+|Flags|
+Fragment Offset
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| Time to Live |
+Protocol
+|
+Header Checksum
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Source Address
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Destination Address
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Options
+|
+Padding
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+Napište, která hlavní pole IP a TCP hlaviček a jak ovlivňuje mechanismus překladu adres (NAT).
+
+5
+
+NP-úplnost
+1. Definujte pojmy: rozhodovací problém, instance problému, třída NP a třída NPÚ.
+2. Popište 3 problémy z třídy NPÚ. Zdůvodněte u jednoho z nich, že patří do třídy NP.
+3. Jak pomocí polynomiálního převodu dokážete, že nějaký problém A je NP-úplný (za předpokladu, že už nějaké NPÚ
+problémy znáte) ?
+4. Jaké prakticky použitelné přístupy můžete zvolit pro řešení NP-úplných problémů ?
+
+6
+
+Vlákna
+
+Předpokládejte nějaký běžný operační systém jako Linux nebo Windows běžící na procesorech s architekturou x86.
+1. Vysvětlete, co to je vlákno, a co je součástí jeho kontextu.
+2. Jaké jsou důležité stavy, ve kterých se vlákno může v takovém OS nacházet ? Pro každý uvedený stav vysvětlete, co
+znamená, a dále vysvětlete, jak se vlákno do takového stavu dostane (například voláním jakého syscallu jádra).
+3. Předpokládejte, že bychom chtěli v jazyce jako Pascal, C, nebo C++ naimplementovat v běžné aplikaci běžící v uživatelském režimu vlastní koncept kooperativně přepínaných vláken, tedy v kontextu jednoho preemptivně přepínaného vlákna
+operačního systému bychom umožnili běh různých našich kooperativně přepínaných vláken. Jak by rámcově v takovém
+jazyce vypadala implementace procedury Yield, která by měla procesor odebrat volajícímu vláknu a přepnout kontext na
+nové vlákno identifikované thread ID předaným jako parametr této procedury ?
+Není třeba psát přesný program, stačí v přibližném zápisu kódu uvést, jaké hlavní kroky je třeba v proceduře Yield provést.
+Pokud byste potřebovali použít assembler cílového procesoru, stačí podobně načrtnout potřebné instrukce v hrubých rysech.
+
+7
+
+Konvergence řad
+
+Definujte konvergenci nekonečné řady a definujte absolutní konvergenci nekonečné řady. Zodpovězte následující otázky a odpovědi
+zdůvodněte.
+1. Konverguje absolutně řada 1 − 1/2 + 1/4 − 1/8 + 1/16 − . . . ?
+
+2. Konverguje řada 1 − 1/2 + 1/3 − 1/4 + 1/5 − . . . ?
+3. Je pravda, že když řada a1 + a2 + . . . konverguje, potom i řada a21 + a22 + . . . konverguje ?
+
+8
+
+Sloupcový prostor matice
+
+Definujte sloupcový prostor matice A ∈ Rm×n .
+Najděte bázi sloupcového prostoru matice
+
+1
+A = 1
+1
+
+2
+3
+1
+
+
+1
+0 .
+2
+
+Rozhodněte a zdůvodněte, zda soustava Ax = b (s maticí A z předchozí úlohy) je řešitelná
+1. pro každé b ∈ R3 ,
+2. pro nekonečně mnoho b ∈ R3 .
+
+9
+
+Souvislost grafů
+
+Definujte pojem tah v grafu.
+Pro graf G = (V, E) uvažte dvě následující binární relace na V × V :
+• pro x, y ∈ V je (x, y) ∈ S právě tehdy, když x a y leží ve stejné komponentě souvislosti grafu G,
+• pro x, y ∈ V je (x, y) ∈ T právě tehdy, když existuje v grafu G tah z vrcholu x do vrcholu y.
+O obou relacích rozhodněte, zda jsou reflexivní, symetrické, antisymetrické a tranzitivní. Odpovědi stručně zdůvodněte.
+Mějme graf G s množinou vrcholů {0, 1}3 (poslounosti 0 a 1 délky 3) a hranami mezi těmi dvojicemi vrcholů, které se liší právě
+na jedné pozici. Rozhodněte, pro která přirozená k existuje tah délky k z vrcholu 000 do vrcholu 111.
+
+

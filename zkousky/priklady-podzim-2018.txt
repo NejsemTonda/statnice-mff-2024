@@ -1,0 +1,781 @@
+Bakalářské zkoušky (příklady otázek)
+
+podzim 2018
+
+1
+
+Automaty (3 body)
+1. Definujte (generativní) gramatiku, jazyk generovaný gramatikou a Chomského hierarchii gramatik.
+2. Zkonstruujte gramatiku generující jazyk
+L = {uvuR | u ∈ {a, b}∗ , v ∈ {a}∗ },
+kde uR označuje zrcadlový obraz slova u.
+3. Zařaďte jazyk L do Chomského hierarchie, tj. určete nejmenší třídu Chomského hierarchie, do které jazyk náleží, a
+dokažte, že žádná gramatika ze slabší třídy Chomského hierarchie nemůže generovat L.
+
+2
+
+Algoritmy a datové struktury (3 body)
+1. Definujte AVL stromy a jejich základní vlastnosti (invarianty).
+2. Popište průběh operace vložení prvku 3 do následujícího AVL stromu (s dodržením všech invariantů). Vysvětlete
+jednotlivé kroky.
+3. Proveďte diskusi časové složitosti operací (1) vyhledání hodnoty a (2) vložení nového prvku, zejména ve srovnání se
+základní variantou binárního vyhledávacího stromu.
+
+6
+1
+
+8
+
+0
+
+4
+2
+
+3
+
+7
+
+9
+
+5
+
+Databáze (3 body)
+1. Uvažujte následující relační schéma: AUTOR(ID, Jméno, DatumNarození), KNIHA(Název, PočetStran, IDAutora).
+Vysvětlete pojem “integritní omezení”. Doplňte chybějící integritní omezení do uvedeného schématu.
+Zapište následující dotaz v SQL: jména autorů, kteří napsali alespoň deset stostránkových knih.
+2. Vysvětlete pojem “funkční závislost na atributech relace”. Rozšiřte některou tabulku z prvního příkladu tak, aby v ní
+byla porušena třetí normální forma.
+
+1
+
+4
+
+Programovací jazyky (3 body)
+
+Pro tuto otázku si vyberte libovolný mainstreamový objektově orientovaný staticky typovaný jazyk (C++, C# nebo Java)
+a svůj výběr napište na začátek řešení.
+1. Naimplementujte/nadeklarujte vhodné objektové rozhraní (pomocí interfaces nebo abstraktních tříd) pro neorientované grafy G = (V, E) ve své nejběžnější podobě (hrany spojují právě dva vrcholy, mezi dvěma vrcholy vede nejvýš
+jedna hrana). Motivací je, aby toto rozhraní mohly implementovat různé reprezentace grafů (seznam sousedů, matice
+sousednosti, ...), zatímco programátor grafových algoritmů (BFS, hledání min. kostry, ...) může napsat svůj kód pouze
+jednou a bude fungovat se všemi reprezentacemi grafů.
+Vámi definované rozhraní by mělo pokrývat 3 entity (vrchol, hranu a graf ), přičemž vrchol nabídne přístup ke všem
+incidentním hranám, hrana nabídne přístup ke svým dvěma vrcholům a graf umožní přístup k seznamu všech vrcholů
+a seznamu všech hran. Modifikace grafu v tomto rozhraní neuvažujeme (struktura grafu je pouze pro čtení).
+Každý vrchol a každá hrana má příznak (pro jednoduchost mu říkejme tag). Tag u vrcholu může například indikovat,
+zda byl vrchol již navštíven, tag u hrany může například značit její váhu. Tagy tedy mohou mít obecně různé datové
+typy, avšak pro danou instanci grafu mají všechny vrcholy stejný typ tagu a všechny hrany taktéž. Váš interface by
+měl být obecný, aby si programátor mohl při jeho implementaci zvolit typy tagů pro vrcholy a pro hrany. Interface
+také nabídne pro každý vrchol a hranu vhodné prostředky, jak tag přečíst a nastavit.
+2. Představme si implementaci vašeho rozhraní, kde tagy vrcholů značí index komponenty souvislosti (typu int, indexované od 0) a tagy hran jsou typu float (případně podobného typu ve vašem zvoleném jazyce) a značí jejich délky.
+Tagy hran jsou na počátku již inicializované, tagy vrcholů musíte nastavit vy.
+Napište kód těla funkce využívající vaše rozhraní, která na vstupu dostane graf a reálné číslo r. Váš kód provede rozklad
+grafu na komponenty souvislosti tak, že každý vrchol bude mít svůj index komponenty uložený jako tag (konkrétní
+hodnoty indexů nejsou podstatné, důležité je, že vrcholy ve stejné komponentě mají stejný tag). Hrany, které mají větší
+délku (tag) než stanovený parametr r, nebereme při určování komponent v potaz (tedy jako by vůbec neexistovaly).
+
+5
+
+Zámky (3 body)
+
+Pro řešení otázky je dostačující následující zjednodušená představa o konceptech jazyka C# (pokud ale skutečné chování
+využitých konceptů jazyka C# znáte přesněji, tak to není na závadu):
+Každá instance třídy object v sobě obsahuje právě jeden unikátní zámek. Tento zámek je možno zamknout pomocí operace
+lock (viz řádek 13 kódu níže) – jedná se o běžnou implementaci zámků s podporou pro rekurzivní zamykání a s pasivním
+čekáním na uvolnění zámku. Otevírací složená závorka za příkazem lock odpovídá žádosti o zamčení zámku (řádek 13),
+párová zavírací složená závorka tohoto bloku pak odpovídá operaci odemčení zámku (řádek 18).
+Metoda Parallel.For(int fromInclusive, int toExclusive, Action<int> body) vytvoří nová vlákna, jejichž počet
+odpovídá počtu logických procesorů na cílovém systému. Tato vlákna poté volají metodu předanou jako parametr body metody Parallel.For (v uvedeném příkladu níže tedy metodu ProcessFilename) tak, že pro každé i z rozsahu <fromInclusive,
+toExclusive) je metoda body zavolána právě jednou. Nicméně není definované, ve kterém z vyrobených vláken bude metoda
+body pro konkrétní i zavolána, stejně tak není definované pořadí, v jakém budou jednotlivé hodnoty i zvoleny. Návrat do
+volajícího vlákna z metody Parallel.For je bezpečně zaručen až v situaci, kdy všechna vytvořená vlákna dokončila všechna
+volání metody body pro všechny hodnoty i.
+Předpokládejte následující třídu zapsanou v jazyce C#:
+1 class JpegCounter {
+2
+public JpegCounter(string[] filenames) { _filenames = filenames; }
+3
+4
+string[] _filenames;
+5
+int _count;
+6
+object _globalLock = new object();
+7
+8
+public int CountJpegs() {
+9
+_count = 0; Parallel.For(0, _filenames.Length, ProcessFilename); return _count;
+10
+}
+11
+12
+void ProcessFilename(int i) {
+
+2
+
+13
+14
+15
+16
+17
+18
+19
+20 }
+
+lock (_globalLock) {
+string ext = Path.GetExtension(_filenames[i]).ToUpper();
+if (ext == ".JPG" || ext == ".JPEG") {
+_count++;
+}
+}
+}
+
+1. V kontextu vícevláknového programu stručně vysvětlete, co to je race condition, a jak může vznikat.
+2. Vysvětlete, zda je v uvedeném kódu důležité použití zámku _globalLock, a zda by bez jeho použití mohlo docházet k
+nějakým race conditions. Mohla by metoda ProcessFilename bez využití zámku _globalLock (tj. po smazání řádků
+6, 13 a 18) vracet pro stejný vstup předaný třídě JpegCounter jinou hodnotu, než verze uvedená zde v zadání?
+3. Předpokládejte, že vytvoříme program, který vyrobí novou instanci třídy JpegCounter, která dostane odkaz na seznam
+10.000.000 jmen souborů, kde rámcově desetina z nich má příponu .jpg nebo .jpeg. Dále předpokládejte nějaký
+typický dvoujádrový procesor, na kterém takový program spustíme. Proveďte hrubý odhad, kolikrát bude asi uvedená
+implementace metody CountJpegs rychlejší (nebo pomalejší) než její sekvenční implementace (kdybychom napsali
+běžný for cyklus a všechna volání metody ProcessFilename provedli postupně v jednotlivých iteracích for cyklu
+rovnou z volajícího vlákna). Vysvětlete, zda (a případně jak) by se dala metoda ProcessFilename co nejjednodušeji
+upravit tak, aby byla paralelní verze rychlejší než verze uvedená v zadání.
+
+6
+
+Sítě (3 body)
+1. Stručně vysvětlete význam protokolu IP z pohledu vrstevnaté architektury. Jaké funkce nabízí vrstvám nad sebou a co
+požaduje od vrstev pod sebou?
+2. Protokol IPv4 v sobě nativně podporuje fragmentaci datagramů. Vysvětlete, kdy k fragmentaci může dojít a jak je
+možné jí předcházet.
+3. Uvažme použití protokolu IP nad Ethernetovou linkou (1000BASE-T). Vysvětlete, jak v tomto případě síťový uzel
+přeloží IPv4 a IPv6 adresy na adresy linkové vrstvy (MAC) pro lokální doručení v rámci dané sítě.
+
+7
+
+Dualita lineárního programování (3 body)
+1. Formulujte přesné znění silné věty o dualitě lineárního programování.
+2. Je dán neorientovaný graf G = (V, E) a vrcholy s1 , s2 , t1 , t2 ∈ V . Pro i = 1, 2 označme Pi množinu všech cest mezi
+vrcholy si a ti v daném grafu a nechť P = P1 ∪ P2 . Uvažme následující lineární program, ve kterém máme proměnnou
+xp pro každou cestu z množiny P :
+X
+max
+xp
+p∈P
+
+t.ž.
+
+X
+
+xp ≤ 1
+
+pro
+
+∀e ∈ E
+
+xp ≥ 0
+
+pro
+
+∀p ∈ P .
+
+p:e∈p
+
+Napište duální program (duální proměnné označujte y, s patřičnými indexy).
+3. Uvažme graf G daný množinou vrcholů V = {s1 , s2 , t1 , t2 , a, b, c, d} a množinou hran
+E = {(s1 , a), (s2 , a), (s1 , b), (s2 , b), (a, c), (b, d), (t1 , c), (t2 , c), (t1 , d), (t2 , d)} .
+Pokud existuje, najděte optimální řešení výše uvedené primární úlohy a pomocí silné věty o dualitě dokažte, že je
+opravdu optimální.
+
+3
+
+8
+
+Překladače (3 body)
+
+Gramatika má počáteční neterminál S a terminály id, ",", ";", long, int, double a #. Terminál id představuje libovolný
+identifikátor (různý od terminálů - klíčových slov) tvořený sekvencí písmen a číslic začínající písmenem:
+S
+
+→ D#
+
+D
+
+→ T L;
+
+T
+
+→ M B
+
+M
+
+→ λ
+
+M
+
+→ long
+
+B
+
+→ int
+
+B
+
+→ double
+
+L → id
+L → L , id
+
+1. Nakreslete derivační strom pro řetězec int i, j; #.
+2. Určete množiny F IRST (A) a F OLLOW (A) pro A ∈ {D, T, M, B, L}.
+3. Určete, zda je gramatika LL(1), a stručně vysvětlete proč.
+
+9
+
+Aproximační algoritmy (otázka studijního zaměření – 3 body)
+1. Zaveďte pojem “aproximační faktor algoritmu”.
+2. Popište co nejlepší aproximační algoritmus pro problém vrcholového pokrytí v grafu, jaký znáte.
+3. Analyzujte výše popsaný algoritmus (tj. správnost, časová složitost, aproximační poměr).
+
+10
+
+Kombinatorická geometrie (otázka studijního zaměření – 3 body)
+
+Zformulujte a dokažte Clarksonovu větu o horním odhadu na složitost k-té úrovně jednoduchého arrangementu n přímek v
+rovině.
+(Nápověda k důkazu: Uvažujte náhodný podarrangement R, do nějž umístíme každou přímku původního arrangementu s
+1
+nezávisle na ostatních. Dvěma způsoby odhadněte střední hodnotu počtu vrcholů na hladině 0
+pravděpodobností p = k+1
+arrangementu R, seshora s využitím velikosti R a zespoda odhadnutím pravděpodobnosti že vrchol na hladině nejvýše k v
+původním arrangementu se stane vrcholem na hladině 0 v arrangementu R.)
+
+11
+
+Pravděpodobnostní metoda (otázka studijního zaměření – 3 body)
+
+Nechť G = (V, E) je graf s m hranami. Dokažte, že G obsahuje bipartitní podgraf (ne nutně indukovaný) s alespoň m/2
+hranami.
+
+12
+
+Axiom výběru (otázka studijního zaměření – 3 body)
+
+Zformulujte co nejpřesněji axiom výběru a podrobně dokažte, že je ekvivalentní následujícímu tvrzení: Kartézský součin
+neprázdného souboru neprázdných množin je vždy neprázdný.
+
+4
+
+13
+
+Barevnost grafů (otázka studijního zaměření – 3 body)
+
+1. Napište definici vrcholové a hranové barevnosti grafu. Určete vrcholovou a hranovou barevnost následujícího grafu:
+
+2. Nechť G je graf s lichým počtem vrcholů takový, že všechny vrcholy G mají stejný stupeň d, d ≥ 1. Určete hranovou
+barevnost G.
+
+14
+
+Pravděpodobnostní metoda (otázka studijního zaměření – 3 body)
+
+Nechť G = (V, E) je graf s m hranami. Dokažte, že G obsahuje bipartitní podgraf (ne nutně indukovaný) s alespoň m/2
+hranami.
+
+15
+
+Matematická lingvistika: morfologická, syntaktická a sémantická analýza
+přirozeného jazyka (otázka studijního zaměření – 3 body)
+
+1. Vysvětlete pojem “ontologie” ve zpracování sémantiky přirozeného jazyka.
+2. Popište sémantickou síť Wordnet.
+3. Vysvětlete pojem “anafora” a uveďte základní kategorie anafory v textu.
+
+16
+
+Matematická lingvistika: základy teorie informace (otázka studijního zaměření – 3 body)
+
+Mějme dvě diskrétní náhodné veličiny X a Y . Obě nabývají čtyř různých hodnot z množiny {a, b, c, d}. Sdružené pravděpodobnostní rozdělení je následující:
+Y =a
+Y =b
+Y =c
+Y =d
+
+X=a
+1/8
+1/16
+1/32
+1/32
+
+X=b
+1/16
+1/8
+1/32
+1/32
+
+X=c
+1/16
+1/16
+1/16
+1/16
+
+X=d
+1/4
+0
+0
+0
+
+1. Rozhodněte, která z veličin X a Y má větší entropii. Odpověď zdůvodněte.
+2. Vypočítejte podmíněnou entropii H(Y |X = c).
+3. Jaký vzorec použijete pro výpočet vzájemné informace I(X; Y ) na základě pravděpodobností uvedených v tabulce, tj.
+bez znalosti entropie?
+
+5
+
+17
+
+Matematická lingvistika: formální jazyky a automaty (otázka studijního
+zaměření – 3 body)
+
+Nejpopulárnějším nástrojem pro zpracování morfologie přirozených jazyků byla v 80. letech minulého století tzv. Two-level
+morphology profesorů Kartunnena a Koskenniemiho.
+1. Pojmenujte dvě úrovně reprezentace zmíněné v názvu teorie.
+2. Na jakém základním formálním nástroji bylo zpracování morfologie založeno?
+3. Uveďte alespoň dvě ze tří základních myšlenek tohoto mechanismu.
+
+18
+
+Matematická lingvistika: základní formalismy pro popis přirozených jazyků (otázka studijního zaměření – 3 body)
+
+1. Vyjmenujte a popište tři základní komponenty transformační gramatiky.
+2. Vysvětlete pojem transformace v Chomského transformační gramatice. Kterými dvěma složkami je transformace definována?
+3. Proč je nutné zavádět typy sestav rysů v unifikačních gramatikách?
+
+19
+
+Počítačová grafika: rekurzivní sledování paprsku (otázka studijního zaměření – 3 body)
+
+1. Popište princip rekurzivního sledování paprsku (ray tracing). Co je na vstupu a co je výsledkem?
+2. Z jakých složek se počítá světlo při dopadu paprsku v rekurzivní proceduře shade()?
+3. Jaké hlavní nedostatky vykazuje základní algoritmus ray tracing popsaný v prvním bodě, pokud bychom ho chtěli
+použít jako fotorealistickou zobrazovací metodu?
+
+20
+
+Počítačová grafika: barvy (otázka studijního zaměření – 3 body)
+
+1. Jak barvy vnímá lidské oko? Uveďte alespoň přibližný koncept.
+2. Jak barvy zobrazuje počítačová technika? Popište systémy pro ukládání barev na počítači (barevné prostory).
+3. Napište příklad barevného systému vhodného pro intuitivní zadávání barvy laickým uživatelem.
+
+21
+
+Počítačová grafika: real-time 3D grafika (otázka studijního zaměření – 3
+body)
+
+1. Stučně popište, jak vypadá pipeline pro vykreslení scény v existujících knihovnách pro 3D real-time grafiku s podporou
+HW akcelerace (např. OpenGL nebo DirectX). Zaměřte se pouze na hlavní komponenty této pipeline, které se přímo
+týkají renderingu scény na GPU, a stručně (nejlépe jednou větou) popište jejich funkci.
+2. Která místa z výše uvedené pipeline může programátor ovlivnit (nahradit je vlastním kódem) a jak?
+3. Kde je v této pipeline řešena otázka korektního zakrývání objektů (že obraz objektů blíže ke kameře může zakrýt
+objekty vzdálenější) a jak? Také v tomto kontextu vysvětlete, jak se zpracují poloprůhledné objekty.
+
+6
+
+22
+
+Garbage collection (otázka studijního zaměření – 3 body)
+
+1. Popište “mark and sweep” algoritmus pro garbage collection. V popisu ideálně použijte standardní barevné značení
+objektů (černá pro navštívené objekty, šedá pro zpracovávané objekty, bílá pro ostatní objekty).
+2. Uvažujte následující program:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+
+class Data {
+public Data neighbor;
+}
+public class Main {
+public static void one (Data d) {
+Data x = new Data ();
+// Bod kolekce 1
+d.neighbor = x;
+two (d);
+}
+public static void two (Data d) {
+Data y = new Data ();
+// Bod kolekce 2
+y.neighbor = d;
+}
+public static void main (String [] arguments) {
+Data d = new Data ();
+// Bod kolekce 3
+one (d);
+}
+}
+Jaké objekty by “mark and sweep” garbage collector považoval za kořeny (roots), pokud by byla “stop the world”
+kolekce vykonána na řádcích označených v komentářích body 1, 2 nebo 3 (odpovídejte pro každou pozici jednotlivě) ?
+Vysvětlete proč.
+
+23
+
+Testování funkčnosti (otázka studijního zaměření – 3 body)
+
+Zadání používá pro ilustraci jazyk Java a framework JUnit 4, nicméně otázky se týkají principů testování a v odpovědích
+můžete použít i jiná podobná prostředí.
+Uvažujte následující fragment kódu:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+
+import java.util.List;
+import java.util.ArrayList;
+import org.junit.*;
+import static org.junit.Assert.*;
+public class ListTest {
+private List<String> list;
+@Before public void setUp () { list = new ArrayList<String> (); }
+@Test public void testEmpty () { assertTrue (list.isEmpty ()); }
+@Test public void testAddSize () {
+list.add ("X");
+assertEquals (1, list.size ());
+}
+@Test public void testAddContents () {
+list.add ("X");
+7
+
+17
+18
+19 }
+
+assertTrue (list.contains ("X"));
+}
+
+1. Vysvětlete účel třídy ListTest a jejích jednotlivých atributů a metod.
+2. Do třídy ListTest by šlo evidentně analogicky doplňovat další metody například takto:
+1 public class ListTest {
+2
+...
+3
+@Test public void testTwoAddSize () {
+4
+list.add ("X"); list.add ("X");
+5
+assertEquals (2, list.size ());
+6
+}
+7
+@Test public void testThreeAddSize () {
+8
+list.add ("X"); list.add ("X"); list.add ("X");
+9
+assertEquals (3, list.size ());
+10
+}
+11
+...
+12 }
+Za jakých okolností by takové doplnění dávalo smysl, pokud vůbec ? Obecněji, jakými ohledy se řídí volba metod, které
+implementuje třída ListTest, případně jiné podobné třídy stejného účelu ?
+3. Co se nejspíš stane, pokud v metodě testAddContents vypustíme volání list.add ? Diskutujte v širším kontextu
+procesu vývoje software, nikoliv pouze chování volaných metod.
+
+24
+
+Paralelismus a synchronizace na multiprocesorech (otázka studijního zaměření – 3 body)
+
+1. Předpokládejte následující kód zámku (spinlock):
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+#include <atomic>
+void lock (std::atomic<bool> &lock) {
+while (lock.exchange (true)) {
+}
+}
+void unlock (std::atomic<bool> &lock) {
+lock = false;
+}
+Krok po kroku (řádek po řádku) vysvětlete, jak bude tento kód synchronizovat dvě vlákna, která se současně pokusí
+získat zámek. Pozornost věnujte zdůvodnění správnosti zámku.
+
+2. Uvažujte situaci, kdy se dvě vlákna ucházejí o zámek z předchozího bodu, který je ale trvale zamčen třetím vláknem.
+Může se v takové situaci lišit provoz mezi procesorem a pamětí v případě, kdy tento kód poběží na multiprocesoru, od
+případu, kdy by běžel na uniprocesoru ? Proč ?
+3. Bylo by možné v zámku z předchozího bodu nahradit typ std::atomic<bool> prostým typem bool ? Proč ne nebo
+jak ano ?
+
+25
+
+Databáze a Web: Validita XML dat (otázka studijního zaměření – 3 body)
+
+1. Vysvětlete pojem “validní XML schéma”.
+2. Uveďte alespoň 3 rozdíly mezi jazykem DTD a XML Schema.
+3. V jazyce XML Schema vyjádřete element adresa, který obsahuje podelementy ulice, číslo popisné, město a PSČ v
+libovolném pořadí. Lze takové schéma vyjádřit i v jazyce DTD? Pokud ano, jak. Pokud ne, proč.
+8
+
+26
+
+Databáze a Web: XSLT (otázka studijního zaměření – 3 body)
+
+1. Krátce popište jak pracuje XSLT procesor. Vysvětlete pojem “implicitní XSLT šablona”.
+2. Jaký bude výstup aplikace prázdného XSLT skriptu na dokument
+obsahující pouze element <h1 c="blue">Hello world!</h1>?
+3. Napište XSLT skript, jehož výstupem je seznam názvů a hodnot všech atributů libovolného vstupního XML dokumentu.
+
+27
+
+Databáze a Web: Relační úplnost, spojení tabulek a SQL (otázka studijního zaměření – 3 body)
+
+1. Na vhodném jednoduchém příkladu vysvětlete rozdíl mezi vnitřním a vnějším spojením tabulek v jazyce SQL.
+2. Vysvětlete pojmy “relace” a “relačně úplný jazyk”. Je jazyk SQL relačně úplný? Proč?
+
+28
+
+XML (otázka studijního zaměření – 3 body)
+
+Uvažujte seznam institucí veřejné správy (např. Ministerstvo financí, Český statistický úřad nebo Město Turnov). Pro každý
+úřad evidujeme
+– název (text, povinné)
+– IČO (osmimístné číslo, zleva doplněno 0)
+– adresu sídla sestávající z názvu ulice, čísla popisného a města (vše povinné)
+– kontaktní email (povinné)
+– seznam úřadoven (tj. míst, kam mohou občané chodit vyřizovat svojí agendu s úřadem osobně).
+Seznam může obsahovat libovolný počet úřadoven a může být i prázdný. Pro každou úřadovnu jsou evidovány kontaktní
+hodiny (povinné).
+Vytvořte XML schéma popisující XML dokumenty pro zápis seznamu institucí veřejné správy. K XML schématu napište
+také příklad validního XML dokumentu (s alespoň jednou institucí). Napiště XPath výraz, který z XML dokumentu vybere
+instituce s úřadovnou, která má otevřeno v úterý odpoledne (tj. od 12:00 či později).
+
+29
+
+Návrhové vzory (otázka studijního zaměření – 3 body)
+
+Stejně jako v předchozí otázce uvažujte seznam institucí veřejné správy. Uvažujte dvě různé třídy (v libovolném objektovém či
+objektově orientovaném jazyku – C++, C#, Java, . . . ) reprezentující služby pro správu seznamu. První třída, SluzbaA, nabízí
+ve svém rozhraní pro vložení nové instituce metodu vytvorInstituci, druhá třída, SluzbaB, nabízí metodu zalozInstituci.
+Obě mají také různé sady parametrů pro specifikaci nové instituce.
+Uvažujte třídu Klient, jejíž implementace umožňuje vytvořit novou instituci voláním metody vytvorInstituci. Přišel
+požadavek, aby byla využívána metoda zalozInstituci místo metody vytvorInstituci. Navrhněte řešení, které má co
+nejmenší vliv na vnitřní kód uvedených tříd. Dále rozšiřte třídu SluzbaB a případně další potřebné třídy tak, aby se k
+instanci třídy SluzbaB mohly registrovat různí klienti (instance třídy Klient i jiných tříd), kteří budou instancí třídy
+SluzbaB notifikováni v případě jakékoliv změny v seznamu institucí.
+Pro řešení zvolte vhodné návrhové vzory. Zvolené návrhové vzory pojmenujte. Řešení buď zakreslete v podobě UML diagramu
+či diagramů nebo zapište v kódu ve zvoleném jazyce.
+
+30
+
+Testování funkčnosti (otázka studijního zaměření – 3 body)
+
+Stručně popište běžně využívané postupy na testování komponent (tříd, modulů), které mají netriviální závislosti. Proveďte
+jejich vzájemné srovnání (diskuzi výhod a omezení) z pohledu kritérií jako například vyjadřovací síla nebo jednoduchost
+použití během vytváření testů.
+9
+
+31
+
+Ortonormální báze (3 body)
+
+1. Definujte pojem ortonormální báze.
+2. Buď z1 , z2 , z3 , z4 ortonormální báze prostoru R4 a nechť vektor u = z1 − z2 + 2z3 − 2z4 .
+– Určete kuk,
+– rozhodněte, zda je vektor v = z1 − z2 + 3z3 + 4z4 kolmý na u,
+– sestrojte projekci vektoru u do ortogonálního doplňku množiny {z1 , z2 }.
+
+32
+
+Determinanty a podobnost (3 body)
+
+1. Definujte determinant matice a rozhodněte, zda obecně platí det(A + B) = det(A) + det(B). (Dokažte nebo vyvraťte.)
+2. Spočtěte determinant matice
+
+
+0
+1
+
+1
+
+0
+
+0
+0
+
+0
+0
+0
+1
+1
+0
+
+1
+0
+1
+1
+0
+1
+
+1
+0
+1
+1
+1
+0
+
+1
+0
+1
+0
+0
+0
+
+
+1
+1
+
+1
+ .
+1
+
+0
+0
+
+3. Definujte podobnost matic a dokažte, že podobné matice mají stejný determinant.
+
+33
+
+Regulární matice (3 body)
+
+1. Definujte pojem regulární matice a dokažte, že reálné regulární matice řádu n spolu s operací maticového součinu tvoří
+grupu.
+2. Spočítejte kolik existuje regulárních matic v Z3×3
+.
+2
+
+34
+
+Taylorův rozvoj (3 body)
+
+Spočtěte Taylorův rozvoj funkce log(1 + x) v bodě x = 0.
+Vypočítejte limitu
+lim
+
+x→+∞
+
+35
+
+
+x2 (log(x + 1) − log x) − x .
+
+Primitivní funkce (3 body)
+
+Uveďte vzorec pro integraci (tj. nalezení primitivní funkce) metodou per partes.
+Nalezněte jím
+Z
+
+36
+
+ex sin x .
+
+Grafy (3 body)
+
+1. Zadefinujte pojmy tah a uzavřený tah v grafu.
+2. Zformulujte nutnou a postačující podmínku pro to, aby v grafu existoval uzavřený tah obsahujíci všechny jeho vrcholy
+a hrany.
+3. Ukažte, že každý graf má orientaci, v níž se vstupní a výstupní stupeň každého vrcholu liší nejvýše o jedna.
+
+10
+
+37
+
+Vytvořující funkce (3 body)
+
+Nechť a0 , a1 , a2 . . . je posloupnost čísel definovaná pomocí následující soustavy rekurencí:
+
+a0
+
+=
+
+2
+
+a1
+
+= −1
+
+an
+
+=
+
+3an−1 − 2an−2 pro n ≥ 2.
+
+Najděte vytvořující funkci této posloupnosti. Výsledek vyjádřete vzorečkem v uzavřeném tvaru, tj. bez použití nekonečných
+součtů. Není třeba hledat vzorec pro n-tý člen posloupnosti.
+
+38
+
+Normální podgrupy (3 body)
+
+Definujte pojem normální podgrupy v grupě.
+Pro pevné n ∈ N uvažte množinu všech permutací n-prvkové množiny, které mají kladné znaménko, tedy An = {π ∈
+Sn : sgn(π) = 1}. Ukažte, že tvoří podgrupu symetrické gupy Sn všech permutací a rozhodněte, zda se jedná o normální
+podgrupu.
+
+39
+
+Logika (3 body)
+
+Vyjádřete následující dvě tvrzení formulemi predikátové logiky nad vhodně zvoleným jazykem (s unárními predikáty pro
+“chce”, “hledá způsoby”, “hledá důvody”).
+1. Kdo chce, hledá způsoby, kdo nechce, hledá důvody.
+2. Kdo nehledá způsoby, hledá důvody.
+V nějakém formálním dokazovacím systému (tablo metoda, rezoluční metoda, Hilbertovský kalkul) dokažte, že z prvního
+tvrzení vyplývá to druhé.
+
+11
+
+

@@ -1,0 +1,242 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+podzim 2014
+
+1
+
+Nejkratšı́ cesta grafem
+1. Uvažujte graf s kladným ohodnocenı́m hran (délka). Definujte formálně problém hledánı́ nejkratšı́ cesty mezi dvěma uzly
+tohoto grafu.
+2. Napište pseudokód algoritmu pro hledánı́ nejkratšı́ cesty mezi dvěma uzly grafu s kladným ohodnocenı́m hran.
+
+2
+
+Vyhledávánı́ v textu
+1. Popište strukturu vyhledávacı́ho automatu algoritmu Aho Corasick pro vyhledávánı́ v textu (načrtněte přı́klad pro hledané
+řetězce he“, she“, her“).
+”
+”
+”
+2. Napište pseudokód algoritmu Aho Corasick pro vyhledávánı́ v textu (pouze vyhledávánı́, nikoliv konstrukci vyhledávacı́ho
+automatu).
+3. Jaká je časová složitost tohoto algoritmu ?
+
+3
+
+Architektura počı́tače
+
+Uvažujte celočı́selný datový typ INT reprezentovaný vnitřně v osmi bitech pomocı́ dvojkového doplňku, tedy napřı́klad čı́slo 0
+je reprezentováno jako 000000002 , čı́slo 1 jako 000000012 , čı́slo 127 jako 011111112 , čı́slo −1 jako 111111112 .
+Předpokládejte, že operace + pro typ INT je vnitřně implementována jako prosté osmibitové binárnı́ sčı́tánı́, tedy neuvažuje se
+znaménko a neindikuje se přetečenı́, výsledek se ořezává na osm bitů.
+1. Jaké nejmenšı́ a největšı́ čı́slo je možné zapsat v datovém typu INT ?
+2. Jaký bude výsledek operace 127 + 1 pro typ INT ?
+3. Jaký bude výsledek operace −127 + (−1) pro typ INT ?
+4. Uvažujte x jako proměnnou typu INT a MIN jako konstantu rovnou nejmenšı́mu čı́slu typu INT. Jaký bude obsah proměnné
+x po provedenı́ následujı́cı́ho bloku kódu ? V odpovědi neuvažujte možné optimalizace překladače.
+x = MIN
+x = -x
+
+4
+
+Vstupnı́ a výstupnı́ zařı́zenı́
+
+Uvažujte běžnou architekturu počı́tače, ve které zařı́zenı́ mohou žádat o obsluhu pomocı́ přerušenı́. Předpokládejte, že mezi
+připojenými zařı́zenı́mi jsou klávesnice, grafický adapter (displej) a disk.
+1. Která z uvedených zařı́zenı́ a v jakých situacı́ch budou pravděpodobně žádat o přerušenı́ ?
+2. Jakým způsobem žádá zařı́zenı́ o přerušenı́ ? Konkrétně, jak se v architektuře počı́tače informace o potřebě obsluhy dostane
+od zařı́zenı́ k procesoru.
+3. Jak procesor reaguje na žádost o přerušenı́ ? Konkrétně, popište bezprostřednı́ reakci z pohledu hardware, nikoliv kroky
+realizované pomocı́ software.
+
+5
+
+Automaty
+1. Definujte formálně pojem konečný automat“.
+”
+2. Definujte formálně kdy konečný automat přijı́má slovo.
+3. Může konečný automat rozpoznávat také nekonečné jazyky ?
+4. Sestavte konečný automat, který přijı́má stejný jazyk jako regulárnı́ výraz ^[a-z]+@[a-z]+\.[a-z.]+$ (výraz pro jednoduchou kontrolu adresy mailu).
+
+6
+
+Transakce
+1. Definujte pravidla pro izolaci transakcı́ s použitı́m dvoufázového zamykánı́.
+2. Uvažujte transakce T1: R(X)R(Y ) a T2: W (X)W (Y ). Napište všechny rozvrhy, kterými může tyto transakce plánovat
+dvoufázové zamykánı́ (vyznačte i operace zamčenı́ a odemčenı́).
+3. Může vést dvoufázové zamykánı́ nad těmito transakcemi k uváznutı́ a proč ?
+
+7
+
+Principy implementace objektově orientovaných jazyků
+1. Vysvětlete rozdı́l mezi předávánı́m parametrů funkce (metody) hodnotou (pass by value) a odkazem (pass by reference).
+V jakých situacı́ch se hodı́ jeden či druhý způsob předávánı́ parametrů ?
+Uvažujte následujı́cı́ kód (z dostupných verzı́ si vyberte jeden programovacı́ jazyk, pozor, verze se nechovajı́ stejně):
+Listing 1: Java
+c l a s s Main {
+s t a t i c void f ( I n t e g e r x ) {
+i f ( x > 0 ) { x−−; f ( x ) ; }
+}
+public s t a t i c void main ( S t r i n g [ ] arguments ) {
+int a = 8 ; f ( a ) ;
+System . out . p r i n t l n ( a ) ;
+}
+}
+Listing 2: C++
+#include <i o s t r e a m >
+void f ( int &x ) {
+i f ( x > 0 ) { x−−; f ( x ) ; }
+}
+int main ( ) {
+int a = 8 ; f ( a ) ;
+s t d : : c o u t << a << s t d : : e n d l ;
+return ( 0 ) ;
+}
+Listing 3: C#
+using System ;
+c l a s s Example {
+s t a t i c void f ( r e f int x ) {
+i f ( x > 0 ) { x−−; f ( r e f x ) ; }
+}
+s t a t i c void Main ( string [ ] arguments ) {
+int a = 8 ; f ( r e f a ) ;
+C o n s o l e . WriteLine ( a ) ;
+}
+}
+
+2. Kolikrát se zavolá funkce f ?
+3. Jaký výstup napı́še kód při spuštěnı́ ?
+
+8
+
+Principy implementace objektově orientovaných jazyků
+1. Vysvětlete, co je statický atribut třı́dy (static field, static class variable, static member variable).
+2. Uvažujte třı́du s následujı́cı́m rozhranı́m (z dostupných verzı́ si vyberte jeden programovacı́ jazyk):
+Listing 4: Java
+public c l a s s S i n g l e t o n {
+public s t a t i c S i n g l e t o n g e t I n s t a n c e ( ) {
+...
+}
+}
+Listing 5: C++
+class Singleton {
+public :
+s t a t i c S i n g l e t o n& g e t I n s t a n c e ( ) {
+...
+}
+};
+Listing 6: C#
+public c l a s s S i n g l e t o n {
+public s t a t i c S i n g l e t o n I n s t a n c e {
+get {
+...
+}
+}
+}
+Doplňte implementaci třı́dy Singleton tak, aby uvedená metoda (getter) vždy vracela referenci na jedinou Singleton instanci,
+a aby se tato instance vytvořila při prvnı́m volánı́ uvedené metody (getteru). Neuvažujte existenci vı́ce vláken.
+3. Jak docı́lı́te toho, aby programátor neměl možnost obejı́t uvedenou metodu (getter) a vytvořit si vı́ce instancı́ třı́dy Singleton
+napřı́klad přı́mo volánı́m new ?
+
+9
+
+Protokoly TCP/IP
+1. Jak vypadá adresa komunikujı́cı́ho procesu v protokolu TCP ?
+2. Po jakých jednotkách potvrzuje protokol TCP přijatá data ? Jak protokol TCP minimalizuje počet datagramů přenášených
+kvůli potvrzenı́ ?
+3. Jak protokol TCP řı́dı́ tok v situaci, kdy odesı́latel produkuje data rychleji, než je přı́jemce schopen je zpracovat ?
+4. Jaké internetové protokoly jsou vystavěny nad protokolem TCP (nejméně dva přı́klady) ?
+
+10
+
+Rozklad polynomů
+
+1. Definujte pojem ireducibilnı́ polynom nad tělesem T “.
+”
+2. Nad kterými z uvedených těles existuje ireducibilnı́ polynom stupně alespoň dva (ilustrujte přı́kladem): Q, C, Z2 , Z3 ?
+
+11
+
+Rozklad polynomů
+
+1. Definujte pojem vı́cenásobný kořen polynomu“.
+”
+2. Pro která z uvedených těles se polynom x4 − 2x3 + 2x2 − 2x + 1 rozkládá na lineárnı́ činitele: Q, C, Z2 , Z3 ?
+
+12
+
+Limita posloupnosti
+
+1. Definujte pojem limita posloupnosti reálných čı́sel“ (vlastnı́ i nevlastnı́).
+”
+2. Vyslovte větu o strážnı́cı́ch.
+3. Rozhodněte, zda existuje limita a pokud ano, spočtěte ji:
+√
+1 + 2 + · · · + b nc
+n→∞
+n
+lim
+
+13
+
+Metrické prostory
+
+1. Definujte pojem uzavřená množina“ v metrickém prostoru.
+”
+2. Rozhodněte o platnosti následujı́cı́ch tvrzenı́:
+(a) Jsou-li F1 , F2 , . . . uzavřené množiny, je i ∪∞
+n=1 Fn uzavřená množina.
+(b) Jsou-li F1 , F2 , . . . uzavřené množiny, je i ∩∞
+n=1 Fn uzavřená množina.
+(c) Nenı́ možné, aby byly uzavřené množiny A i X \ A.
+3. Jsou následujı́cı́ množiny uzavřené ? Zdůvodněte.
+(a) (1, ∞)
+(b) {0}
+(c) ∅
+
+14
+
+Metrické prostory
+
+1. Definujte pojmy metrika“ a metrický prostor“.
+”
+”
+2. Rozhodněte o následujı́cı́ch množinách, zda jsou otevřené a zda jsou uzavřené v metrickém prostoru reálných čı́sel s
+eukleidovskou metrikou. O jedné z těchto množin vaše tvrzenı́ dokažte.
+(a) < 0, 1 >
+(b) (0, ∞)
+(c) (−∞, 1 >
+(d) (−∞, ∞)
+
+15
+
+Skalárnı́ součin
+
+1. Definujte reálný skalárnı́ součin.
+2. Rozhodněte, zda je skalárnı́m součinem nad R3 zobrazenı́ hx, yi = 2x1 y1 + 2x2 y2 + 2x3 y3 + x1 y3 + x3 y1 + x2 y3 + x3 y2 .
+
+16
+
+Eulerovské grafy
+
+1. Definujte eulerovský graf.
+2. Formulujte nutnou a postačujı́cı́ podmı́nku pro to, aby graf byl eulerovský (Eulerovu větu).
+3. Necht’ n ∈ N, uvažujme graf G = (V, E) s vrcholy V = {0, 1}n a hranami mezi těmi vrcholy, jejichž posloupnosti se lišı́
+v lichém počtu pozic (tedy napřı́klad pro n = 2 je V00 spojen s V01 a V10 ale nikoliv s V11 ). Pro která n je tento graf
+eulerovský ?
+
+17
+
+Vlastnosti grafů
+
+1. Definujte stupeň vrcholu v (neorientovaném) grafu.
+2. Vyjádřete (bez sumy) součet stupňů vrcholů stromu, tedy
+
+P
+
+v∈V deg(v) pro strom T = (V, E).
+
+3. V závislosti na přirozeném čı́sle n rozhodněte, kdy existuje graf s 2n vrcholy takový, že n vrcholů má stupeň 1 a n vrcholů
+stupeň 2. Pro která n existuje takový graf, který je navı́c souvislý ?
+
+

@@ -1,0 +1,222 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+podzim 2012
+
+1
+
+Kryptografie, RSA
+1. Vysvětlete termı́ny asymetrická kryptografie“, veřejný klı́č“, soukromý klı́č“.
+”
+”
+”
+2. Vysvětlete, jak lze asymetrickou šifru využı́t k podepisovánı́ dokumentů.
+3. Popište postup inicializace, šifrovánı́ a dešifrovánı́ algoritmem RSA.
+
+2
+
+Třı́dy složitosti
+1. Definujte pojmy P, NP, NP-těžký a NP-úplný problém.
+2. Uved’te tři přı́klady NP-úplných problémů.
+
+3
+
+Třı́děnı́ Quick Sort
+1. Napište pseudokód třı́dı́cı́ho algoritmu Quick Sort.
+2. Zdůvodněte, jaké jsou nejmenšı́ a největšı́ počty kroků a spotřeba paměti tohoto algoritmu pro n prvků.
+3. Napište průměrnou časovou složitost tohoto algoritmu pro n prvků. Odvozenı́ nenı́ požadováno.
+
+4
+
+Procesory
+1. Vysvětlete princip zřetězeného zpracovánı́ instrukcı́ procesorem. Kvantifikujte zhruba režii při zpožděnı́ (pipeline stall) ve
+zřetězeném zpracovánı́ instrukcı́. Jaké zrychlenı́ lze očekávat při zřetězeném zpracovánı́, pokud zpracovánı́ každé instrukce
+má k kroků ?
+2. Vysvětlete důvod přı́tomnosti cache obsahu paměti v architektuře procesoru. Kvantifikujte zhruba režii při výpadku (cache
+miss) v přı́stupu k obsahu paměti. Vysvětlete pojmy přı́mo mapovaná cache“ a množinově asociativnı́ cache“.
+”
+”
+
+5
+
+Stránkovánı́
+
+Uvažujte architekturu s podporou stránkovánı́ a délkou virtuálnı́ a fyzické adresy 32 bitů. Stránky majı́ velikost 4 kB, k překladu
+adres je použita dvouúrovňová stránkovacı́ tabulka. Stránkovacı́ tabulka prvnı́ úrovně a stránkovacı́ tabulka druhé úrovně majı́
+stejný počet položek.
+1. Nakreslete část obsahu stránkovacı́ tabulky nutnou pro překlad virtuálnı́ adresy 12345616 na fyzickou adresu 12345616 .
+2. Jaká je nejmenšı́ nutná velikost stránkovacı́ch tabulek, pokud je potřeba namapovat pouze tuto jedinou adresu a proč ?
+Velikosti uvádějte v počtu položek stránkovacı́ch tabulek.
+3. Které z následujı́cı́ch datových typů nenı́ vhodné na uvedenou virtuálnı́ adresu ukládat a proč ?
+
+unsigned char
+int32_t
+int64_t
+char [4096]
+
+6
+
+Synchronizace
+1. Uvažujte třı́du implementujı́cı́ semafor s následujı́cı́ signaturou:
+class Semaphore
+{
+Semaphore (int);
+void up ();
+void down ();
+};
+Popište sémantiku jednotlivých metod.
+2. Máte k dispozici implementaci čı́tače:
+class Counter
+{
+private int value = 0;
+public int read () { return (value); };
+public void increment () { value ++; };
+};
+S použitı́m semaforu upravte implementaci tak, aby správně fungovala při současném volánı́ z vı́ce vláken.
+3. Diskutujte chovánı́ vámi upravené implementace při současném volánı́ metody read z vı́ce vláken.
+
+7
+
+Transakce
+1. Definujte pojem transakce“ a vysvětlete vlastnosti ACID (atomicity, consistency, isolation, durability).
+”
+2. Uvažujte transakce T1: R(X)R(Y )W (X) a T2: R(X)R(Y )W (Y ). Je rozvrh R1 (X)R2 (X)R1 (Y )R2 (Y )W1 (X)W2 (Y ) serializovatelný a proč ?
+
+8
+
+XSLT
+1. Krátce popište princip fungovánı́ XSLT procesoru při zpracovánı́ XSLT skriptu.
+2. Co vrátı́ prázdný XSLT skript a proč ?
+3. Co bude výsledkem aplikace následujı́cı́ho XSLT skriptu na XML dokument se seznamem zaměstnanců, z nichž každý má
+jako atribut rodné čı́slo a jako vnořené elementy jméno a přı́jmenı́ ?
+<xsl:stylesheet>
+<xsl:template match="zamestnanec">
+<xsl:value-of select="@rodnecislo" />
+<xsl:apply-templates />
+</xsl:template>
+</xsl:stylesheet>
+
+9
+
+Predikátová logika
+1. Zformulujte větu o kompaktnosti predikátové logiky. Uved’te hlavnı́ body jejı́ho důkazu.
+
+10
+
+Návrhové vzory
+
+1. Vysvětlete, co to je návrhový vzor (design pattern). Jaké jsou základnı́ součásti popisu návrhového vzoru ?
+2. Vyberte si některý ze vzorů Visitor, Abstract Factory, Model-View-Controller a stručně jej popište.
+
+11
+
+Šablony a generika
+
+template <class A> class B
+{
+public:
+void f (A a) { ... }
+}
+public class B<A>
+{
+public void f (A a) { ... }
+}
+1. Uvedené fragmenty kódu ilustrujı́ šablony a generika. Vysvětlete, jaké typy uvedené fragmenty kódu definujı́.
+2. Ilustrujte použitı́ šablon nebo generik na definici rozhranı́ třı́dy, která implementuje FIFO frontu s metodami vloženı́
+poslednı́ho a vyjmutı́ prvnı́ho prvku.
+
+12
+
+DNS
+
+1. Stručně popište princip překladu doménového jména na IP adresu systémem DNS.
+2. Vysvětlete rozdı́l mezi autoritativnı́mi a neautoritativnı́mi DNS servery. Co je primárnı́ a sekundárnı́ DNS server ?
+3. Co jsou kořenové DNS servery a jak se předcházı́ jejich přetı́ženı́ ? Jak je v systému DNS zajištěna aktuálnost překladů ?
+
+13
+
+Rozklad polynomů
+
+1. Definujte pojem ireducibilnı́ polynom“.
+”
+2. Ukažte, že každý polynom stupně alespoň 1 má jednoznačný rozklad na součin ireducibilnı́ch polynomů.
+3. Najděte rozklad polynomu x3 + x na ireducibilnı́ polynomy v R[x].
+4. Najděte rozklad polynomu x3 + x na ireducibilnı́ polynomy v C[x].
+
+14
+
+Derivace, Newtonova metoda
+
+1. Definujte pojem derivace funkce“.
+”
+2
+2. Zjistěte, na kterých intervalech je funkce xe−x rostoucı́ a klesajı́cı́.
+3. Popište Newtonovu metodu hledánı́ nulového bodu funkce.
+
+15
+
+Primitivnı́ funkce
+
+1. Definujte pojem primitivnı́ funkce“.
+”
+2. Vyslovte větu o výpočtu primitivnı́ funkce metodou per partes.
+3. Najděte primitivnı́ funkci k x sin(x).
+
+16
+
+Determinant
+
+1. Definujte pojem determinant“.
+”
+2. Dokažte, že det A = det AT .
+3. Jaký je vztah determinantu matice A a k nı́ inverznı́ matice A−1 ?
+
+17
+
+Soustavy lineárnı́ch rovnic
+
+1. Dokažte, že elementárnı́ úpravy použı́vané v Gausově eliminačnı́ metodě neměnı́ řešenı́ soustavy.
+2. Spočı́tejte Gausovou eliminačnı́ metodou řešenı́ soustavy dané touto rozšı́řenou maticı́:
+
+
+1 1 1 1
+ 1 1 4 4
+1 2 3 4
+
+18
+
+Metrické prostory
+
+1. Definujte pojmy metrika“ a metrický prostor“. Doplňte přı́klad metrického prostoru nad Rn s jinou než eukleidovskou
+”
+”
+metrikou.
+2. Rozhodněte o následujı́cı́ch množinách, zda jsou otevřené a zda jsou uzavřené v metrickém prostoru reálných čı́sel s
+eukleidovskou metrikou. O jedné z těchto množin vaše tvrzenı́ dokažte.
+• h0, 1i
+• (0, ∞)
+• (−∞, ∞)
+
+19
+
+Nezávislost jevů
+
+1. Pravděpodobnost jevu A je P (A), pravděpodobnost jevu B je P (B). Vyjádřete pravděpodobnost P (A ∩ B) současného
+výskytu A a B, pokud vı́te, že A a B jsou nezávislé.
+2. Rozšiřte předchozı́ vyjádřenı́ pro přı́pad, kdy A a B jsou závislé. Stačı́ v tomto přı́padě k vyjádřenı́ P (A ∩ B) znalost P (A)
+a P (B) ?
+3. V experimentu se házı́ dvěma kostkami. Pro která n ∈ {2...12} je jev součet hodů obou kostek je n“ závislý na jevu hod
+”
+”
+prvnı́ kostky je 1“ ?
+
+20
+
+Základnı́ pojmy teorie grafů
+
+1. Definujte úplný graf Kn a úplný bipartitnı́ graf Km,n .
+2. Pro jaká m, n ∈ N je Km,n cestou ?
+3. Pro jaká n ∈ N je Kn rovinný ?
+4. Pro jaká m, n ∈ N je Km,n rovinný ?
+Odpovědi zdůvodněte.
+
+

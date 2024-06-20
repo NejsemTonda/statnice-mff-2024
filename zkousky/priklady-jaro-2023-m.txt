@@ -1,0 +1,110 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+jaro 2023
+
+1
+
+Lineární zobrazení (3 body)
+1. V prostoru R3 najděte přímku p, která prochází bodem (1, 2, 3)T a celá se zobrazuje na jeden bod při zobrazení
+f (x) = Ax, kde
+
+
+1 1 1
+A = 4 2 1 .
+0 2 3
+2. Dokažte či vyvraťte následující tvrzení:
+Lineární zobrazení f : Rn → Rn je isomorfismem právě tehdy, když zobrazuje libovolnou přímku zase na přímku.
+
+2
+
+Vlastní čísla a vlastní vektory (3 body)
+1. Definujte pojem vlastní číslo a vlastní vektor reálné matice A ∈ Rn×n .
+2. Zformulujte větu o spektrálním rozkladu symetrické matice A ∈ Rn×n .
+3. Najděte matici A ∈ R3×3 takovou, aby zároveň platilo:
+– A má hodnost 1,
+– A má vlastní vektory (2, 1, 1)T , (1, −1, −1)T a (0, 1, −1)T . (Všimněte si, že jsou na sebe kolmé.)
+
+3
+
+Ortogonální doplněk (3 body)
+1. Definujte pojem ortogonální doplněk množiny vektorů.
+2. Buď V vektorový prostor dimenze n. Dokažte, že množina vektorů {x1 , . . . , xm } ⊂ V je lineárně nezávislá právě tehdy,
+když dim({x1 , . . . , xm }⊥ ) ≤ n − m.
+3. Najděte bázi ortogonálního doplňku k množině řešení soustavy
+x1 + 2x2 + 3x3 + 4x4 = 0,
+2x1 + x2 + 2x3 + x4 = 0.
+
+4
+
+Princip inkluze a exkluze (3 body)
+1. Napište znění Principu inkluze a exkluze.
+2. Určete, kolik celých čísel z množiny {1, 2, . . . , 360} je dělitelných alespoň jedním z čísel 4, 6 nebo 9.
+
+5
+
+Hyperkrychle (3 body)
+
+Pro d ∈ N nazýváme d-dimenzionální hyperkrychlí graf s množinou vrcholů tvořenou posloupnostmi nul a jedniček délky
+d, kde dva vrcholy jsou spojené hranou právě tehdy, když se odpovídající posloupnosti liší v právě jedné souřadnici. Tedy
+Hd = (V, E), kde V = {0, 1}d a E = {{x, y}|x, y ∈ V ∧ ∃!i : xi ̸= yi }. (Např. pro d = 4 je vrchol 1010 spojen hranou s vrcholy
+0010, 1110, 1000 a 1011.)
+
+1
+
+1. Uveďte tvrzení o maximálním počtu hran rovinného grafu s n vrcholy.
+2. Určete, pro která d ∈ N je d-dimenzionální hyperkrychle rovinný graf. Odpověď zdůvodněte.
+
+6
+
+Limita posloupnosti (3 body)
+
+Nechť (an ) = (a1 , a2 , . . .) je posloupnost reálných čísel.
+1. Definujte, co znamená, že (an ) má limitu +∞ (plus nekonečno).
+2. Definujte, co znamená, že posloupnost (an ) je shora neomezená.
+3. Je pravda, že když (an ) je shora neomezená, pak má limitu +∞? Odpověď zdůvodněte.
+
+7
+
+Spojitost funkce (3 body)
+
+Nechť f : c(0, 1) → R je reálná funkce.
+1. Definujte, co znamená, že f je spojitá v bodě 12 .
+2x−1
+2. Je funkce f definovaná na tomto intervalu jako f (x) = 1−2x
+pro x ̸= 12 a jako f ( 12 ) = −1 spojitá v bodě 12 ?
+
+3. Nemohli bychom funkci v části 2 zadat jednodušeji jako f (x) = 2x−1
+1−2x pro každé x ∈ (0, 1)?
+Odpovědi v částech 2 a 3 zdůvodněte.
+
+8
+
+Riemannův integrál (3 body)
+
+Nechť f : [0, 1] → R je reálná funkce, která má spojitou derivaci f ′ : [0, 1] → R.
+R1
+1. Vypočítejte Riemannův integrál 0 f ′ (x) dx.
+R1
+2
+2. Vypočítejte Riemannův integrál 0 xex dx.
+R1
+3. Vypočítejte Riemannův integrál 0 x cos(x2 ) dx.
+Své odpovědi zdůvodněte (není potřeba zdůvodňovat běžná tvrzení a věty z přednášek).
+
+9
+
+Skolemizace a modely (3 body)
+
+Uvažte následující tvrzení:
+– “Každý zajíc je rychlejší než nějaká želva.”
+– “Každý je buď zajíc, nebo želva, ale ne obojí.”
+– “Existuje alespoň jeden zajíc a alespoň jedna želva.”
+1. Vyjádřete tato tvrzení jako sentence φ1 , φ2 , φ3 ve vhodně zvoleném jazyce L predikátové logiky (prvního řádu).
+2. Pomocí skolemizace najděte otevřenou teorii S (v nějakém rozšíření L′ jazyka L), která je ekvisplnitelná s teorií
+T = {φ1 , φ2 , φ3 }. Popište nějaký tříprvkový model teorie S, nebo zdůvodněte, proč neexistuje.
+3. Uvažme dále sentenci φ4 v jazyce L, která formalizuje tvrzení “Existuje zajíc, který je rychlejší než všechny želvy.” Je
+φ4 v teorii T pravdivá / lživá / nezávislá? Zdůvodněte.
+
+2
+
+

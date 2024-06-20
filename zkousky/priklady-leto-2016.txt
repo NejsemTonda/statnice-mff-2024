@@ -1,0 +1,383 @@
+Bakalářské zkoušky (příklady otázek)
+
+léto 2016
+
+1
+
+Toky v sítích
+1. Definujte problém maximálního toku v síti.
+2. Zapište v pseudokódu Fordův-Fulkersonův algoritmus na hledání maximálního toku.
+3. Dokažte, že pro libovolnou síť s celočíselnými kapacitami se Fordův-Fulkersonův algoritmus zastaví.
+4. Sestrojte síť s nejvýše 10 hranami, na níž Fordův-Fulkersonův algoritmus použije alespoň 10000 zlepšujících cest.
+
+2
+
+Přihrádkové třídění
+1. Zapište v pseudokódu algoritmus přihrádkového třídění pro Z záznamů, které obsahují klíč z množiny {1, . . . , U } a hodnotu
+(libovolné přirozené číslo).
+2. Jakou časovou složitost tento algoritmus má ?
+3. Popište, jak použít přihrádkové třídění k odstraňování násobných hran z grafu. Vrcholy grafu jsou očíslovány čísly 1 až N ,
+hrany jsou zadány jako M neuspořádaných dvojic čísel vrcholů.
+
+3
+
+Databáze
+1. Vyjmenujte množinové operace relační algebry. Jsou na jejich operandy kladeny nějaké podmínky a proč ? Jsou všechny
+množinové operace nezbytné pro zachování síly jazyka ? Pokud ne, které lze vynechat a nahradit zbylými ?
+2. Vysvětlete funkci dvoufázového zamykacího protokolu.
+3. Uvažujte transakce T1 : R(A), W (B) a T2 : W (A). Bude rozvrh {S1 (A), R1 (A), U1 (A), S2 (A), W2 (A), U2 (A), X1 (B), W1 (B),
+U1 (B), COM M IT1 , COM M IT2 } dvoufázový ? Pokud ne, upravte ho aby byl a přitom se nezměnilo pořadí čtení a zápisů.
+
+4
+
+Databáze
+1. Vysvětlete funkci dvoufázového zamykacího protokolu.
+2. V čem se od něj odlišuje striktní dvoufázový zamykací protokol ? Zabraňuje některý z nich více anomáliím ? Pokud ano,
+jakým ?
+3. Uvažujte transakce T1 : R(X) R(Y ) W (Y ) a T2 : W (Y ) R(Y ). Dají rozvrhy S1 : R1 (X) W2 (Y ) R1 (Y ) W1 (Y ) R2 (Z) a S2 :
+W2 (Y ) R1 (X) R1 (Y ) R2 (Z) W1 (Y ) vždy stejný výsledek a proč ?
+
+5
+
+Rekurzivní sledování paprsku (povinné téma vašeho zaměření)
+1. Popište princip (nástin algoritmu) rekurzivního sledování paprsku (ray tracing, RT), co je na vstupu a co je výsledkem ?
+2. Z jakých složek se počítá světlo v rekurzivní proceduře „shade()“ ?
+3. Jaké hlavní nedostatky vykazuje základní algoritmus RT popsaný v prvním bodě, pokud bychom ho chtěli použít jako
+fotorealistickou zobrazovací metodu ?
+
+4. Jak se tyto nedostatky řeší (všeobecný princip „distribuovaného sledování paprsku“) ?
+
+6
+
+Teorie grafů (barvení grafů) (povinné téma vašeho zaměření)
+1. Napište definici barevnosti grafu a určete barevnost následujícího grafu:
+
+2. Zformulujte Brooksovu větu o barevnosti grafů maximálního stupně ∆.
+3. Dokažte bez použití Brooksovy věty, že obsahuje-li souvislý graf maximálního stupně ∆ vrchol stupně menšího než ∆, pak
+jeho barevnost je nejvýše ∆.
+
+7
+
+Teorie grafů (barvení grafů) (povinné téma vašeho zaměření)
+1. Napište definici hranové barevnosti grafu a určete hranovou barevnost následujícího grafu:
+
+2. Zformulujte Vizingovu větu o hranové barevnosti grafů maximálního stupně ∆.
+3. Dokažte bez použití Vizingovy věty, že graf maximálního stupně ∆ lze hranově obarvit 2∆ − 1 barvami.
+
+8
+
+Automaty a gramatiky
+1. Vyslovte pumping lemma pro bezkontextové jazyky.
+2. Popište lineárně omezený Turingův stroj.
+3. Zařaďte do Chomského hierarchie jazyk L = {ww|w ∈ {a, b}∗ } (tedy nalezněte vzhledem k inkluzi co nejmenší třídu
+hierarchie, do které jazyk patří). Odpověď dokažte.
+
+9
+
+Automaty a gramatiky
+1. Vyslovte Myhill-Nerodovu větu.
+2. Popište deterministické a nedeterministické zásobníkové automaty.
+
+3. Zařaďte do Chomského hierarchie jazyk L nad abecedou X = {a, b, c}, kde L = {ucv|u, v ∈ {a, b}∗ ∧ u 6= v} (tedy nalezněte
+vzhledem k inkluzi co nejmenší třídu hierarchie, do které jazyk patří). Odpověď dokažte.
+
+10
+
+Syntaktická analýza (povinné téma vašeho zaměření)
+
+1. Vysvětlete rozdíl mezi závislostní a složkovou syntaxí.
+2. Nakreslete všechny závislostní stromy a složkové stromy pro náledující větu:
+The dog saw a cat with a telescope in a mirror.
+3. Jmenujete dvě metody pro statický parsing a vysvětlete jejich základní princip.
+
+11
+
+Strojový překlad (povinné téma vašeho zaměření)
+
+1. Popište použití modelu zašuměného kanálu (noisy channel model) pro statistický strojový překlad.
+2. Popište dvě metody vyhodnocování kvality strojového překladu.
+3. Popište princip jazykového modelování, k čemu jazykový model slouží a jakým způsobem se trénuje.
+
+12
+
+Systémové programování (povinné téma vašeho zaměření)
+
+1. Vysvětlete koncept mapování souborů do paměti (memory mapped files).
+2. Navrhněte možné API (nebo popište existující API), pomocí kterého lze mapovat soubory do paměti. Popis by měl zahrnovat
+vysvětlení sémantiky jednotlivých funkcí včetně typů a významu argumentů.
+3. Popište krok po kroku jak probíhá zápis jednoho byte na pozici 1000 do vybraného souboru pomocí mapování souboru
+do paměti. V popisu použijte funkce vašeho API z předchozího bodu a výslovně označte, kdo vykonává jednotlivé kroky
+(aplikace, operační systém, hardware). Popis by měl začínat první operací aplikace týkající se daného souboru a končit
+zápisem na disk.
+4. Uvažujte běžný multiprocesorový systém s hardwarovou podporou více vláken na jednom jádře. Pokud více procesů čte
+tentýž soubor pomocí mapování do paměti, mohou mít některé procesy data před čtením již v cache (míněno cache
+procesoru, nikoliv cache operačního systému) ? Vysvětlete proč.
+
+13
+
+Optimalizace (povinné téma vašeho zaměření)
+
+Pro následující otázky budeme pracovat s optimalizačním problémem MAX-E3SAT, který je variantou problému splnitelnosti.
+Je definován takto:
+Instance problému je CNF formule ϕ s m klauzulemi a n proměnnými, ve které každá klauzule ma právě tři literály.
+Přípustné řešení je jakékoliv ohodnocení ~a ∈ {0, 1}n .
+Cílem je maximalizovat počet splněných klauzulí.
+Budeme uvažovat následující algoritmus:
+RANDOM: Pro každé i zvol nezávisle unifomně náhodně ai ∈ {0, 1}. Vystup vektor ~a = (a1 , . . . , an ).
+Budeme také uvažovat variantu algoritmu 2-RANDOM, kde náhodné proměnné ai nebudeme volit nezávislé ale pouze po dvou
+nezávislé.
+1. Definujte nezávislé náhodné proměnné a po 2 nezávislé náhodné proměnné. Stačí pro případ binárních náhodných proměnných s uniformním rozdělením (jako používáme v algoritmu).
+2. Dokažte, že algoritmus RANDOM je 7/8-aproximační pro MAX-E3-SAT.
+3. Jaký je aproximační poměr algoritmu 2-RANDOM pro MAX-E3-SAT?
+
+14
+
+Procesy a vlákna
+
+1. Pro typický operační systém jako Linux nebo Windows vysvětlete, jaký je rozdíl mezi konceptem procesu a vlákna. Co je
+součástí stavu procesu a co je součástí stavu vlákna ?
+Předpokládejte, že na příkazové řádce v Unixovém operačním systému (případně běžné příkazové řádce operačního systému
+Windows) zadáte následující složený příkaz, kde ls je výpis adresáře, head -N je výběr prvních N řádků (na Windows by
+příkazy mohly být převzaty například z prostředí Cygwin):
+ls | head -3 > out.txt
+2. Kolik procesů v dané situaci vznikne a kdo je spustí ?
+3. Jakým způsobem se příkaz head dozví, že má vybrané 3 řádky zapsat zrovna do souboru out.txt ? Kdo a jakým způsobem
+příkazu head tuto informaci předá ?
+4. Jak je zařízeno, že příkaz head může číst seznam souborů vygenerovaný příkazem ls ? Je z pohledu příkazu ls tato situace
+stejná jako při zadání níže uvedeného příkazu ? Vysvětlete.
+ls > out.txt
+
+15
+
+Programovací jazyky
+
+Pro vypracování otázky si zvolte jeden z jazyků C#, C++, Java (volbu vyznačte).
+1. Navrhněte objektový model pro dokument zapsaný ve zjednodušené verzi XML, kde stromová struktura jazyka obsahuje
+pouze elementy, které mohou mít atributy (atribut je dvojice jméno, hodnota). Pořadí elementů je podstatné, pořadí
+atributů podstatné není, u jednoho elementu nelze opakovat atributy se stejným jménem.
+Model by měl umožnit vytištění dokumentu v obvyklém formátu a jeho snadnou modifikaci (přidávání atributu a podobně).
+Respektujte pravidla objektového návrhu (čeká se návrh objektového modelu, tedy v tomto bodě není třeba psát těla
+metod).
+2. Přidejte do modelu metodu „forEach“ (včetně těla), která jako parametr akceptuje lambda výraz a aplikuje jej na každý
+atribut elementu, na kterém je zavolána a na všechny podelementy daného elementu. Lambda výraz má dva parametry,
+atribut a element atributu.
+Příklad dokumentu:
+<e l e m e n t 1 key1=" v a l u e 1 " key2=" v a l u e 2 ">
+<e l e m e n t 2 key1=" v a l u e 1 " key2=" v a l u e 2 " />
+<e l e m e n t 2 key1=" v a l u e 1 " key2=" v a l u e 2 " />
+</ e l e m e n t 1>
+
+16
+
+Programovací jazyky
+
+Pro vypracování otázky si zvolte jeden z jazyků C#, C++, Java (volbu vyznačte).
+1. Navrhněte třídu, která bude poskytovat dynamické pole (kontejner, do kterého lze neomezeně přidávat další objekty a
+udržuje se pořadí objektů podle vkládání). Pole umožní alespoň přidávat nové objekty na konec, zjistit počet objektů v
+poli a vrátit objekt na dané pozici.
+Dbejte na to, aby váš návrh co nejméně omezoval typy ukládaných objektů, ale přitom poskytoval běžnou typovou bezpečnost.
+Naznačte podstatné části implementace (definice třídy, hrubě těla metod).
+2. Napište (ideálně jednou větou), co je (ve vztahu k dynamickému poli) iterátor či enumerátor (dle zvoleného implementačního
+jazyka) a naznačte implementaci iterátoru či enumerátoru pro vaší implementaci dynamického pole.
+3. Do třídy implementující dynamické pole přidejte metodu „sort“, která pole na místě setřídí pomocí algoritmu QuickSort.
+Tento algoritmus neimplementujte, pouze napište, jak bude vypadat deklarace metody (parametry a návratová hodnota), a
+zda kvůli ní budete muset nějak upravit zbytek vaší třídy pro dynamické pole. Metodu navrhněte tak, aby v ní byl QuickSort
+principiálně implementovatelný, tedy například stanovte případná omezení na hodnoty vkládané do pole a popište, jak se
+taková omezení vyjádří v kódu.
+
+17
+
+TCP
+
+1. Popište (nebo nakreslete) postup zahájení a ukončení TCP spojení. Vysvětlete motivaci three way handshake.
+2. Vysvětlete (nebo nakreslete), jak TCP zabezpečuje spolehlivost (reliability) a jaká je v TCP základní myšlenka řízení toku
+(flow control).
+3. Standard TCP definuje následující hlavičku:
+0
+1
+2
+3
+0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Source Port
+|
+Destination Port
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Sequence Number
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Acknowledgment Number
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+| Data |
+|U|A|P|R|S|F|
+|
+| Offset| Reserved |R|C|S|S|Y|I|
+Window
+|
+|
+|
+|G|K|H|T|N|N|
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Checksum
+|
+Urgent Pointer
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+Options
+|
+Padding
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|
+data
+|
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+K předchozím dvěma bodům doplňte význam a postup nastavení polí „source port“, „destination port“, „sequence number“,
+„acknowledgment number“ a „window“ z hlavičky.
+
+18
+
+Systémy souborů
+
+1. Na nějakém běžném souborovém systému jsme vytvořili soubor /A.TXT a zapsali do něj jedno písmeno A v kódování
+ASCII. Ve výpisu adresáře je u souboru poznamenáno, že má „velikost“ 1 byte. Při zobrazení detailnějších informací o
+souboru se nám ale zobrazuje, že „velikost souboru na disku“ je 8192 bytů. Vysvětlete, jaký je rozdíl mezi těmito dvěma
+informacemi, a proč je druhé číslo tak velké.
+2. Pokud bychom do uvedeného souboru připsali navíc další písmeno B opět v kódování ASCII, jaká bude nejspíš „velikost“
+a jaká „velikost souboru na disku“ pro daný soubor ?
+3. Na nějakém běžném souborovém systému (FAT, běžný souborový systém unixového typu, nebo NTFS) vysvětlete, jakým
+způsobem a kde jsou zhruba uloženy informace o obsahu adresářů (tedy jaké soubory a podadresáře obsahuje nějaký
+konkrétní adresář).
+4. Předpokládejte, že používáme nějaký vhodný souborový systém na operačním systému Linux nebo Windows (tedy nějaký
+souborový systém moderního unixového typu na Linuxu nebo souborový systém NTFS na Windows). Vysvětlete, jak na
+takovém systému docílit toho, aby pro soubor /A/B/C/D mohl být obsah adresářů A a B na jiném (fyzickém) disku než
+obsah adresáře C a souboru D. Důležité pro nás je, aby běžné aplikace o tomto rozdělení mezi různé disky nemusely vědět.
+
+19
+
+Tvorba webových stránek (povinné téma vašeho zaměření)
+
+Uvažme následující situaci (tato situace je společná pro všechny uvedené podotázky). Na webových stránkách restaurace je
+formulář, ve kterém si uživatel může rezervovat jídlo z poledního menu na následující pracovní den. Ve formuláři je možné vybrat
+právě jedno jídlo ze 3 nabízených, doplnit své jméno a odeslat tuto rezervaci potvrzovacím tlačítkem. Zaslané rezervace se na
+straně serveru zpracují a uloží do SQL databáze.
+1. Navrhněte fragment HTML pokrývající část stránky s formulářem. Drobné syntaktické chyby v HTML budou tolerovány.
+2. Popište, jaké kroky musí podniknout skript (například v PHP) na straně serveru, který data z formuláře zpracovává a ukládá
+do SQL databáze. Není nutné psát kód skriptu, pouze popište, jaké kontroly, operace a podobně musí skript provést, aby
+
+nemohlo dojít k neočekávaným chybám nebo dokonce narušení bezpečnosti, a co bude obsahovat vygenerovaná HTTP
+odpověď.
+3. Je nevhodné, aby roztržitý uživatel poslal svoji objednávku vícekrát. Navrhněte mechanismus, pomocí kterého se uživateli
+zobrazí nad formulářem upozornění, pokud již na daný den objednávku odeslal. Předpokládejte, že uživatel není nikde
+registrován a tedy ani neprochází autentizačním procesem. Vaše řešení by mělo brát v úvahu i situace, kdy uživatel zavře
+prohlížeč a na webové stránky se vrátí později, nicméně není potřeba řešit extrémní situace jako je například smazání všech
+uživatelských dat z historie prohlížeče.
+4. Popište, jaké změny by bylo potřeba provést na straně klienta a na straně serveru, pokud by měl být formulář odeslán
+technikou AJAX. Dále popište, jak se tím změní chování aplikace z hlediska uživatele.
+
+20
+
+Funkce více proměnných
+
+1. Definujte pojem „parciální derivace“.
+2. Vyslovte větu o Lagrangeových multiplikátorech (vázané extrémy).
+3. Nalezněte lokální extrémy funkce f (x, y, z) = sin x sin y sin z na množině {(x, y, z) ∈ R3 : x + y + z = π/2, x, y, z > 0}.
+
+21
+
+Funkce více proměnných
+
+1. Definujte pojem „totální diferenciál“.
+2. Vyslovte větu o nutné podmínce pro lokální extrém funkce více proměnných.
+3. Nalezněte lokální a globální extrémy funkce f (x, y) = x + 2y/x + 1/y na množině (0, ∞)2 .
+
+22
+
+Kostra grafu
+
+1. Definujte co je to kostra souvislého grafu.
+2. Mějme graf G = (V, E) na n vrcholech, jehož každý vrchol má stupeň d. Předpokládejme, že G má k koster a že každá
+hrana G je obsažena ve stejném počtu koster. Nechť e je hrana grafu G. Kolik koster má graf G − e = (V, E \ {e})?
+3. Kolik koster má graf na následujícím obrázku?
+
+23
+
+Teorie grafů
+
+Mějme graf G, který vznikne z cyklu C9 na vrcholech v1 , . . . , v9 přidáním hran (vi , vj ) pro všechna i ≡ j (mod 3).
+1. Kolik nejvíce hran je možné z grafu G odebrat, aby zůstal stále souvislý ?
+
+2. Spočítejte, kolik vrcholů je třeba z grafu G odebrat, aby se vrcholy v1 a v5 ocitly v různých komponentách souvislosti.
+Ukažte, že tento počet nelze snížit.
+3. Zformulujte Mengerovu větu o charakterizaci vrcholově k-souvislých grafů. Uveďte hlavní ideu důkazu.
+
+24
+
+Souvislost grafu
+
+1. Definujte hranovou (ke (G)) a vrcholovou (kv (G)) souvislost grafu G.
+2. Pokud δ(G) je minimální stupeň grafu G, najděte příklady grafů, pro které platí:
+(a) δ(G) = ke (G) = kv (G)
+(b) δ(G) > ke (G) = kv (G)
+(c) δ(G) = ke (G) > kv (G)
+(d) δ(G) > ke (G) > kv (G)
+3. Dokažte nerovnost δ(G) ≥ ke (G) ≥ kv (G).
+
+25
+
+Kombinatorika
+
+1. Zformulujte a dokažte binomickou větu
+2. V urně je 20 bílých, 30 červených, 15 modrých a 35 žlutých míčků. Desetkrát vytáhneme náhodný míček a vrátíme jej zpět.
+Určete pravděpodobnost, že ve výsledném výběru bude právě 7 modrých míčků. (Netřeba dopočítávat numericky.)
+3. Určete, kolika způsoby lze sestavit obsah urny se sto míčky čtyř barev tak, aby neobsahovala více než 50 míčků stejné
+barvy. (Netřeba dopočítávat numericky.)
+
+26
+
+Ortogonální doplněk
+
+1. Definujte pojem ortogonálního doplňku množiny ve vektorovém prostoru se skalárním součinem.
+2. Ukažte, že ortogonální doplněk je vždy podprostor.
+3. V R5 určete dimenzi ortogonálního doplňku množiny všech řešení soustavy
+
+
+
+
+5
+1 1 1 1 1
+ 1 0 1 0 1 x =  3  .
+1 0 0 0 1
+1
+
+27
+
+Pravděpodobnost
+
+1. Nechť A a B jsou dva jevy v pravděpodobnostním prostoru. Napište, jak je definována podmíněná pravděpodobnost, že
+nastane jev A, za podmínky, že nastal jev B.
+2. Pytlík bonbónů obsahuje bonbóny tří různých příchutí: malinové, jahodové a citrónové. Od každé příchuti je v něm celkem
+15 bonbónů. Z pytlíku náhodně vybereme šest bonbónů (bez vracení). Vyjádřete vzorečkem následující pravděpodobnosti
+(nemusíte dopočítávat numericky):
+(a) Pravděpodobnost, že aspoň jeden vybraný bonbón je citrónový.
+(b) Pravděpodobnost, že jsme od každé příchuti vybrali aspoň jeden bonbón.
+(c) Pravděpodobnost, že všechny vybrané bonbóny jsou citrónové, za podmínky, že aspoň jeden vybraný bonbón je
+citrónový.
+
+28
+
+Vlastní čísla
+
+1. Definujte charakteristický polynom čtvercové matice A.
+2. Ukažte, že součin vlastních čísel matice A je roven det(A).
+3. Najděte reálnou matici řádu 2 × 2 neobsahující nulu s vlastními čísly λ1 = 1, λ2 = 2.
+
+

@@ -1,0 +1,373 @@
+Bakalářské zkoušky (příklady otázek)
+
+jaro 2019
+
+1
+
+Automaty (3 body)
+
+Nechť A a B jsou regulární jazyky nad abecedou {0, 1}. Rozhodněte, zda následující jazyky jsou regulární, a svou odpověď
+zdůvodněte.
+1. A ∩ B
+2. AR = {aR | a ∈ A}, kde aR je slovo a zapsané pozpátku
+3. {a | a ∈ A ∧ |a| mod 3 = 0}
+
+2
+
+Třídění (3 body)
+1. Popište, jak pomocí binárního vyhledávacího stromu setřídit (uspořádat vzestupně) posloupnost x1 , . . . , xn .
+2. Co z toho plyne pro minimální možnou složitost operací s vyhledávacím stromem? Předpokládejme přitom, že klíče
+ve stromu je možné pouze porovnávat.
+3. Popište algoritmus, který setřídí n uspořádaných dvojic (x1 , y1 ), . . . , (xn , yn ) ∈ {1, . . . , n}2 v čase O(n).
+
+3
+
+Databáze (3 body)
+
+Tento E-R diagram popisuje zjednodušený rozvrh základní školy:
+ID
+
+Učitel
+
+jméno
+
+ID
+
+předmět
+
+1
+
+příjmení
+
+učí
+
+N
+
+Hodina
+
+den
+
+M
+
+výuka pro
+
+1
+
+Třída
+
+hodina
+
+Diagram je neformální a nemusí obsahovat všechny potřebné informace; např. správné řešení slabých entitních typů je nutné
+odhadnout na základě zkušeností z reálného světa.
+1. Převeďte diagram na relační schéma (v podobě diagramu nebo SQL DDL příkazů). Uveďte primární a cizí klíče
+jednotlivých relací.
+2. Napište dotaz v SQL, který zobrazí všechny situace, kde má tentýž učitel rozvrženy dvě různé hodiny v tentýž den a
+hodinu (tedy chyby v rozvrhu). Výstupem jsou tedy řádky obsahující jméno a příjmení učitele, den a hodinu, ve které
+nastává problém. Dbejte na to, aby každá chyba byla zobrazena pouze jednou.
+3. Napište dotaz v SQL, který generuje abecedně uspořádaný seznam všech učitelů. V každém řádků má být jméno učitele
+a počet různých tříd, které potká na svých hodinách. Seznam má obsahovat i učitele, kteří neučí nic.
+
+1
+
+4
+
+Programovací jazyky (3 body)
+
+Navrhněte datovou strukturu v jazyce C++, C# nebo Java, která bude reprezentovat matematický výraz a sloužit k opakovanému rychlému výpočtu hodnoty daného výrazu pro různé hodnoty parametrů. Taková struktura může být použita např.
+při vykreslování grafů funkcí jedné, dvou nebo více proměnných.
+Výraz může obsahovat číselné konstanty, proměnné, unární a binární matematické operátory a volání matematických funkcí
+z rozsáhlé knihovny. Veškeré výpočty probíhají v aritmetice s pohyblivou čárkou s dvojitou přesností.
+Struktura by měla být navržena tak, aby bylo přidávání dalších operátorů či funkcí do knihovny co nejjednodušší.
+1. Popište nejvýznamnější třídy a další prvky vašeho řešení, zejména vnější i vnitřní rozhraní sloužící k vyhodnocování
+výrazu. Zakreslete objekty a jejich vzájemné odkazy pro výraz sin(x + 1)/ sin(x − 1).
+2. Navrhněte způsob, jak při
+√ výpočtu řešit chyby (dělení nulou, přetečení apod.) tak, aby to bylo použitelné např. při
+kreslení grafu funkce 1/ x na intervalu h−1, 1i.
+3. Popište, jak je nutné strukturu upravit, pokud by měla zabránit opakovanému vyhodnocování společných podvýrazů,
+tedy např. ve výrazu (1−sin(x·y))/(1+sin(x·y)) vyhodnocovat podvýraz sin(x·y) pouze jednou (pro každé ohodnocení
+proměnných x a y).
+NEŘEŠTE způsob konstrukce struktury (t.j. syntaktickou analýzu výrazu ani hledání společných podvýrazů).
+
+5
+
+Procesy, vlákna, plánování (3 body)
+
+Uvažujte klasický operační systém, ve kterém jsou procesy či vlákna ve stavech READY, RUNNING, WAITING/SLEEPING,
+TERMINATED.
+1. Nakreslete přechodový diagram, ve kterém jsou stavy procesu uzly a ve kterém hrany znázorňují možné přechody mezi
+stavy. U každé hrany vyznačte, za jakých okolností může daný přechod nastat (napište alespoň jednu konkrétní událost,
+která takový přechod vyvolá).
+2. Vysvětlete, zda a čím je omezený počet procesů, které se mohou současně nacházet ve stavu READY.
+3. Vysvětlete, zda a čím je omezený počet procesů, které se mohou současně nacházet ve stavu RUNNING.
+
+6
+
+Směrování (3 body)
+
+Uvažujte protokol IPv4.
+Načrtněte architekturu sítě, kde jsou dva klientské počítače připojené k routeru, který je dále připojen k internetu. Pouze
+router má veřejnou IPv4 adresu, pro klientské počítače současně zprostředkuje překlad adres (NAT). Zvolte konkrétní IPv4
+adresy v celé takto postavené síti a u všech tří uzlů napište obsah statické routovací tabulky tak, aby všechny uzly mohly
+komunikovat mezi sebou i s dalšími počítači na internetu. Do tabulky napište i pravidla pro odesílání datagramů do vlastní
+IP sítě.
+Jako další krok navrhněte rozšíření architektury o další router, který umožní klientským počítačům přístup do vzdálené
+privátní sítě. Opět načrtněte architekturu, zvolte konkrétní IPv4 adresy a napište obsah statických routovacích tabulek
+všech uzlů. V návrhu předpokládejte, že přidaný router bude mít přímé spojení do vzdálené privátní sítě na dedikovaném
+rozhraní.
+
+7
+
+Optimalizace (3 body)
+
+Uvažte následující lineární program P:
+
+2
+
+min 2x1 + x2 + x3
+
+(1)
+
+t.ž. 3x1 + x2 ≥ 1
+
+(2)
+
+x1 + 2x2 + x3 ≥ 4
+
+(3)
+
+x1 , x2 , x3 ≥ 0
+
+(4)
+
+1. Formulujte duální lineární program D k lineárnímu programu P.
+2. Najděte optimální řešení duálního programu D.
+3. Uveďte přesné znění silné věty o dualitě lineárního programování.
+4. S využitím znalosti optimálního řešení úlohy D a silné věty o dualitě najděte optimální řešení lineárního programu P,
+pokud existuje.
+
+8
+
+Jazykové modelování (otázka studijního zaměření – 3 body)
+
+Vysvětlete následující pojmy
+1. Metoda zašuměného kanálu
+2. Jazykový model ve statistickém strojovém překladu
+3. Vyhlazování
+
+9
+
+Základní formalismy pro popis přirozených jazyků (otázka studijního zaměření – 3 body)
+
+Uveďte základní charakteristiky následujících formalismů pro popis syntaxe přirozených jazyků:
+1. Lexical Functional Grammar
+2. Tree-adjoining Grammar
+3. Kategoriální gramatika
+
+10
+
+Morfologická, syntaktická a sémantická analýza přirozeného jazyka (otázka
+studijního zaměření – 3 body)
+
+Jedním ze základních konceptů teorie Funkčního generativního popisu je valence.
+1. Jaký je základní rozdíl mezi aktantem a volným doplněním?
+2. Uveďte názvy alespoň 3 z 5 typů aktantů používaných v teorii Funkčního generativního popisu.
+3. Definujte valenční rámec.
+
+11
+
+Matice (otázka studijního zaměření – 3 body)
+
+Homogenní souřadnice a maticové transformace.
+1. Jak se pomocí matic transformují objekty v 3D počítačové grafice?
+2. Proč zavádíme homogenní souřadnice a matice 4 × 4? Co nám umožňují realizovat?
+3. Uveďte několik elementárních maticových transformací (translace, rotace, škálování – pokuste se matice napsat prvek
+po prvku) a jeden praktický příklad složené transformace (nemusíte konstrukci dotáhnout do konce, stačí naznačit
+postup).
+
+3
+
+12
+
+Potlačování šumu (otázka studijního zaměření – 3 body)
+
+Potlačování šumu v rastrovém obraze pořízeném digitálním fotoaparátem nebo kamerou.
+1. Napište matematický model šumu; co předpokládáme, že senzor fotoaparátu nasnímal?
+2. Uveďte jednoduché lineární metody redukce šumu (konvoluce).
+3. Popište alespoň jeden nelineární algoritmus potlačující šum.
+
+13
+
+Stínování (otázka studijního zaměření – 3 body)
+
+Lokální model odrazu světla na povrchu tělesa v simulované 3D scéně.
+1. Popište jednoduchý lokální model odrazivosti (jak barva pozorovaná na povrchu tělesa závisí na poloze a intenzitě
+světelného zdroje).
+2. Jak se takový model odrazivosti používá v realtime zobrazení? Uvažujte běžné GPU, 3D model složený z trojúhelníků,
+navrhněte data posílaná ve vrcholech, jak použít GPU shadery?
+3. Jak je možné dosáhnout efektu hladkého tělesa, i když je 3D model sestaven z trojúhelníků (stačí popsat myšlenku,
+princip)?
+
+14
+
+REST API (otázka studijního zaměření – 3 body)
+
+Navrhněte REST API, které má sloužit jako přibližná náhrada za FTP. API umožní uživateli práci se vzdáleným souborovým
+systémem na úrovni běžných operací se soubory a adresáři. Konkrétně:
+– nahrávat a stahovat soubory,
+– vytvářet adresáře,
+– procházet adresáře (číst metadata souboru a podadresářů),
+– mazat soubory a adresáře
+– a přejmenovat soubory a adresáře.
+Pro jednoduchost předpokládejme, že názvy souborů a adresářů se skládají výhradně ze znaků anglické abecedy, čísel, pomlčky
+a podtržítka. Rovněž pro jednoduchost nemusíte řešit problémy autentizace a autorizace uživatelů, avšak vaše API musí být
+navrženo tak, aby umožňovalo snadné přidání těchto funkcí později.
+Stručně popište jednotlivé endpointy vašeho API. U každého endpointu uveďte URL (případně parametrizované), HTTP
+metodu, jaká data (a v jakém formátu) se nachází v těle požadavku a v těle odpovědi. Pokud některý endpoint vyžaduje
+nebo vrací dodatečná data (např. HTTP hlavičky), rovněž je popište.
+
+15
+
+Uživatelská relace (otázka studijního zaměření – 3 body)
+
+Implementujeme webovou aplikaci, která slouží pouze k vizualizaci dat. Z bezpečnostních důvodů je zcela zakázáno, aby
+aplikace prováděla jakékoli změny na straně serveru (s výjimkou logování chyb). Aplikace ale potřebuje řešit přihlašování
+uživatelů (autentizaci), aby mohla zobrazovat data na základě oprávnění přihlášeného uživatele.
+Navrhněte metodu pro udržování uživatelské relace v tomto prostředí. Protože není možné ukládat jakákoli data na straně
+serveru, je jediným řešením uložit informaci o přihlášení na straně klienta. Pro lepší představu definujeme, že tato informace
+je uložena ve struktuře, kterou si pojmenujeme identifikační token.
+Můžete také předpokládat, že celá aplikace striktně používá vynucené šifrované spojení (HTTPS s HSTS).
+1. Jaké položky musí obsahovat identifikační token, aby byl rozumně bezpečný (tj. aby nemohl být snadno falzifikován
+nebo odcizen)? U položek, u kterých to není naprosto zřejmé, stručně popište, jakým způsobem server vytvoří (odkud
+načte/jak spočítá) jejich hodnoty.
+
+4
+
+2. Kde je možné identifikační token uložit (na straně klienta), aby jednak nedošlo k jeho smazání např. při obnově stránky
+v prohlížeči a jednak aby nebylo možné tento token snadno odcizit? Stručně popište jakým způsobem vámi vybrané
+úložiště funguje (server pošle speciální data v HTTP hlavičkách, existuje API pro JavaScript, ...).
+3. Navrhněte mechanismus pro invalidaci identifikačních tokenů (individuálně pro každého uživatele, ne nutně individuálně
+pro každý vystavený token). Předpokládejme, že tento mechanismus je ovládán administrátorem skrze jinou aplikaci,
+takže při invalidaci je možné měnit data na straně serveru (např. v konfiguraci nebo v databázi), ale samotné vydávání
+tokenů (autentizace) stále nesmí měnit data na straně serveru.
+
+16
+
+Databázové transakce (otázka studijního zaměření – 3 body)
+
+1. Stručně vysvětlete pojem transakce (především z pohledu uživatele – programátora, k čemu transakce slouží) a popište
+sémantiku SQL operací pro práci s transakcemi.
+2. Vyjmenujte čtyři vlastnosti, které musí splňovat ACID transakce v databázových systémech. Každou vlastnost stručně
+(1–2 větami) vysvětlete.
+3. Vyjmenujte izolační úrovně databázových systému, jak jsou definované v normě SQL. Vyberte si jeden libovolný známý
+čtecí problém, jehož chování je ovlivněno úrovní izolace. Vysvětlete, ve kterých izolačních úrovních se tento problém
+projeví a jak.
+
+17
+
+Funkce (3 body)
+
+p
+Pro funkci f (x) = 3x 3 (x + 4)2 , spočtěte derivaci a limity v ∞ a −∞. Načrtněte graf funkce f (nemusíte určovat konvexnost
+a konkávnost).
+
+18
+
+Riemannův integrál (3 body)
+
+Definujte horní a dolní Riemannovu sumu. S jejich pomocí definujte Riemannův integrál. Určete hodnotu
+je dolní celá část, tj. nejmenší celé číslo, které je menší nebo rovno x.)
+
+19
+
+R4
+1
+
+bxcdx. (Kde bxc
+
+Metrické prostory (3 body)
+
+Definujte spojité zobrazení mezi dvěma metrickými prostory. Nechť id : R → R je identické zobrazení (tj. f (x) = x), d1 je
+obvyklá metrika na R (tedy d1 (x, y) = |x − y|) a ddisc je diskrétní metrika (tedy ddisc (x, y) = 1 pokud x 6= y a ddisc (x, y) = 0
+pokud x = y). Je id spojité zobrazení z (R, d1 ) do (R, ddisc )? Je id spojité zobrazení z (R, ddisc ) do (R, d1 )? Zdůvodněte.
+
+20
+
+Lineární zobrazení (3 body)
+
+Uvažujme lineární zobrazení f : Rn → Rn definované předpisem f (x) = Ax, kde A ∈ Rn×n je čtvercová matice. Dokažte:
+1. Je-li f „na“ , potom A je regulární.
+2. Je-li A je regulární, potom f je „na“ .
+
+21
+
+Pozitivně definitní matice (3 body)
+
+Definujte pojem pozitivní definitnosti matic.
+Pro matici
+
+
+
+−2
+2
+3
+
+4
+A = −2
+0
+
+5
+
+
+0
+3
+10
+
+rozhodněte, zda je pozitivně definitní a pokud ano, spočtěte její Choleského rozklad.
+
+22
+
+Algebraická tělesa (3 body)
+
+Nechť T je těleso. Rozhodněte, zda jsou následující tvrzení pravdivá a odpovědi zdůvodněte:
+1. ∀a, b, c ∈ T : ab = ac ⇒ b = c.
+
+
+0 1 1
+2. Matice 1 0 1 je regulární právě tehdy, když charakteristika T je rovna dvěma.
+1 1 0
+3. Je-li |T | konečná, pak je i chrakteristika T konečná.
+
+23
+
+Princip inkluze a exkluze (3 body)
+
+Určete mohutnost sjednocení čtyř množin A1 , . . . , A4 , pokud víte, že průnik k těchto množin (pro k ≥ 1) má mohutnost
+7 − k, účastní-li se A1 tohoto průniku. V ostatních případech je mohutnost průniku k množin rovna 10 − k.
+
+24
+
+Grafy (3 body)
+
+Za použití faktu, že každý rovinný graf obsahuje vrchol malého stupně, dokažte, že množinu vrcholů každého rovinného grafu
+na alespoň třech vrcholech lze rozdělit na tři podmnožiny V1 , V2 , V3 takové, že každá množina Vi indukuje les.
+
+25
+
+Logika (3 body)
+
+Nechť T je teorie (hustých lineárních uspořádání s nejmenším a největším prvkem) jazyka L = h≤i s rovností obsahující
+následující axiomy:
+x≤x
+(x ≤ y ∧ y ≤ x) → x = y
+(x ≤ y ∧ y ≤ z) → x ≤ z
+x≤y ∨ y≤x
+(∃x) (∃y) (∀z) (x ≤ z ∧ z ≤ y ∧ x 6= y)
+x < y → (∃z) (x < z ∧ z < y)
+kde x < y je zkratka za x ≤ y ∧ x 6= y.
+1. Uveďte definici pojmu kompletní teorie (v predikátové logice).
+2. Pomocí skolemizace posledních dvou axiomů nalezněte otevřenou konzervativní extenzi T 0 teorie T (v případně rozšířeném jazyce).
+3. Jsou teorie T a T 0 kompletní? Uveďte zdůvodnění.
+
+6
+
+

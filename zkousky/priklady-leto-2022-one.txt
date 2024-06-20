@@ -1,0 +1,278 @@
+Bakalářské zkoušky (příklady otázek z informatiky, specializace PGVVH a
+UI)
+
+léto 2022
+
+1
+
+Binární vyhledávací stromy (3 body)
+1. Definujte binární vyhledávací strom.
+2. Implementujte operaci vložení prvku do stromu (bez vyvažování). Rozeberte časovou složitost v nejlepším a nejhorším
+případě.
+3. Implementujte operaci nalezení následníka: pro daný klíč x najděte vrchol stromu s nejmenším klíčem větším než x.
+Rozeberte časovou složitost v nejlepším a nejhorším případě.
+
+Implementaci popište nejlépe pseudokódem.
+
+2
+
+Překlad konstrukcí vyššího jazyka (3 body)
+
+Mějme jednoduchý procesor s architekturou inspirovanou MIPS. Procesor má 32 32-bitových celočíselných obecných registrů
+označených $R0-$R31 a jeden 32-bitový registr PC, který ukazuje na začátek následující instrukce. Hodnota registru $R0
+je vždy 0.
+Instrukce procesoru jsou uvedeny v následující tabulce. V popisu používáme tyto operandy:
+– label - symbolické návěští do kódu
+– [mem] - adresa paměti
+– reg - jeden obecný registr
+instrukce
+LD reg=[mem]
+ST [mem]=reg
+ADD reg1=reg2,reg3
+J label
+BEQ reg1,reg2,label
+BNE reg1,reg2,label
+SLT reg1=reg2,reg3
+
+popis
+načte celočíselnou proměnnou z adresy mem do registru reg
+uloží registr reg do celočíselné proměnné na adrese mem do
+sečte registr reg2 s registrem reg3 a výsledek uloží do registru
+reg1
+nepodmíněný skok na adresu instrukce označenou návěštím label
+podmíněný skok, který se provede, pokud jsou si registry reg1 a
+reg2 rovny
+podmíněný skok, který se provede, pokud si registry reg1 a reg2
+nejsou rovny
+nastaví registr reg1 na hodnotu 1, pokud je registr reg2 menší
+než registr reg3, jinak se nastaví na 0
+
+Mějme následující posloupnost instrukcí:
+LD
+LD
+LD
+J
+lab2:
+LD
+LD
+ADD
+SLT
+BEQ
+
+$r1=[q]
+$r2=[n]
+$r3=[inc]
+lab1
+$r4=[a]
+$r5=[b]
+$r4=$r4,$r1
+$r5=$r5,$r4
+$r5,$r0,lab3
+1
+
+operace
+reg = *mem
+*mem = reg
+reg1 = reg2 + reg3
+PC = label
+if(reg1==reg2) PC = label
+if(reg1!=reg2) PC = label
+reg1 = (reg2 < reg3)
+
+ST
+lab3:
+ADD
+lab1:
+SLT
+BNE
+
+[b]=$r4
+$r1=$r1,$r3
+$r4=$r1,$r2
+$r4,$r0,lab2
+
+1. Vyberte (zakroužkujte) z následujících úryvků v jazyce C všechny, které odpovídají výše uvedené posloupnosti instrukcí
+(všechny neznámé identifikátory považujte za 32-bitovou celočíselnou proměnnou, která je někde deklarovaná). Pro
+zvolené řešení připište k instrukcím čísla řádků odpovídajících příkazů v jazyce C.
+1
+2
+3
+
+1
+2
+3
+
+for (i=q; i<n; i+=inc)
+if (a+i <= b)
+b = a+i;
+
+1
+2
+3
+
+if (a+i > b)
+for (i=q; i<n; i+=inc)
+b = a+i;
+
+if (a+i < b)
+for (i=q; i<n; i+=inc)
+b = a+i;
+
+1
+2
+3
+4
+5
+6
+
+i = q;
+while (i<n) {
+if (a+i > b)
+b = a+i;
+i += inc;
+}
+
+1
+2
+3
+
+for (i=q; i<n; i+=inc)
+if (a+i > b)
+b = a+i;
+
+Žádný z uvedených úseků
+neodpovídá. Napište vlastní
+kód a očíslujte řádky kódu.
+
+2. Napište (stačí jeden řádek), jak se změní původní kód v jazyce C, pokud instrukci BEQ nahradíme instrukcí BNE se
+stejnými operandy.
+3. Předpokládejme, že je podmínka v příkazu if rozšířena o část && i < b, tj. podmínka bude mít tvar if (původní
+podmínka && i < b). Upravte původní sekvenci instrukcí tak, aby realizovala tuto rozšířenou podmínku.
+
+3
+
+Integrál (3 body)
+
+Nechť I ⊆ R je neprázdný otevřený interval.
+1. Jaký je vztah mezi dvěma funkcemi primitivními na intervalu I k téže funkci? Odpověď zdůvodněte.
+2. Nechť f, g : I → R jsou dvě reálné funkce a F, G : I → R jsou funkce k nim primitivní (tj. F 0 = f a G0 = g na I).
+Napište vzorec pro výpočet funkce primitivní k funkci f G, známe-li funkci primitivní k funkci F g.
+3. Nalezněte podle tohoto vzorce primitivní funkci k reálné funkci f (x) = x sin x.
+
+4
+
+Zobrazení (3 body)
+1. Definujte, kdy je zobrazení f : X → Y prosté (injektivní) a kdy je “na” (surjektivní).
+2. Pro n ∈ N rozhodněte, kolik existuje prostých zobrazení z množiny {1, 2, . . . , n} do možiny {1, 2, . . . , 2n}. Odpověď
+zdůvodněte.
+3. Pro n ∈ N rozhodněte, kolik existuje zobrazení množiny {1, 2, . . . , 2n} na možinu {1, 2, . . . , n} takových, že pro každé
+k ∈ {1, 2, . . . , n} existují právě dvě hodnoty i, j ∈ {1, 2, . . . , 2n}, pro které f (i) = f (j) = k. Odpověď zdůvodněte.
+
+5
+
+Anti-aliasing (specializační otázka – 3 body)
+1. Který z parametrů rastrového zobrazovacího zařízení je anti-aliasingem vylepšen? Jak se to pozná na výsledném
+obrázku?
+2. Jak se může anti-aliasing implementovat v klasickém rastrovém vykreslování (rasterizace, např. při kreslení vektorové
+grafiky)?
+3. Jak se anti-aliasing implementuje v prostředí paprskového zobrazovače (např. ray-tracing)?
+
+2
+
+6
+
+Zobrazování 3D scény na grafické kartě (specializační otázka – 3 body)
+1. Jaká primitiva umí GPU přímo zobrazit (v klasickém zobrazovacím řetězci pro 3D grafiku)? Napište, která primitiva
+se podle Vás používají nejčastěji.
+2. Jak se posílají 3D data z aplikace do GPU? Uveďte jen přehledně několik příkladů, několik různých principů. Zamyslete
+se i nad globálními daty pro vykreslování: transformační matice, parametry pro stínování - jak ty se předávají do GPU?
+3. Navrhněte rámcově efektivní systém organizace 3D scény a jejího odesílání do GPU. Předpokládejte, že scéna se skládá
+z pevné části (např. terén = povrch Země) a několika málo pohybujících se objektů, které se nedeformují, jen mění
+polohu a orientaci. Jde nám o racionální návrh koncepce, ne o implementační detaily.
+
+7
+
+Rotace v prostoru (specializační otázka – 3 body)
+
+Jde nám o metody, jak matematicky reprezentovat rotaci pevného tělesa v 3D prostoru. Středem rotace bude pro jednoduchost počátek souřadnic. Těleso se kolem počátku bude jenom otáčet, to znamená, že nebude měnit svůj tvar ani velikost
+(“transformace tuhého tělesa” nebo anglicky “rigid body transform”).
+1. Navrhněte první metodu, kterou byste zvolili pro případ, že bude třeba často rotaci interpolovat – tj. animovat dané
+těleso (později se budeme snažit vyjádřit plynulý a přirozený animační pohyb).
+2. Navrhněte ještě jinou metodu, jak rotaci vyjádřit. Může mít proti té první některé výhody (rychlost, jednoduchost,
+snadnost GPU implementace), ale i nevýhody. Výhody a nevýhody uveďte a alespoň stručně zdůvodněte.
+3. Jak byste postupovali při animaci rotace v čase? Vyberte si první nebo druhou metodu a dostatečně přesně popište
+matematický postup animace (i u této podotázky se zabývejte jen rotacemi).
+
+8
+
+Skeletální animace ve 3D (specializační otázka – 3 body)
+
+Jde nám o postupy, které se též nazývají anglickým termínem ”rigging”. Budeme se zabývat jen animacemi v 3D prostoru.
+1. Popište koncepci skeletální animace/riggingu, jaká reprezentace 3D scény se předpokládá? Vysvětlete stručně matematický základ takové animace.
+2. Které prostředky (interaktivní, bývají součástí GUI animačních programů) mohou být nabídnuty uživatelům/animátorům, aby se příprava animace zjednodušila a urychlila?
+3. Existuje nějaká hardwarová podpora pro rigging? Jak by se daly výše popsané metody implementovat na moderních
+GPU (stačí popsat koncepci – jaké shadery k tomu použít, jak by se předávala dynamická animační data do grafické
+karty, apod.). Popište možnou implementaci schematicky, není třeba psát CPU nebo GPU kód.
+
+9
+
+N-královen (specializační otázka – 3 body)
+
+Problém N-královen je úloha, jak rozmístit N královen na šachovnici velikosti N × N tak, aby se navzájem neohrožovaly
+(žádné dvě královny nesmí být na stejném sloupci, řádku nebo diagonále). Popište vhodnou abstrakci problému N-královen
+pro prohledávací algoritmus (stavy, přechodový model, cílovou podmínku). Vyberte vhodný informovaný či neinformovaný
+prohledávací algoritmus, svoji volbu zdůvodněte. Ukažte, jak by se problém modeloval a řešil jako problém splňování podmínek.
+
+10
+
+Logistická regrese (specializační otázka – 3 body)
+
+1. Napište funkci, která určuje, co bude predikovat model logistické regrese.
+2. Jakých hodnot tato funkce nabývá? Jaká je interpretace hodnot této funkce?
+
+11
+
+Evaluace binárního klasifikátoru (specializační otázka – 3 body)
+
+Pro evaluaci binárního klasifikátoru byla použita množina 1000 testovacích příkladů, ve které je 50 % příkladů negativních.
+Bylo zjištěno, že dotyčný klasifikátor má citlivost (sensitivity) 60 % a úspěšnost (accuracy) 70 %.
+1. Napište kompletní matici konfuze (confusion matrix).
+2. Vypočtěte specifičnost (specificity) klasifikátoru.
+3
+
+12
+
+Shlukování (specializační otázka – 3 body)
+
+Budete ručně provádět první iteraci algoritmu K-means pro K = 2 na malé množině šesti příkladů s příznaky A1 a A2 :
+A1
+2
+1
+0
+5
+6
+4
+
+příklad
+1
+2
+3
+4
+5
+6
+
+A2
+4
+3
+4
+2
+2
+0
+
+Náhodně jsme přiřadili příklady do dvou shluků C1 a C2 : C1 = {2, 3, 4}, C2 = {1, 5, 6}.
+1. Zakreslete příklady a spočítejte pro každý shluk jeho centroid.
+2. Přiřaďte každý příklad k nejbližšímu centroidu dle euklidovské vzdálenosti. Uveďte prvky nově vzniklých shluků.
+
+4
+
+

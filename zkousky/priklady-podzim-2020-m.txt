@@ -1,0 +1,153 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+podzim 2020
+
+1
+
+Limita funkce, spojitost a derivace (3 body)
+1. Napište definici limity funkce a uveďte příklad ukazující, že následující podmínka (P ) není ekvivalentní tvrzení, že
+“funkce f definovaná na R má v bodě a limitu L”:
+(P )
+
+∀ ε > 0 ∃ δ > 0 : |f (x) − L| < ε ⇒ |a − x| < δ
+
+2. Pokud existují, najděte konstanty a a b takové, že funkce f definovaná jako
+(
+sin x2 −2x3
+pro všechna x > 0
+3x2
+f (x) =
+2
+x + ax + b pro všechna x ≤ 0
+je spojitá a má spojitou první derivaci. Pokud takové konstanty existují, jsou jednoznačně určeny? Zdůvodněte, jak
+jste k výsledkům došli.
+
+2
+
+Primitivní funkce (3 body)
+1. Napište definici pojmu “primitivní funkce k funkci f na intervalu (a, b)”.
+2. Na následujících obrázcích je zobrazen graf funkce f a grafy čtyř dalších funkcí g1 , g2 , g3 a g4 . Jedna z funkcí gi je
+primitivní funkce k funkci f . Určete, která to je, a svou odpověď zdůvodněte.
+
+1
+
+3. Najděte primitivní funkci k funkci f (x) = x2 sin x.
+
+3
+
+Funkce více proměnných (3 body)
+1. Definujte totální diferenciál. Pro funkci f (x, y) = xy spočtěte Df (x, y)(h1 , h2 ) obvyklou metodou a výsledek poté
+ověřte podle definice. (Nápověda: pokud k(h1 , h2 )k = c, pak |h1 |, |h2 | ≤ c.)
+2
+
+2
+
+2. Ve kterých bodech je tečná rovina grafu funkce f (x, y) = 5 + x16 + y9 rovnoběžná s rovinou z = x + 2y? Pro jeden z
+těchto bodů spočtěte rovnici tečné roviny.
+
+4
+
+Vlastní čísla (3 body)
+1. Definujte vlastní čísla a vlastní vektory pro komplexní matice.
+2. Pro matici
+
+
+1
+A = 1
+1
+
+1
+1
+1
+
+
+1
+1
+1
+
+rozhodněte, zda existuje ortonormální báze R3 skládající se z vlastních vektorů A. Pokud taková báze existuje, nalezněte
+ji.
+
+5
+
+Matice rotací (3 body)
+
+Nechť M je množina všech matic v R2×2 , které jsou maticí rotace kolem počátku v R2 vzhledem ke kanonické bázi, tj.
+
+M = A ∈ R2×2 | ∃ rotace f : R2 → R2 , že A = kan [f ]kan .
+Rozhodněte, zda M tvoří spolu s maticovým součinem grupu.
+
+6
+
+Hallova věta (3 body)
+1. Definujte pojem “systém různých reprezentantů (daného množinového systému)” a formulujte Hallovu větu.
+2. Nechť f je zobrazení z množiny {1, . . . , 10}2 do nezáporných celých čísel splňující podmínky
+∀i ∈ {1, . . . , 10}
+
+10
+X
+
+f (i, j) = 5 ,
+
+j=1
+
+∀j ∈ {1, . . . , 10}
+
+10
+X
+
+f (i, j) = 5 .
+
+i=1
+
+Ukažte, že potom pro každé i ∈ {1, . . . , 10} lze vybrat k(i) takové, že f (i, k(i)) > 0 a přitom k je prostá funkce.
+
+2
+
+7
+
+Barevnost grafů (3 body)
+
+Mějme graf G na vrcholech v1 , . . . , v100 takový, že:
+– každý vrchol je spojen hranou se svými čtyřmi nejbližšími předchůdci a čtyřmi nejbližšími následníky, a k tomu
+– vrcholy s indexem mezi 40 a 60 (včetně) jsou spojeny hranou s dalšími nejbližšími předchůdci a následníky, do celkem
+sedmi předchůdců a sedmi následníků,
+– vrchol s indexem 10 je spojen s vrcholy s indexy mezi 70 a 80 (včetně),
+– vrchol s indexem 90 je spojen s vrcholy s indexy mezi 20 a 30 (včetně).
+Je-li předchůdců či následníků méně, je vrchol spojen se všemi připadajícími v úvahu.
+Formálně:
+
+
+ 
+ 
+
+(vi , vj ) ∈ EG ⇔ i 6= j ∧ |i−j| ≤ 4∨ i ∈ {40, . . . , 60}∧|i−j| ≤ 7 ∨ i = 10∧j ∈ {70, . . . , 80} ∨ i = 90∧j ∈ {20, . . . , 30}
+Určete barevnost tohoto grafu, případně co nejtěsnější meze barevnosti G.
+
+8
+
+Podmíněná pravděpodobnost (3 body)
+
+Na testování jisté choroby je možno použít dva testy, označme je A a B. Je známo, že chorobou trpí 7% populace, a že u
+9% populace vyjde pozitivní alespoň jeden z testů bez ohledu na to, zda testovaný pacient má uvedenou chorobu. Určete
+pravděpodobnost, že pacient má uvedenou chorobu za předpokladu, že mu alespoň jeden test vyjde pozitivní.
+Pokud to vašim úvahám pomůže, můžete využít následující fakta: U klinicky prokazatelně nemocných, u nichž byl testován
+jen test A, vyšlo 80% pozitivních. Podobně 70% prokazatelně nemocných testovaných jen testem B bylo pozitivních. U
+nemocných testovaných oběma testy vyšly pozitivní oba testy u 60% osob.
+
+9
+
+Logika (3 body)
+1. Uveďte obecný tvar rezolučního pravidla ve výrokové logice a definici, kdy je klauzule C rezolucí odvoditelná z teorie
+(tj. množiny klauzulí) S.
+2. Následující tři tvrzení vyjádřete jako formule ϕ1 , ϕ2 , ϕ3 ve výrokové logice nad množinou prvovýroků P = {n, m, p}
+reprezentujících (po řadě), že “lidé nosí deštníky”, “meteorologové hlásí déšť”, “prší”. Poté teorii T = {ϕ1 , ϕ2 , ϕ3 } zapište
+jako množinu klauzulí.
+(i) Neprší-li, lidé nenosí deštníky.
+(ii) Hlásí-li meteorologové déšť, lidé nosí deštníky.
+(iii) Nehlásí-li meteorologové déšť, prší.
+3. Rezolucí dokažte, že z T vyplývá, že prší.
+
+3
+
+

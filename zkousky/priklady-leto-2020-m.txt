@@ -1,0 +1,142 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+léto 2020
+
+1
+
+Plocha (3 body)
+
+Nechť f (x) = xex a g(x) = −xe−x . Spočtěte obsah rovinného útvaru
+U = {(x, y) ∈ R2 | y ≥ f (x), y ≥ g(x), y ≤ e} .
+f
+
+g
+e
+2.5
+
+2
+
+1.5
+
+1
+
+0.5
+
+–1
+
+2
+
+–0.5
+
+0
+
+0.5
+
+1
+
+Taylorův polynom (3 body)
+1. Nechť f (x) je funkce, která má v bodě b ∈ R derivace všech řádů. Napište vzorec pro Taylorův polynom řádu n ≥ 1
+funkce f (x) se středem v bodě b. Označíme-li tento polynom T (x), co lze říci o hodnotě limity
+lim
+
+x→b
+
+f (x) − T (x)
+?
+xn
+
+2. Nechť k je přirozené číslo. čemu se rovná Taylorův polynom řádu 2 funkce f (x) = cos(kx) se středem v nule?
+3. S využitím předchozích odpovědí, nebo i jakkoliv jinak, spočítejte hodnotu
+1 − cos(x) cos(2x) cos(3x)
+.
+x→0
+x2
+lim
+
+3
+
+Maticové prostory (3 body)
+
+Uvažujme matici
+
+1
+A = 4
+7
+
+2
+5
+8
+1
+
+
+3
+6 .
+9
+
+1. Najděte všechny vektory x ∈ R3 takové, které náleží do řádkového prostoru matice A a zároveň řeší soustavu Ax = 0.
+2. Ukažte, že každý vektor x ∈ R3 se dá vyjádřit jako součet vektoru z Ker(A) (jádro matice) a vektoru z R(A) (řádkový
+prostor matice).
+
+4
+
+Diagonalizace (3 body)
+
+Uvažujme reálnou matici s parametrem p
+
+A=
+
+1
+−1
+
+
+p
+.
+−1
+
+1. Najděte (alespoň jednu) hodnotu p ∈ R takovou, aby matice A byla diagonalizovatelná (v teorii vlastních čísel).
+2. Najděte hodnotu p ∈ R takovou, aby matice A nebyla diagonalizovatelná (v teorii vlastních čísel).
+
+5
+
+Projekce (3 body)
+1. Definujete (ortogonální) projekci vektoru na podprostor.
+2. Nechť U, V jsou navzájem ortogonální podprostory nějakého vektorového prostoru (tj. ∀u ∈ U, ∀v ∈ V : u ⊥ v). Buď
+A matice projekce na prostor U a B matice projekce na prostor V . Ukažte, že A + B je maticí projekce a zjistěte, na
+jaký prostor projektuje.
+
+6
+
+Relace (3 body)
+
+Určete, zda je následující relace (X, ∗) reflexivní, symetrická, antisymetrická a tranzitivní. Jde-li o ekvivalenci, určete počet
+tříd ekvivalence; jde-li o částečné uspořádání, určete velikost největšího antiřetězce.
+X = {1, . . . , 10}2 , (a, b) ∗ (c, d) ⇔ (3\(a − c) ∧ bd ≥ max{b, d})
+
+7
+
+2-souvislé grafy (3 body)
+
+Zformulujte „ušaté lemma“ o struktuře vrcholově 2-souvislých grafů.
+Ukažte, že hrany každého vrcholově 2-souvislého grafu lze obarvit dvěmi barvami, červenou a modrou tak, že mezi každými
+dvěma vrcholy existuje cesta s alespoň jednou modrou hranou a také jiná cesta s alespoň jednou červenou hranou.
+
+8
+
+Střední hodnota (3 body)
+1. Definujte pojem “střední hodnota reálné náhodné veličiny na (konečném) pravděpodobnostním prostoru”.
+2. Určete střední hodnotu počtu dvojic po sobě následujících stejných výsledků v posloupnosti n hodů spravedlivou mincí.
+(Např. v posloupnosti RRLLL jsou takové dvojice 3.)
+
+9
+
+Logika (3 body)
+1. Uveďte definici, kdy je teorie T jazyka L kompletní (pro výrokovou logiku).
+2. Nalezněte CNF reprezentaci 3-bitové parity. Přesněji, nalezněte formuli ϕ v konjunktivně normálním tvaru, která je
+ekvivalentní formuli
+x1 ⊕ x2 ⊕ x3 ,
+kde ⊕ je (asociativní) spojka XOR (výlučné nebo).
+3. Určete, nad jakými jazyky je teorie {ϕ} kompletní. Uveďte zdůvodnění.
+
+2
+
+

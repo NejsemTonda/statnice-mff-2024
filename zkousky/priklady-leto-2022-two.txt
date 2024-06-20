@@ -1,0 +1,241 @@
+Bakalářské zkoušky (příklady otázek z informatiky, specializace OI)
+
+léto 2022
+
+1
+
+Gramatika typu 0 (3 body)
+1. Uveďte definici gramatiky typu 0 a jazyka generovaného touto gramatikou.
+2. Sestrojte gramatiku typu 0 generující následující jazyk:
+L = {ai bi+j cj | i ≥ j ≥ 0}
+
+2
+
+Obsluha zařízení (3 body)
+
+Následující diagram popisuje (zjednodušené) rozhraní diskového řadiče pro programem řízenou obsluhu (PIO):
+Addresa
+0x1F0
+0x1F2
+0x1F3
+0x1F4
+0x1F5
+0x1F7
+0x1F7
+
+Směr
+R/W
+W
+W
+W
+W
+W
+R
+
+Jméno
+Data Port
+Sector Count
+LBA low byte
+LBA mid byte
+LBA hi byte
+Command
+Status
+
+Význam
+PIO data
+Počet přenášených sektorů
+Část LBA adresy
+Část LBA adresy
+Část LBA adresy
+Příkazový registr (0x20 = čtení, 0x30 = zápis)
+Indikace stavu
+
+Formát registru pro indikaci stavu je:
+Bit
+0
+3
+6
+7
+
+Jméno
+ERR
+DRQ
+RDY
+BSY
+
+Význam
+Nastaven pokud poslední příkaz skončil chybou
+Nastaven pokud řadič očekává čtení nebo zápis dat
+Nastaven pokud je řadič připraven přijmout příkaz
+Nastaven pokud řadič vykonává příkaz a nemůže přijmout další
+
+Zde je jednoduchá funkce pro čtení sektorů z tohoto diskového řadiče:
+#include <stdint.h>
+#include <sys/io.h>
+#define E_OK 0
+#define E_ERROR -1
+int read_sectors (uint32_t lba_address, uint8_t count, uint8_t *buffer) {
+while ((inb (0x1F7) & 128) != 0) { }
+while ((inb (0x1F7) & 64) != 0) { }
+outb (count, 0x1F2);
+outb (lba_address & 0xFF, 0x1F3);
+outb (lba_address & 0xFF00, 0x1F4);
+outb (lba_address & 0xFF0000, 0x1F5);
+outb (0x20, 0x1F7);
+for (uint32_t i = 0 ; i < count * 512 ; i ++) {
+while ((inb (0x1F7) & 8) == 0) {
+if ((inb (0x1F7) & 0) != 0) {
+return (E_ERROR);
+
+1
+
+}
+}
+buffer [i] = inb (0x1F0);
+}
+return (E_OK);
+}
+(Pro přístup k registrům řadiče se používají standardní funkce uint8_t inb (uint16_t addr) a
+void outb (uint8_t value, uint16_t addr), které přečtou, resp. zapíší jeden byte z, resp. do registru daného
+uvedenou adresou.)
+1. Ve funkci pro čtení sektorů jsou tři (logicky různé) chyby, kvůli kterým by na popsaném rozhraní nefungovala správně.
+Identifikujte je a opravte.
+2. Napište podobnou (ovšem bez chyb) funkci pro zápis sektorů.
+
+3
+
+Projekce (3 body)
+
+Najděte směrnici p ∈ R3 přímky, která prochází počátkem a víme, že všechny tři body u = (1, 2, 3)T , v = (0, 3, 1)T , w =
+(8, 1, 2)T se při projekci na tuto přímku zobrazí na stejný bod.
+
+4
+
+Částečná uspořádání (3 body)
+1. Definujte pojmy řetězec a antiřetězec (nezávislá množina) v částečném uspořádání.
+2. Zformulujte větu o vztahu velikosti nosné množiny částečného uspořádání vzhledem k délkám jejich řetězců a antiřetězců.
+3. Kolik nejdelších řetězců a antiřetězců má následující částečné uspořádání (X , ⊆), kde X = {A ⊆ {1, . . . , 10} : |A| ∈
+{2, 3, 7}}?
+
+5
+
+Protokoly TCP a UDP (specializační otázka – 3 body)
+1. Uvažujte následující implementaci jednoduchého klienta a serveru komunikujících socketem nad protokolem TCP:
+from socket import *
+
+from socket import *
+
+SOCKET_PORT = 8888
+SOCKET_BUFFER_SIZE = 4096
+
+SOCKET_PORT = 8888
+SOCKET_BUFFER_SIZE = 4096
+
+with socket (AF_INET, SOCK_STREAM) as s:
+s.connect ((’192.168.0.1’, SOCKET_PORT))
+s.send (’Hello !’.encode (’utf-8’))
+s.shutdown (SHUT_RDWR)
+
+with socket (AF_INET, SOCK_STREAM) as ss:
+ss.bind ((’192.168.0.1’, SOCKET_PORT))
+ss.listen ()
+while True:
+with ss.accept () [0] as cs:
+while True:
+data = cs.recv (SOCKET_BUFFER_SIZE)
+if len (data) == 0:
+break
+print (data.decode (’utf-8’))
+cs.shutdown (SHUT_RDWR)
+
+V kontextu uvedené implementace rozhodněte a zdůvodněte následující body. Ve svých úvahách předpokládejte
+rozumný kontext, tedy nikoliv situace jako “co když má klient špatnou adresu serveru”, “co když má server firewall
+blokující provoz”, nebo “co když se připojí ještě další program”.
+(a) Pokud je spuštěn klient bez běžícího serveru, skončí jeho běh s chybou.
+(b) Běžící server při každém sekvenčním spuštění klienta vypíše právě jednu řádku obsahující text “Hello !”.
+(c) Běžící server při současném spuštění dvou klientů vypíše právě dvě shodné řádky obsahující text “Hello !”.
+
+2
+
+2. Nyní uvažujte podobnou implementaci klienta a serveru nad protokolem UDP. Rozhodněte a zdůvodněte stejné body
+jako v předchozím.
+from socket import *
+
+from socket import *
+
+SOCKET_PORT = 8888
+SOCKET_BUFFER_SIZE = 4096
+
+SOCKET_PORT = 8888
+SOCKET_BUFFER_SIZE = 4096
+
+with socket (AF_INET, SOCK_DGRAM) as s:
+s.connect ((’192.168.0.1’, SOCKET_PORT))
+s.send (’Hello !’.encode (’utf-8’))
+s.shutdown (SHUT_RDWR)
+
+with socket (AF_INET, SOCK_DGRAM) as s:
+s.bind ((’192.168.0.1’, SOCKET_PORT))
+while True:
+data = s.recv (SOCKET_BUFFER_SIZE)
+print (data.decode (’utf-8’))
+
+3. Monitorováním provozu sítě zjistíte, že při použití protokolu TCP si klient a server vymění celkem 8 paketů při jednom
+spuštění klienta, zatímco při použití protokolu UDP pouze 1 paket na jedno spuštění klienta. Zdůvodněte proč, vaše
+zdůvodnění by mělo správně odhadnout obsah paketů.
+4. Uvažujte dále úpravu TCP i UDP klienta, kde místo
+s.send (’Hello !’.encode (’utf-8’)) bude
+for i in range (1000): s.send (’Hello !’.encode (’utf-8’)).
+Pro takto upravené klienty rozhodněte a zdůvodněte pro TCP i UDP následující body.
+(a) Běžící server při každém sekvenčním spuštění klienta vypíše právě 1000 řádek obsahujících text “Hello !”.
+(b) Počet paketů vyměněných mezi klientem a serverem přepočítaný na jednu zprávu “Hello !” se oproti předchozímu
+nezmění.
+(c) Počet paketů vyměněných mezi klientem a serverem přepočítaný na jednu zprávu “Hello !” může být průměrně
+menší než 1.
+
+6
+
+Extrémy funkcí (specializační otázka – 3 body)
+
+Nechť f (x, y, z, u) = ax4 + by 4 + cz 4 + du4 je funkce čtyř proměnných x, y, z, u definovaná na R4 , přičemž a, b, c, d jsou reálné
+parametry. Nalezněte všechny hodnoty parametrů, pro něž f má v počátku (tj. v bodě (0, 0, 0, 0)) ostré globální maximum.
+Své řešení zdůvodněte.
+
+7
+
+Lineární programování (specializační otázka – 3 body)
+
+Uvažte následující lineární program (P):
+
+max(−5x1 + 6x2 − 4x3 )
+2x1 + 3x2 − x3 ≤ −2
+−x1 + 2x2 + 2x3 ≤ 3
+x1 , x2 , x3 ≥ 0
+1. Napište duální program (D) k výše uvedenému LP.
+2. Vyřešte duální program (D).
+3. Co výsledek předchozího bodu znamená pro primární LP (P)?
+
+8
+
+Brooksova věta (specializační otázka – 3 body)
+1. Zformulujte Brooksovu větu o barevnosti grafů maximálního stupně ∆.
+2. Dokažte (bez použití Brooksovy věty), že je-li graf souvislý, má maximální stupeň ∆ a nelze ho obarvit ∆ barvami,
+pak je ∆-regulární.
+
+3
+
+3. Nechť G je 3-regulární souvislý graf, který obsahuje dva vrcholy ve vzdálenosti větší než 2 od sebe. Ukažte použitím
+Brooksovy věty, že vrcholy G lze obarvit 9 barvami tak, aby žádné dva vrcholy ve vzdálenosti nejvýše 2 od sebe neměly
+stejnou barvu.
+
+9
+
+Silná souvislost (specializační otázka – 3 body)
+1. Definujte silnou souvislost orientovaného grafu a její komponenty.
+2. Popište efektivní algoritmus pro nalezení komponent silné souvislosti.
+3. Orientovaný graf nazveme polosouvislý, pokud mezi každými dvěma vrcholy vede cesta aspoň jedním směrem. Navrhněte
+efektivní algoritmus pro testování polosouvislosti.
+
+4
+
+

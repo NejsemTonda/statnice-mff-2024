@@ -1,0 +1,139 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+léto 2021
+
+1
+
+Derivace (3 body)
+1. Nechť f : R → R je funkce a r je reálné číslo. Napište definici derivace funkce f v bodě r.
+2. Nechť f : R → R je funkce, která pro každé x ∈ R splní 0 ≤ f (x) ≤ x2 . Plyne z těchto předpokladů, že f má v bodě
+x = 0 derivaci? Plyne z těchto předpokladů, že f 0 (0) = 0?
+3. Definujme funkci q : R → R předpisem
+(
+(sin x)2 · sin
+q(x) =
+0
+
+1
+x
+
+
+
+pro x 6= 0,
+pro x = 0.
+
+Má funkce q derivaci v bodě 0, a pokud ano, čemu se rovná?
+
+2
+
+Primitivní funkce (3 body)
+1. Napište definici pojmu primitivní funkce k funkci f na otevřeném intervalu I.
+2. Najděte primitivní funkci k funkci f (x) = x2 ln x na intervalu (0, +∞), kde ln x označuje přirozený logaritmus.
+3. Nechť k a ` jsou nezáporná celá čísla. Uvažme funkci fk,` (x) = xk (ln x)` definovanou na intervalu I = (0, +∞). Dokažte,
+že fk,` má na intervalu I primitivní funkci Fk,` . Dokažte dále, že tuto primitivní funkci Fk,` lze vyjádřit vzorečkem
+pomocí konstant, funkce x, funkce ln x a operací sčítání, odčítání, násobení, dělení a umocňování.
+
+3
+
+Soustavy lineárních rovnic (3 body)
+
+Uvažujme matici
+
+
+1
+A = −1
+0
+
+
+1 2
+1 1 .
+2 3
+
+1. Rozhodněte, zda existuje b ∈ R3 takové, že soustava Ax = b má právě jedno řešení.
+2. Rozhodněte, zda existuje k ≥ 1 takové, že soustava (Ak )x = b má alespoň jedno řešení pro všechna b ∈ R3 .
+
+4
+
+Ortogonální projekce (3 body)
+
+Buď P ∈ Rn×n matice ortogonální projekce na podprostor reálného vektorového prostoru.
+1. Zjednodušte výraz P − P 2 + P 3 − P 4 + . . . + (−1)n+1 P n .
+2. Dokažte, že pro každé x ∈ Rn platí:
+kP xk = kxk ⇔ P x = x.
+
+5
+
+Determinanty matic (3 body)
+1. Zformulujte Laplaceův rozvoj determinantu matice A ∈ R9×9 podle druhého sloupce.
+
+1
+
+2. Rozhodněte, zda pro čtvercové matice téhož řádu platí
+det(A + B) = det(A) + det(B).
+Odpověď zdůvodněte (dokažte nebo uveďte protipříklad).
+
+6
+
+Stromy (3 body)
+
+Nechť G = (V, E) je graf s neprázdnou množinou hran. Rozhodněte, které z následujících podmínek jsou ekvivalentní tomu,
+že G je strom.
+a) G je souvislý a každé dvě kostry G jsou si navzájem izomorfní,
+b) G nemá kružnice, minimální stupeň vrcholu je 1 a |E| > |V | − 2,
+c) G je souvislý a má alespoň dva vrcholy stupně 1 (tzv. listy),
+d) G obsahuje nesouvislý podgraf, dokonce každá vlastní podmnožina hran F ⊂ E tvoří nesouvislý graf (V, F ) a přitom
+mezi každými dvěma vrcholy existuje v G tah,
+e) v G neexistuje podmnožina W ⊆ V vrcholů, která by indukovala podgraf s |W | hranami a přitom pro každou neprázdnou
+W ( V existuje hrana {u, v} mezi W a doplňkem W ve V .
+Své rozhodnutí zdůvodněte.
+
+7
+
+Kombinační čísla (3 body)
+1. Definujte kombinační číslo (binomický koeficient) a stručně popište Pascalův trojúhelník.
+2. Rozhodněte, zdali pro každé přirozené n platí mezi následujícími dvěma výrazy stejná nerovnost a pokud ano, určete
+jakým směrem.
+  
+ 
+
+
+
+ 
+n
+n+1
+n+2
+2n − 1
+2n
++
++
++ ··· +
+a
+.
+n
+n
+n
+n
+n
+Své rozhodnutí zdůvodněte. (Nápověda: zkuste využít vztahů mezi dvěma sousedními čísly v Pascalově trojúhelníku.)
+
+8
+
+Střední hodnota (3 body)
+1. Definujte pojem střední hodnota reálné náhodné veličiny na konečném pravděpodobnostním prostoru Ω.
+2. Mějme běžnou šestistěnnou kostku se stěnami označenými čísly 1, 2 . . . , 6, přičemž každé z čísel padne se stejnou
+pravděpodobností. Určete střední hodnotu náhodné veličiny definované jako druhá mocnina hozeného čísla.
+3. Pro n ∈ N uvažujme Sn množinu všech permutací množiny {1, 2, . . . , n}. Pevný bod permutace q ∈ Sn je takové
+k ∈ {1, 2, . . . , n}, pro které je q(k) = k. Určete střední hodnotu počtu pevných bodů v náhodně vybrané permutaci
+(každá permutace je vybrána se stejnou pravděpodobností).
+
+9
+
+Logika (3 body)
+1. Uveďte definici, kdy je teorie T jazyka LT jednoduchou kompletní extenzí teorie S jazyka LS (v predikátové logice).
+2. Nechť S = {(∀x)(∀y)(∀z)((U (x) ∧ U (y) ∧ U (z)) → (x = y ∨ y = z ∨ x = z))} je teorie jazyka L = hU i s rovností, kde
+U je unární relační symbol. Napište dvě (neekvivalentní) jednoduché kompletní extenze T1 , T2 teorie S.
+3. Zdůvodněte, proč jsou T1 , T2 kompletní.
+
+2
+
+

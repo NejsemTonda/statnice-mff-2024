@@ -1,0 +1,170 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+podzim 2021
+
+1
+
+Spojité funkce (3 body)
+1. Definujte, co znamená, že funkce f : R → R je spojitá v bodě b ∈ R.
+2. Pro každou z následujících dvou funkcí rozhodněte (a stručně zdůvodněte), zda je spojitá v bodě 0.
+
+(
+
+x
+pro x ∈ Q
+−x pro x 6∈ Q.
+
+(
+
+0
+pro x = 0
+exp(−1/x) pro x 6= 0.
+
+f1 (x) =
+f2 (x) =
+
+3. Nechť f : R → R je funkce splňující 0 ≤ f (x) ≤ 1 pro každé x ∈ R. Předpokládejme, že f je riemannovsky integrovatelná
+na intervalu [0, 1], a definujme funkci g : [0, 1] → R předpisem
+Z x
+g(x) =
+f (t) dt.
+0
+
+Je funkce g spojitá na intervalu (0, 1)? Zdůvodněte.
+
+2
+
+Limita posloupnosti (3 body)
+1. Napište, jak je definována limita posloupnosti reálných čísel. (Stačí, když se omezíte na případ, kdy limita je vlastní.)
+∞
+2. Nechť (an )∞
+n=0 je posloupnost reálných čísel, která má vlastní limitu L ∈ R. Definujme posloupnost (bn )n=0 předpisem
+∞
+bn = an − a2n . Je možné z těchto informací rozhodnout, zda má (bn )n=0 limitu, případně čemu se ta limita rovná?
+
+3. Definujme posloupnost (cn )∞
+n=0 následujícími rovnostmi:
+c0 = 1
+pro n ≥ 1.
+
+cn = sin(cn−1 )
+
+Rozhodněte, zda má posloupnost (cn )∞
+n=0 limitu, případně čemu se ta limita rovná.
+
+3
+
+Primitivní funkce (3 body)
+1. Napište definici pojmu primitivní funkce k funkci f na intervalu (a, b).
+2. O každém z následujících výroků rozhodněte, zda je pravdivý, a své rozhodnutí stručně zdůvodněte.
+(a) Jestliže je funkce f neklesající na intervalu [a, b], tak má na intervalu (a, b) primitivní funkci.
+(b) Jestliže má funkce f na intervalu (a, b) primitivní funkci F , a jestliže má F lokální minimum v bodě c ∈ (a, b),
+tak platí f (c) = 0.
+3. Spočítejte
+
+Z π √
+
+sin x · cos x dx.
+
+π/2
+
+1
+
+4
+
+Lineární zobrazení (3 body)
+1. Definujte pojem jádro Ker(f ) lineárního zobrazení f mezi vektorovými prostory U a V .
+2. Dokažte, že jádro Ker(f ) je podprostorem U .
+3. Najděte bázi jádra lineárního zobrazení, které představuje druhou derivaci na prostoru reálných polynomů stupně
+nanejvýše 5.
+
+5
+
+Skalární součin (3 body)
+
+Na prostoru R3 uvažujme standardní a nestandardní skalární součin
+hx, yi = xT y,
+hx, yiA = xT Ay,
+kde
+
+
+1
+A = 1
+1
+
+1
+2
+0
+
+
+1
+0 .
+3
+
+1. Ověřte, že hx, yiA tvoří skutečně skalární součin (stačí ověřit vlastnost hx, xiA > 0 pro každé x 6= 0).
+2. Najděte lineární zobrazení f : R3 → R3 takové, aby pro každé x, y ∈ R3 platilo
+hf (x), f (y)i = hx, yiA .
+
+6
+
+Podobnost matic (3 body)
+
+Uvažujme matice
+
+3
+A = 0
+0
+
+3
+2
+0
+
+
+
+3
+1
+2 , B = 0
+1
+0
+
+1
+2
+3
+
+
+0
+0 .
+3
+
+1. Definujete pojem podobnost matic.
+2. Rozhodněte (a zdůvodněte), zda matice A, B jsou podobné.
+3. Dokažte limn→∞ ( 41 A)n = limn→∞ ( 41 B)n .
+
+7
+
+Kombinatorické počítání (3 body)
+
+Kolik lze nalézt různých čtvercových matic řádu 4 nad tělesem Z3 , které obsahují 9 nul, ale žádný řádek ani sloupec nemají
+zcela zaplněný nulami?
+
+8
+
+Souvislost grafů (3 body)
+
+Pro jednoduchý graf G s alespoň dvěma vrcholy definujte jeho vrcholovou a hranovou souvislost.
+Rozhodněte, zda existují grafy s následujícími hodnotami vrcholové a hranové souvislosti. Odpovědi zdůvodněte.
+1. kv (G1 ) = 2, ke (G1 ) = 3,
+2. kv (G2 ) = 3, ke (G2 ) = 2,
+3. kv (G3 ) = 2, ke (G3 ) = 3 a G3 je kubický (tj. všechny jeho vrcholy mají stupeň 3).
+
+9
+
+Logika (3 body)
+1. Uveďte definici (jednu z navzájem ekvivalentních definic), kdy je teorie S jednoduchou extenzí teorie T .
+2. Nalezněte příklad výrokových teorií S, T1 , T2 takových, že S je jednoduchou bezespornou extenzí teorie T1 i teorie T2
+a T1 ∪ T2 je sporná, anebo zdůvodněte, proč takové teorie neexistují.
+3. Kolik je navzájem neekvivalentních jednoduchých extenzí S výrokové teorie T = {p → q} nad množinou prvovýroků
+P = {p, q, r}, ve kterých neplatí q → r, tj. S 6|= q → r?
+2
+
+

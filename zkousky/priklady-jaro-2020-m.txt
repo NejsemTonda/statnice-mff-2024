@@ -1,0 +1,110 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+jaro 2020
+
+1
+
+Řady (3 body)
+1. Definujte konvergenci řady.
+2. Formulujte nutnou podmínku konvergence řady. Uveďte příklad řady, která nutnou podmínku splňuje, ale není konvergentní.
+P∞
+2
+3. Rozhodněte o konvergenci řady n=1 nn! a své rozhodnutí zdůvodněte.
+
+2
+
+Derivace (3 body)
+1. Definujte derivaci funkce v bodě. Z definice odvoďte derivaci funkce f (x) = x1 v bodě a 6= 0.
+2. Rozhodněte o pravdivosti následujícího tvrzení a své rozhodnutí zdůvodněte: Pokud je f spojitá v bodě 1, má v bodě
+1 vlastní derivaci.
+√
+3. Spočtěte derivaci funkce x x.
+
+3
+
+Funkce více proměnných (3 body)
+1. Definujte Hessovu matici a uveďte větu o tom, jak souvisí s lokálními extrémy funkce více proměnných.
+2. Najděte všechny lokální extrémy funkce f (x, y) = −y 2 + sin x a určete, zda se jedná o maxima či minima.
+
+4
+
+Pozitivně definitní matice (3 body)
+
+Definujte pozitivně definitní matice a popište dvě metody pro testování pozitivní definitnosti.
+
+5
+
+Maticové prostory (3 body)
+
+Pro matici
+
+
+
+4
+1
+A=
+2
+1
+
+3
+4
+−1
+0
+
+2
+−1
+0
+3
+
+
+1
+1
+
+1
+−1
+
+najděte bázi průniku podprostorů U a V , kde
+– U je definován jako ortogonální doplněk jádra matice A a
+– V je definován jako sloupcový prostor matice AT .
+
+6
+
+Matice lineárních zobrazení (3 body)
+
+Rozhodněte a zdůvodněte, zda následující matice jsou identické:
+– matice otočení o 90 stupňů proti směru hodinových ručiček v R2 vzhledem ke kanonické bázi a
+– matice přechodu od báze B1 = {1, x} k bázi B2 = {−x, 1} prostoru reálných lineárních funkcí jedné proměnné.
+1
+
+7
+
+Kombinatorické počítání (3 body)
+
+Nechť A a B jsou disjunktní množiny přirozených čísel takové, že |A| = 10, |B| = 15. Kolik existuje uspořádaných sedmic
+(x1 , x2 , . . . , x7 ) takových, že:
+– |{x1 , x2 , . . . , x7 } ∩ (A ∪ B)| = 7
+– |{x1 , x2 , . . . , x7 } ∩ A| = 3
+– xi ∈ B ∧ xj ∈ B ∧ i < j ⇒ xi < xj
+(Neboli v každé sedmici je sedm různých čísel, z toho tři z A, a čísla z B jsou vzestupně uspořádána.)
+
+8
+
+Kostry grafů (3 body)
+1. Definujte kostru grafu.
+2. Kolik koster má Kn , úplný graf na n vrcholech?
+3. Nalezněte dva neizomorfní grafy se stejným počtem hran i vrcholů, oba s právě 6 kostrami.
+
+9
+
+Logika (3 body)
+1. Uveďte definice, kdy je teorie T1 jazyka L1 extenzí teorie T2 jazyka L2 , a kdy jsou T1 , T2 ekvivalentní.
+2. Uvažme následující tři teorie ve výrokové logice. Uveďte všechny dvojice z nich, ve kterých je první teorie extenzí druhé.
+Ukažte, proč tomu tak je.
+– T1 = {¬p ∨ ¬q} jazyka {p, q},
+– T2 = {p ↔ ¬q} jazyka {p, q},
+– T3 = {¬(¬p ↔ q) → r, r ↔ p ∨ q} jazyka {p, q, r}.
+3. Určete, kolik je navzájem neekvivalentních extenzí nad {p, q, r} teorie T1 ∪ T3 . Uveďte zdůvodnění.
+
+2
+
+

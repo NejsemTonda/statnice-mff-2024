@@ -1,0 +1,298 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+léto 2015
+
+1
+
+Minimálnı́ cesta grafem
+1. Definujte pojem minimálnı́ cesty mezi dvěma vrcholy v ohodnoceném neorientovaném grafu.
+2. Zvolte si vhodný algoritmus pro hledánı́ minimálnı́ cesty v grafu ohodnoceném celými čı́sly (kladnými i zápornými) a
+napište pseudokód algoritmu.
+
+2
+
+Algoritmus topologického uspořádánı́
+1. Definujte topologické uspořádánı́ na orientovaném grafu.
+2. Charakterizujte grafy, které lze topologicky uspořádat.
+3. Napište pseudokód pro algoritmus topologického uspořádánı́, který poběžı́ v lineárnı́m čase vzhledem k velikosti grafu.
+
+3
+
+Obsluha přerušenı́
+1. Předpokládejte běžný počı́tač se zabudovaným řadičem pevných disků. Takový řadič může způsobit hardwarové přerušenı́
+procesoru. Uved’te přı́klad situace, kdy by běžný řadič pevných disků inicioval vznik takového přerušenı́. Bude se jednat o
+přerušenı́ synchronnı́ nebo asynchronnı́ ?
+2. Co je obsahem tabulky vektorů přerušenı́ ? Kdo typicky obsah tabulky vyplňuje a kdo jejı́ obsah čte ?
+3. Proč se někdy mı́sto běžného volánı́ procedury nebo funkce použı́vajı́ softwarová přerušenı́ ?
+
+4
+
+Stránkovánı́
+
+Předpokládejte běžný desktopový operačnı́ systém běžı́cı́ na procesoru se 4 kB stránkami. Operačnı́ systém využı́vá konceptu
+stránkovánı́ pro implementaci procesů.
+1. V takovém prostředı́ spustı́me program, který přečte ze standardnı́ho vstupu slovo a na standardnı́ výstup ho vypı́še
+velkými pı́smeny. Bude někdo při běhu takového programu využı́vat informace uložené ve stránkovacı́ tabulce ? Pokud ano,
+tak kdo, kdy, a proč ? Pokud ne, tak proč ?
+2. Bylo by možné, aby v takovém prostředı́ byly spuštěny 3 procesy A, B, C, kde proces A má vyhraženo vlastnı́ch 40 kB
+fyzické paměti, proces B má vlastnı́ch 80 kB fyzické paměti, proces C má vlastnı́ch 120 kB fyzické paměti, a navı́c všechny
+3 procesy sdı́lejı́ dalšı́ch 20 kB fyzické paměti ? Pokud ano, tak jak bude sdı́lenı́ fyzické paměti mezi procesy dosaženo ?
+Pokud ne, tak proč ?
+3. Bylo by možné dosáhnout toho, aby z uvedených 20 kB sdı́lené paměti mohly čı́st všechny procesy A až C, ale aby do nı́
+mohl zapisovat pouze proces A ? Pokud ano, tak jak ? Pokud ne, tak proč ?
+
+5
+
+Jazyky
+1. Definujte formálně pojem jazyk“.
+”
+
+2. Popište kontextové gramatiky a nezkracujı́cı́ gramatiky. Jak spolu kontextové a nezkracujı́cı́ gramatiky souvisejı́ ?
+3. Zařad’te do Chomského hierarchie jazyk L = {wwR |w ∈ {a, b}∗ }, kde wR značı́ zrcadlový obraz slova w (nalezněte vzhledem
+k inkluzi co nejmenšı́ třı́du hierarchie, do které jazyk patřı́). Odpověd’ zdůvodněte.
+
+6
+
+Jazyky
+1. Definujte formálně pojem regulárnı́ jazyk“.
+”
+2. Popište bezkontextové gramatiky a derivačnı́ stromy. Jak spolu bezkontextové gramatiky a derivačnı́ stromy souvisejı́ ?
+3. Zařad’te do Chomského hierarchie jazyk L = {ai bj |i, j ∈ N ∧ i ≤ j} (nalezněte vzhledem k inkluzi co nejmenšı́ třı́du
+hierarchie, do které jazyk patřı́). Odpověd’ zdůvodněte.
+
+7
+
+Barevnost grafů (povinné téma vašeho zaměřenı́)
+1. Definujte, co je vrcholová a hranová barevnost grafu.
+2. Jaka je vrcholová a hranová barevnost grafu na obrázku ?
+1
+
+3
+
+2
+5
+
+6
+
+7
+
+8
+4
+
+3. Ukažte, že každá množina grafů, která má omezenou hranovou barevnost, má i omezenou vrcholovou barevnost. Ukažte,
+že existuje množina grafů s omezenou vrcholovou barevnostı́, která má neomezenou hranovou barevnost.
+
+8
+
+Morfologická analýza (povinné téma vašeho zaměřenı́)
+1. V kontextu zpracovánı́ přirozeného jazyka definujte pojmy morfologická analýza a lematizace.
+2. V následujı́cı́ české větě identifikujte slova, jejichž morfologická analýza nenı́ jednoznačná (a uved’te proč). Popište metodu,
+která z vı́ce výstupů morfologické analýzy vybere ten, který odpovı́dá použitı́ slova v dané větě:
+Jan má na mysli hlavně vás.
+3. Nastiňte, jak by měl fungovat morfologický analyzátor češtiny, který si poradı́ s následujı́cı́ fiktivnı́ větou a přiřadı́ neznámým
+slovům nejpravděpodobnějšı́ slovnı́ druhy a hodnoty morfologických kategoriı́:
+Fartajznice zbajtrovala printernı́ho samodrufnı́cı́ho volhouta velmi chimeraticky.
+
+9
+
+Syntaxe přirozeného jazyka (povinné téma vašeho zaměřenı́)
+1. Popište hlavnı́ rysy frázových a závislostnı́ch stromů zachycujı́cı́ch větnou syntaxi, srovnejte oba přı́stupy.
+2. Převed’te následujı́cı́ frázovou strukturu na závislostnı́. Jsou pro takový převod potřeba přı́davná data, která přı́mo
+nevyplývajı́ ze vstupnı́ frázové struktury ? Jaká ?
+(S (NP (N Jana)) (VP (VR (REFL si) (V oblı́bila)) (NP (AP (A čı́nskou) (CONJ i) (A indickou)) (N kuchyni))) (PUNCT
+.))
+
+3. Převed’te následujı́cı́ závislostnı́ strukturu na frázovou. Jsou pro takový převod potřeba přı́davná data, která přı́mo
+nevyplývajı́ ze vstupnı́ závislostnı́ struktury ? Jaká ?
+Pes, který neštěká, může kousnout kohokoliv.
+nsubj(může → Pes)
+xcomp(může → kousnout)
+acl(Pes → neštěká)
+nsubj(neštěká → který)
+dobj(kousnout → kohokoliv)
+
+10
+
+Vrcholové pokrytı́ (povinné téma vašeho zaměřenı́)
+
+Pro následujı́cı́ otázky budeme pracovat s optimalizačnı́m problémem 3VC, který je variantou problému vrcholového pokrytı́. Je
+definován takto:
+Instance problému je 3-regulárnı́ hypergraf H = (V, E), kde E je nějaká množina 3-prvkových podmnožin V .
+Přı́pustné řešenı́ pro H = (V, E) je taková množina U ⊆ V , že ∀e ∈ E : e ∩ U 6= ∅.
+Cı́lem je minimalizovat účelovou funkci |U |, tedy počet prvků U .
+Budeme také uvažovat následujı́cı́ lineárnı́ program LP:
+P
+Minimalizuj
+v∈V xv za podmı́nek xv ≥ 0 pro všechna v ∈ V a xu + xv + xw ≥ 1 pro všechny trojice u, v, w ∈ E.
+1. Kdy algoritmus pro problém 3VC nazýváme R-aproximačnı́ ?
+2. Jaký je vztah celočı́selných řešenı́ lineárnı́ho programu LP k přı́pustným řešenı́m a optimu instance problému 3VC ?
+Zdůvodněte.
+3. Jaký je vztah optimálnı́ho (ne nutně celočı́selného) řešenı́ lineárnı́ho programu LP k optimálnı́mu řešenı́ instance problému
+3VC ?
+
+11
+
+Objektově orientované programovánı́
+
+Pro vypracovánı́ otázky si zvolte jeden z jazyků C#, C++, Java. V odpovědi můžete vynechat nepodstatné syntaktické detaily,
+hodnotı́ se zejména použitı́ vhodných nástrojů jazyka. Otázka se týká objektového modelu, očekává se tedy definice rozhranı́
+třı́d (hlavnı́ metody a atributy), nikoliv implementace (těla metod).
+Navrhněte objektový model pro jednoduchý vektorový grafický editor umožňujı́cı́ kreslit v rovině kruhy a obdélnı́ky. Tyto objekty
+se mohou překrývat a proto je nutné zachovávat jejich pořadı́ vykreslovánı́ (Z-order). Model by měl umožnit vykreslenı́ scény,
+vyhledánı́ objektu na daných souřadnicı́ch a dále manipulaci s objekty jako přidánı́, odebránı́ a přesun na popředı́ či do pozadı́.
+Respektujte zásady modernı́ho objektového programovánı́, řešenı́ by mělo být snadno rozšiřitelné o dalšı́ druhy objektů. V
+odpovědi neřešte efektivitu vykreslovánı́ a vyhledánı́ podle souřadnic.
+
+12
+
+Objektově orientované programovánı́
+
+Pro vypracovánı́ otázky si zvolte jeden z jazyků C#, C++, Java. V odpovědi můžete vynechat nepodstatné syntaktické detaily,
+hodnotı́ se zejména použitı́ vhodných nástrojů jazyka. Otázka se týká objektového modelu, očekává se tedy definice rozhranı́
+třı́d (hlavnı́ metody a atributy), nikoliv implementace (těla metod).
+Navrhněte objektový model pro stromovou reprezentaci matematických výrazů s proměnnými, konstantami, unárnı́mi a binárnı́mi
+operátory. Model by měl umožnit vytištěnı́ výrazu v prefixové notaci a vyhodnocenı́ výrazu pro zadané hodnoty proměnných.
+Respektujte pravidla objektového návrhu a umožněte snadnou rozšiřitelnost o dalšı́ operátory.
+
+13
+
+Fragmentace (povinné téma vašeho zaměřenı́)
+
+IPv4 paket (datagram) o celkové velikosti 3940 bytů, se standardnı́ velikostı́ hlavičky, má být odeslán ze sı́tě, která použı́vá
+linkové rámce formátu Ethernet II. Pro tento druh rámců je hodnota parametru MTU rovna 1500.
+Popište, jak dopadne fragmentace odesı́laného IPv4 paketu: kolik bude fragmentů a jak budou nastaveny ty parametry v jejich
+hlavičce, které se týkajı́ fragmentace.
+Dále popište, jak se lišı́ fragmentace v protokolu IPv4 a IPv6.
+
+14
+
+Synchronizace (povinné téma vašeho zaměřenı́)
+
+1. Napište rozhranı́ třı́dy implementujı́cı́ podmı́nkovou proměnnou (condition variable) a popište sémantiku jednotlivých
+metod.
+2. Uvažujte dvě vlákna přistupujı́cı́ ke sdı́lené proměnné podle následujı́cı́ho náčrtku. Jedno čas od času zapisuje, druhé
+zobrazuje některé zapsané hodnoty. Operace nad sdı́lenou proměnnou jsou atomické.
+v o i d WriterThreadBody ( )
+{
+while ( true )
+{
+s h a r e d v a l u e = DoSomeCalculation ( ) ;
+}
+};
+v o i d ReaderThreadBody ( )
+{
+i n t l a s t v a l u e = NONEXISTENT VALUE;
+while ( true )
+{
+w h i l e ( l a s t v a l u e == s h a r e d v a l u e ) { } ;
+DisplayValue ( shared value ) ;
+last value = shared value ;
+}
+};
+Uvedená implementace použı́vá aktivnı́ čekánı́ pro detekci změny obsahu proměnné mezi čtenářem a pı́sařem. S použitı́m
+podmı́nkové proměnné a přı́padně dalšı́ch synchronizačnı́ch nástrojů upravte implementaci tak, aby čekala pasivně.
+3. Zaručuje uvedená implementace s aktivnı́m čekánı́m, že čtenář detekuje všechny zápisy do sdı́lené proměnné ? Zaručuje
+totéž vaše implementace s pasivnı́m čekánı́m ? Vysvětlete.
+
+15
+
+Integrál
+
+1. Definujte pojem Riemannův integrál“.
+”
+2. Vyslovte větu o výpočtu neurčitého integrálu metodou per partes.
+3. Spočtěte určitý integrál
+
+Z π
+
+x2 sin x dx.
+
+0
+
+16
+
+Taylorův polynom
+
+1. Definujte Taylorův polynom. Vyslovte některou z vět popisujı́cı́ chybu při aproximaci Taylorovým polynomem.
+2. Napište Taylorův polynom třetı́ho stupně pro funkci log x v okolı́ bodu 1.
+
+17
+
+Princip inkluze a exkluze
+
+1. Formulujte princip inkluze a exkluze.
+2. Kolik čı́sel z množiny 1, 2, . . . , 360 nenı́ dělitelných žádným z čı́sel 4, 6, 9 ?
+
+18
+
+Systém různých reprezentantů
+
+1. Definujte systém různých reprezentantů (konečného) množinového systému (Mi , i = 1, 2, . . . , n) a vyslovte Hallovu větu.
+2. Pro celé čı́slo k ≥ 1 ukažte, že každý bipartitnı́ k-regulárnı́ graf (graf, jehož všechny vrcholy majı́ stupeň roven k) má
+perfektnı́ párovánı́.
+3. Kolik různých (lišı́cı́ch se alespoň jednou hranou) perfektnı́ch párovánı́ má úplný bipartitnı́ graf Kn,n ?
+
+19
+
+Charakteristický polynom matice
+
+1. Napište definici charakteristického polynomu matice.
+2. Zformulujte, jak charakteristický polynom matice souvisı́ s jejı́mi vlastnı́mi čı́sly a tvrzenı́ dokažte.
+3. Najděte charakteristický polynom matice.
+
+1
+3
+A=
+0
+0
+
+20
+
+2
+4
+0
+0
+
+0
+0
+0
+0
+
+
+0
+0
+
+0
+0
+
+Ortogonálnı́ matice
+
+Napište definici reálné ortogonálnı́ matice.
+Následujı́cı́ vlastnosti dokažte nebo vyvrat’te protipřı́kladem:
+1. Ortogonálnı́ matice řádu n jsou uzavřené na součet.
+2. Ortogonálnı́ matice řádu n jsou uzavřené na součin.
+3. Ortogonálnı́ matice řádu n s operacı́ součin tvořı́ grupu.
+
+21
+
+Podmı́něná pravděpodobnost
+
+1. Definujte podmı́něnou pravděpodobnost náhodných jevů.
+2. Určete střednı́ hodnotu součtu hodů dvou kostek (šest stěn, každá padá se stejnou pravděpodobnostı́, jedna kostka je modrá
+a druhá zelená).
+3. Jaká je pravděpodobnost, že součet je sudé čı́slo, pokud na zelené kostce padlo méně než na modré ?
+
+22
+
+Barevnost grafů
+
+1. Definujte pojmy k-obarvenı́ a barevnost grafu.
+2. Dokažte, že pro graf G = (V, E) s barevnostı́ alespoň k (kde k ∈ N, k ≥ 2) je |E| ≥
+3. Uved’te přı́klad grafu, pro který nastane v předchozı́m tvrzenı́ rovnost.
+
+k
+2 .
+
+
+
+

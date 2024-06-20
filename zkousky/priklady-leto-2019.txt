@@ -1,0 +1,639 @@
+Bakalářské zkoušky (příklady otázek)
+
+léto 2019
+
+1
+
+Automaty a gramatiky (3 body)
+
+Nechť G = ({S, A, B}, {a, b}, S, P ) je gramatika s množinou pravidel P :
+S
+A
+AB
+B
+
+→
+→
+→
+→
+
+AB | λ,
+a,
+BA,
+ABB | b,
+
+kde λ je prázdné slovo.
+1. Popište slovně jazyk L(G).
+2. Zkonstruujte zásobníkový automat přijímající jazyk L(G).
+3. Dokažte, že jazyk L(G) není regulární pomocí Nerodovy věty nebo pomocí pumping lemma.
+
+2
+
+Algoritmy a datové struktury (3 body)
+1. Definujte rozhodovací problémy.
+2. Definujte třídy problémů P a NP.
+3. Definujte NP-úplnost problému.
+4. Uveďte příklad nějakého NP-úplného problému. Není to o něm potřeba dokazovat, ale buďte přesní ve formulaci
+problému.
+
+3
+
+Databáze (3 body)
+1. Popište sémantiku (chování) operace přirozeného spojení v relační algebře. Jaký bude výsledek přirozeného spojení
+tabulek R(A,B)=((0,1),(1,2)) a S(B,C)=((2,3),(3,4))? Je možné se bez této operace v relační algebře obejít?
+2. Je vhodné v databázi podporovat zároveň indexy založené na B-stromu i indexy využívající bitmapy, nebo stačí pouze
+jedny z nich? Svoji odpověď vysvětlete.
+3. Do tabulky R(A,B,C) doplňte funkční závislost tak, aby byla porušena druhá normální forma.
+
+4
+
+Programování (3 body)
+1. Navrhněte objektový model, který umožní reprezentovat školu, která má studenty, učitele a předměty. Předmět má
+jméno, jednoznačný identifikátor, učitele a lze zjistit seznam zapsaných studentů. Studenti i učitelé mají jméno a
+jednoznačný identifikátor. U učitele lze zjistit seznam vyučovaných předmětů. U studenta lze zjistit seznam zapsaných
+předmětů. Pozor, jedna osoba může být zároveň učitelem i studentem (u různých předmětů, nicméně to není nutné
+nijak kontrolovat).
+
+1
+
+Respektujte pravidla objektového návrhu (čeká se návrh objektového modelu, tedy v tomto bodě není třeba psát
+těla metod). Pro návrh použijte Javu nebo C# nebo C++. Drobné syntaktické chyby nebudou při hodnocení otázky
+uvažovány.
+2. Do vašeho návrhu doplňte infrastrukturu (tj. rozšiřte rozhraní jednotlivých tříd) potřebnou pro implementaci výpisu
+do textového souboru v přibližně následujícím formátu:
+people:
+- id: 12345
+name: Alan Doe
+- id: 98765
+name: Jane Smith
+- id: 34567
+name: John Poe
+courses:
+- id: NPRG000
+name: Programming
+teachers:
+- id: 12345
+teaches: NPRG000, NSWI000
+- id: 34567
+teaches: NTIN000
+students:
+- id: 98765
+subscribed: NPRG000, NTIN000
+- id: 34567
+subscribed: NPRG000, NSWI000
+Soustřeďte se hlavně na hlavičky metod/funkcí; jejich těla mohou být jen naznačena. Pokud vámi použitý jazyk poskytuje konstrukty pro ukládání objektů, můžete je použít, ale není to nutné.
+3. Pokud jste ve vašem návrhu modelu použili vícenásobnou dědičnost, velmi stručně načrtněte návrh bez ní. A obráceně,
+pokud jste nepoužili vícenásobnou dědičnost, načrtněte návrh s ní. (Upozornění, vícenásobnou dědičností se chápe
+dědění nejen na třídách ale i např. na interfacech resp. jakýchkoliv konstruktech použitého programovacího jazyka,
+které vícenásobnou dědičnost umožňují). Stručně popište výhody a nevýhody tohoto alternativního návrhu.
+
+5
+
+Architektury (3 body)
+
+Na Wikipedii jsme zjistili, že binární obrazový formát souborů .BMP začíná následující hlavičkou FILEHEADER:
+Offset hex
+00
+02
+06
+08
+0A
+
+Size
+2 bytes
+4 bytes
+2 bytes
+2 bytes
+4 bytes
+
+Purpose
+Identifies the BMP file, and is 0x42 0x4D in hexadecimal, same as BM in ASCII.
+The size of the BMP file in bytes.
+Reserved; actual value depends on the application that creates the image.
+Reserved; actual value depends on the application that creates the image.
+The offset of the byte where the bitmap image data (pixel array) can be found.
+
+za kterou v souboru hned následuje druhá hlavička BITMAPHEADER:
+Offset hex
+0E
+12
+16
+1A
+1C
+
+Size
+4 bytes
+4 bytes
+4 bytes
+2 bytes
+2 bytes
+
+Purpose
+The size of this header.
+The bitmap width in pixels (signed integer in two’s complement).
+The bitmap height in pixels (signed integer in two’s complement).
+The number of color planes (must be 1).
+The number of bits per pixel, which is the color depth of the image.
+
+Chtěli bychom obrázky ve formátu .BMP načítat do naší aplikace, proto nám nejprve pomozte vyřešit následující problémy:
+1. Vysvětlete, co obvykle myslíme termínem zarovnání dat (data alignment). Ilustrujte na formátu .BMP, zda jsou v jeho
+zde uvedené části data z pohledu typického počítače zarovnaná či nikoliv.
+2. Dočetli jsme se, že v uvedeném formátu .BMP jsou všechna data uložena jako little-endian. Vysvětlete, co to znamená.
+
+2
+
+3. Napište v Javě nebo C# nebo C++ jednoduchý program, který přečte obsah souboru CoolPicture.bmp a na standardní
+výstup vypíše jeho šířku (width) v pixelech jako celé číslo v desítkové soustavě. V programu budete potřebovat funkce
+pro práci se soubory – zde není nutné, abyste přesně používali existující API, stačí používat nějaké hypotetické (ale
+rozumné) API.
+V odpovědi obecně stačí přibližný zápis kódu (pseudokód), pokud z něj bude přiměřeně jasné, jak by vypadal správný kód
+v cílovém programovacím jazyce (například není potřeba ukončovat řádky oddělovačem a podobně).
+
+6
+
+Sítě (3 body)
+
+Napište sekvenci odeslaných a přijatých zpráv protokolu FTP pro připojení na server piratsky.server.eu, stažení binárního
+souboru /hide/film.mkv a odpojení. FTP server je v pasivním režimu, rozsah portů pro datové přenosy je 10000–10999, IP
+adresa serveru je 195.113.19.222. Hlásíme se jako anonymous a místo hesla zasíláme email muj@tajnymail.edu.
+Vedle základní sekvence FTP zpráv s potřebnými parametry se očekává obecný popis relace, tedy zejména vysvětlení, jakým
+transportním protokolem a jak se zasílají jednotlivé zprávy. Drobné syntaktické chyby v odpovědi nehrají roli.
+
+7
+
+Optimalizace (3 body)
+1. Uvažte lineární program (P) ve tvaru max cT x, Ax ≤ b, x ≥ 0. Napište, jak bude vypadat duální program (D) k LP
+(P). Formulujte a dokažte slabou větu o dualitě pro dvojici lineárních programů (P) a (D).
+2. Je dán orientovaný graf G = (V, E), s vrcholy V = {s, a, b, t}, hranami E = {(s, a), (s, b), (a, b), (b, a), (a, t), (b, t)} a
+s následujícími kapacitami hran: c(s, a) = 1, c(s, b) = 4, c(a, b) = 2, c(b, a) = 2, c(a, t) = 3, c(b, t) = 2.
+Formulujte úlohu nalezení maximálního toku v grafu G s kapacitami c z vrcholu s do vrcholu t jako lineární program.
+Pomocí slabé věty o dualitě použité na Váš lineární program dokažte, že velikost maximálního tok není více než 6.
+
+8
+
+Překladače (3 body)
+
+Syntaxe jazyka L je definována těmito diagramy:
+S:
+D:
+
+P:
+
+D
+
+;
+
+D
+
+(
+
+P
+
+)
+
+D
+
+[
+
+n
+
+]
+
+*
+
+D
+
+(
+
+D
+
+t
+
+D
+
+t
+i
+
+)
+
+,
+Symboly v kroužcích jsou terminály, ve čtvercích neterminály, počáteční neterminál je S. Definice jazyka kromě těchto
+diagramů obsahuje i následující odstavec:
+
+3
+
+Suffixové operátory
+závorky
+
+(D )
+
+D (P ) ,
+
+D [n]
+
+a
+
+D []
+
+mají přednost před prefixovým operátorem
+
+lze použít ke zrušení této přednosti. Řetězec
+
+t * ( i [ ] ) ; , zatímco řetězec
+
+t(*i)[];
+
+t*i[];
+
+*D ,
+
+má tedy stejný význam jako
+
+má význam odlišný.
+
+– Vysvětlete, proč v definici jazyka musí být uvedený (nebo podobný) odstavec.
+– Popište, jak syntaktické diagramy upravit tak, aby uvedený odstavec nebyl nutný. (Při této úpravě nesmí dojít ke
+změně generovaného jazyka.)
+– Přepište takto upravené diagramy do podoby klasické bezkontextové gramatiky (tj. bez větvení a smyček na pravých
+stranách).
+
+9
+
+Kódy (otázka studijního zaměření – 3 body)
+
+Pro přirozené n uvažme binární kód C obsahující všechna slova (x1 , . . . , x3n ) délky 3n s vlastností x3i−2 = x3i−1 = x3i pro
+všechna i = 1, 2, . . . , n, tedy
+C = {(x1 , x1 , x1 , x2 , x2 , x2 , . . . , xn , xn , xn ) | (x1 , x2 , . . . , xn ) ∈ {0, 1}n } .
+Určete parametry kódu C a rozhodněte, zda je lineární a perfektní (v závislosti na parametru n). Odpovědi zdůvodněte.
+
+10
+
+Dobré uspořádání (otázka studijního zaměření – 3 body)
+
+1. Napište definici dobrého uspořádání (pojem uspořádání definovat nemusíte).
+2. Je každé dobré uspořádání lineární? Je každé lineární uspořádání dobré? Krátce zdůvodněte.
+3. Napište znění tvrzení o dobrých uspořádáních, které je ekvivalentní s axiomem výběru.
+
+11
+
+Barevnost grafů (otázka studijního zaměření – 3 body)
+
+1. Napište definici vrcholové a hranové barevnosti grafu.
+2. Najděte všechna přirozená čísla k, pro něž existuje graf, jehož hranová barevnost je rovna 5 a vrcholová barevnost je
+rovna k.
+
+12
+
+Základní formalismy pro popis přirozených jazyků (otázka studijního zaměření – 3 body)
+
+Základní datové typy:
+1. Popište dva základní datové typy používané pro zachycení syntaxe přirozených jazyků, závislostní a složkové stromy.
+2. Uveďte výhody a nevýhody obou z nich.
+3. Popište problém neprojektivních konstrukcí a vysvětlete, jak se tyto konstrukce dají, příp. nedají popsat těmito dvěma
+typy stromů.
+
+13
+
+Morfologická, syntaktická a sémantická analýza přirozeného jazyka (otázka
+studijního zaměření – 3 body)
+
+Lexikální sémantika:
+1. Popište, jakými metodami můžeme popsat lexikální sémantiku jednotlivých slov přirozeného jazyka.
+2. Podrobněji popište nejrozšířenější sémantické sítě a jejich kladné i záporné vlastnosti.
+4
+
+3. Uveďte aplikační oblasti, ve kterých sémantické sítě můžeme úspěšně použít.
+
+14
+
+Základy teorie informace (otázka studijního zaměření – 3 body)
+
+Házíme třemi poctivými mincemi. Pro každou z nich platí, že pravděpodobnost, že padne panna, je 1/2. Výsledek hodu
+reprezentujeme jako hodnotu náhodné veličiny hx1 , x2 , x3 i, kde xi ∈ {P, O}.
+1. Vypočítejte entropii rozdělení této náhodné veličiny.
+2. Jak se entropie změní, jestliže právě jedna ze tří mincí bude falešná a padne na ní vždy panna?
+
+15
+
+Fourierova transformace (otázka studijního zaměření – 3 body)
+
+1. Definujte (napište vzorec a popište veličiny) 2D Diskrétní Fourierovu transformaci (DFT).
+2. Jak se používá DFT na odstranění šumu v obrazech?
+3. U obrázků na následující straně správně přiřaďte obraz a jeho DFT.
+
+16
+
+Anti-aliasing (otázka studijního zaměření – 3 body)
+
+1. Který z parametrů rastrového zobrazovacího zařízení je anti-aliasingem vylepšen? Jak se to pozná na výsledném obrázku?
+2. Jak se může anti-aliasing implementovat v klasickém rastrovém vykreslování (rasterizace, např. při kreslení vektorové
+grafiky)?
+3. Jak se anti-aliasing implementuje v prostředí paprskového zobrazovače (např. ray-tracing)?
+
+17
+
+3D scéna pro kreslení na GPU (otázka studijního zaměření – 3 body)
+
+1. Jak byste v paměti počítače reprezentovali 3D scénu, která se pak bude v reálném čase vykreslovat na grafické kartě
+(GPU)? Nemusíte psát přímo deklarace dat, ale popište dostatečně podrobně svůj návrh slovy.
+2. Uvažujte systém hierarchické reprezentace tak, aby se komponenty (objekty, modely) daly jednoduše ve scéně opakovat
+bez toho, aby se musela data duplikovat.
+3. Jak technicky implementovat animaci (pohyb) jednotlivých objektů ve scéně? Omezte se na nedeformovatelná tělesa
+(“rigid body animation”), která se jen ve scéně přemisťují otáčením a translací.
+
+18
+
+Adresace (otázka studijního zaměření – 3 body)
+
+Původně se zdálo, že IPv4 adresy a systém přidělování IPv4 adresových bloků bude stačit na velmi dlouho. Nicméně počty
+počítačů připojených do internetu strmě stoupaly, až nakonec IPv4 adresy začaly docházet. Popište stručně aspoň tři různé
+techniky, které oddálily vyčerpání IPv4 adresového prostoru.
+
+19
+
+BSD sockety (otázka studijního zaměření – 3 body)
+
+Součástí popisu každé síťové služby je adresa a port serveru udávající koncový bod, kde je služba provozována. V BSD socket
+API je tento koncový bod reprezentován právě socketem. Pokud je k serveru připojeno více klientů, server má ale pro každého
+klienta vlastní socket, což neodpovídá dobře adresaci služby s udáním jednoho portu. Vysvětlete, jak toto BSD socket API
+řeší a napište schematicky (pomocí BSD socketů) kostru TCP serveru.
+
+5
+
+20
+
+Firewall (otázka studijního zaměření – 3 body)
+
+Popište stručně možnosti a omezení různých druhů firewallů (bezstavový filtr, stavový filtr, aplikační firewall).
+
+21
+
+Synchronizace na multiprocesorech (otázka studijního zaměření – 3 body)
+
+1. Následující implementace zámku (spinlock) může na multiprocesorovém systému selhat. Vysvětlete proč.
+void lock (bool *l) {
+bool prev;
+do {
+disable_interrupts ();
+prev = *l;
+*l = true;
+enable_interrupts ();
+} while (prev);
+}
+void unlock (bool *l) {
+*l = false;
+}
+2. Navrhněte úpravu uvedené implementace zámku tak, aby fungovala i na multiprocesorovém systému. Vysvětlete, jak
+bude tato úprava fungovat na úrovni instrukcí procesoru (pokud použijete nějaké synchronizační prostředky programovacího jazyka, vysvětlete, jak tyto prostředky bude realizovat procesor).
+Zadání používá kód v jazyce C, v odpovědi však stačí přibližný zápis (pseudokód), pokud z něj bude přiměřeně jasné, jak by
+vypadal správný kód v jazyce C (například není potřeba deklarovat proměnné zjevných typů, ukončovat řádky oddělovačem,
+používat direktivy #include a podobně).
+
+22
+
+Interní struktura systémů souborů (otázka studijního zaměření – 3 body)
+
+Předpokládejte soubor, jehož obsah je uložený v 16 blocích systému souborů. Tyto bloky mají po řadě čísla
+8, 3, 11, 12, 13, 14, 15, 16, 96, 97, 98, 99, 33, 32, 31, 30.
+1. Načrtněte, jak bude informace o pozici těchto bloků reprezentovaná ve FAT tabulce a jak v inode se seznamem bloků
+(předpokládejte, že inode byl dimenzován na uložení 12 přímých odkazů na bloky).
+2. Je efektivita (ve smyslu prostorových nároků) uložení informace o pozici bloků souboru ve FAT tabulce nebo v inode
+se seznamem bloků závislá na tom, ve kterých konkrétních blocích je soubor uložený a proč ?
+3. Znáte nějaký systém souborů, který by informaci o této konkrétní pozici bloků uschoval prostorově úsporněji ? Pokud
+ano, jak ? Pokud ne, co tomu brání ?
+
+23
+
+Princip mechanismu RPC (otázka studijního zaměření – 3 body)
+
+Mechanismus volání vzdálených procedur (RPC) může používat zvláštní jazyk pro popis rozhraní těchto procedur. Příklad
+popisu rozhraní v technologii gRPC následuje.
+syntax = "proto3";
+package example;
+message AnExampleMessage {
+uint32 some_integer = 1;
+string some_string = 8;
+}
+service AnExampleService {
+rpc DoSomething (AnExampleMessage) returns (AnExampleMessage) { }
+}
+6
+
+1. Vysvětlete roli jednotlivých částí popisu z příkladu (ideálně co nejvíce).
+2. Popisu z příkladu se používá ke generování kódu. Vysvětlete, jaký kód se z popisu generuje a jakou hraje roli v mechanismu RPC. Načrtněte, jak takový generovaný kód může v hlavních krocích vypadat (pseudokód).
+3. Navrhněte, jakým způsobem by měl server používat vlákna, pokud chceme, aby více klientů mohlo volat server současně
+a jejich požadavky se navzájem neblokovaly. Mechanismus popište v dostatečném detailu (tedy kdy jaké vlákno vzniká
+a zaniká a kdy a na co čeká).
+
+24
+
+Dvoufázové zamykání (otázka studijního zaměření – 3 body)
+
+1. Vysvětlete stručně princip dvoufázového zamykání a jeho vztah k izolaci transakcí.
+2. Uvažme následující dvě transakce, které běží paralelně, přičemž nevíme, v jakém pořadí jsou operace zpracovány databázovým systémem.
+T1: B
+T2: B
+
+U(X)
+U(Z)
+
+U(Y)
+U(X)
+
+U(Z)
+C
+
+C
+
+B označuje zahájení transakce, U(X) je SQL příkaz UPDATE modifikující data X a C je COMMIT. Dále víme, že DB systém
+používá striktní dvoufázové zamykání. Rozhodněte, zda obě transakce proběhnou v pořádku bez ohledu na konkrétní rozvrh,
+nebo zda může pro některé přípustné rozvrhy dojít k potížím (a jakým). Vaši odpověď stručně zdůvodněte.
+3. Jaká opatření může přijmout programátor, aby zajistil, že všechny transakce, které používá ve své aplikaci, provedou vždy
+v pořádku commit, bez ohledu na jejich možné souběhy?
+
+25
+
+CSS (otázka studijního zaměření – 3 body)
+
+1. Vysvětlete pojem CSS selector a jeho význam.
+2. Uveďte (a stručně vysvětlete) 3 základní typy selektorů a alespoň 3 způsoby skládání základních selektorů do složitějších
+konstrukcí.
+3. Vysvětlete algoritmus skládání CSS stylů (jde nám především o určení priorit selektorů a jejich vztah k !important). Pro
+jednoduchost nám stačí skládání stylů, které poskytl autor webové stránky v jednom CSS souboru.
+
+26
+
+Front controller (otázka studijního zaměření – 3 body)
+
+Mějme webovou aplikaci, jejíž serverová část používá návrhové vzory Front Controller a Model-View-Presenter. Web server
+je nakonfigurován tak, že všechny nestatické HTTP požadavky směruje na bootstrap script index.php, a URL přepisuje
+do podoby index.php?presenter=<název prezenteru>&action=<identifkátor akce>&.... Každý prezenter je třída, jejíž identifikátor je název prezenteru se suffixem Presenter, a která dědí od třídy BasePresenter. Třídy prezenterů jsou
+v samostatných souborech v adresáři presenters, přičemž jméno každého souboru odpovídá přesně jménu třídy prezenteru,
+pouze je doplněno o příponu .php. Každá akce je pak reprezentována metodou prezenteru s prefixem action.
+Pokud tedy aplikace zpracovává např. URL index.php?presenter=Login&action=Default, zavolá se metoda actionDefault
+na instanci třídy LoginPresenter ze souboru presenters/LoginPresenter.php.
+Napište algoritmus, který v rámci této aplikace řeší routing a dispatching. Vaše řešení zapište buď jako fragment PHP kódu
+(na drobné syntaktické chyby nebude brán zřetel), nebo alespoň dostatečně podrobně jako sekvenci kroků, které se musí
+provést a co je potřeba k jejich realizaci. V rámci řešení také naznačte, jak byste při dispatchingu předávali parametry HTTP
+požadavku (z URL i z těla).
+
+27
+
+XML (otázka studijního zaměření – 3 body)
+
+Uvažujte seznam prezenčních listin (prezenční listina = záznam o konání akce, např. přednášky, a účasti osob na této akci).
+Pro každou prezenční listinu v seznamu uvažujeme:
+– název akce (text, povinné)
+
+7
+
+– datum a čas konání akce (povinné)
+– adresu místa konání akce sestávající z názvu ulice, čísla popisného a města (vše povinné)
+– označení místnosti konání akce (text, nepovinné)
+– seznam zúčastněných osob (povinné jméno, nepovinný název organizace/firmy)
+Seznam může obsahovat libovolný počet prezenčních listin a může být i prázdný.
+Vytvořte XML schéma popisující XML dokumenty pro zápis seznamu prezenčních listin. K XML schématu napište také
+příklad validního XML dokumentu (s alespoň jednou institucí). Napiště XPath výraz, který z XML dokumentu vybere
+prezenční listiny z akcí, které se konaly v Ostravě a zúčastnilo se jich alespoň 5 osob.
+
+28
+
+Návrhové vzory (otázka studijního zaměření – 3 body)
+
+Stejně jako v předchozí otázce uvažujte seznam prezenčních listin. Uvažujte dvě různé třídy (v libovolném objektovém či
+objektově orientovaném jazyku – C++, C#, Java, . . . ) reprezentující služby pro správu seznamu. První třída, T1, nabízí ve
+svém rozhraní pro zaznamenání účastníka do prezenční listiny metodu vytvorInstituci-zapisUcastnika, druhá třída, T2,
+nabízí metodu zalozInstituci-vlozOsobu. Obě mají také různé sady parametrů pro záznam účastníka.
+Mějme třídu Klient, jejíž implementace umožňuje zaznamenat účastníka na prezenční listinu voláním metody zapisUcastnika.
+Přišel požadavek, aby byla využívána metoda vlozOsobu místo metody zapisUcastnika. Navrhněte řešení, které má co
+nejmenší vliv na vnitřní kód uvedených tříd. Dále rozšiřte třídu T2 a případně další potřebné třídy tak, aby se k instanci
+třídy T2 mohly registrovat různí klienti (instance třídy Klient i jiných tříd), kteří budou instancí třídy T2 notifikováni
+v případě změn prezenčních listinách. Klient musí mít možnost se registrovat ke dvěma typům změn: i) jakákoliv změna, ii)
+změna v datu a čase konání akce.
+Pro řešení zvolte vhodné návrhové vzory. Zvolené návrhové vzory pojmenujte. Řešení buď zakreslete v podobě UML diagramu
+či diagramů nebo zapište v kódu ve zvoleném jazyce.
+
+29
+
+Hledání chyb ve zdrojovém kódu (otázka studijního zaměření – 3 body)
+
+Stručně popište běžné postupy hledání chyb ve zdrojovém kódu (základní princip, typický způsob použití). Diskutujte jejich
+výhody a omezení vzhledem ke schopnosti najít reálné chyby ve zdrojovém kódu velkých programů.
+
+30
+
+Vektory (3 body)
+
+1. Buď x = (4, 1, 2)T , y = (1, 0, 3)T . Najděte nenulový vektor v patřící do lineárního obalu vektorů x, y takový, aby byl
+kolmý na y.
+2. V předchozím příkladu nechť y = (1, 0, 3)T je pevný, ale x bude proměnný vektor. Vyjádřete nyní vektor v předpisem
+jako funkci proměnné x.
+Protože je tato funkce lineárním zobrazením, najděte matici tohoto lineárního zobrazení vzhledem ke kanonické bázi.
+
+31
+
+Grupy (3 body)
+
+Buď n ∈ N pevné a uvažujme množinu M matic řádu n s celočíselnými prvky a determinantem rovným 1. Dokažte, že M s
+maticovým násobením tvoří grupu.
+
+32
+Buď
+
+Matice (3 body)
+
+
+1
+A = 2
+3
+
+2
+1
+2
+
+
+3
+2 ,
+1
+
+
+2
+B = 2
+2
+8
+
+2
+1
+1
+
+
+2
+1 .
+0
+
+Určete, zda matice A, B:
+1. mají stejný determinant,
+2. jsou podobné,
+3. jsou maticemi stejné kvadratické formy, ale vzhledem k různým bázím.
+
+33
+
+Posloupnosti a limity (3 body)
+
+Nechť (an )n∈N je posloupnost reálných čísel a α ∈ R. Definujte, co znamená, že limn→∞ an = α.
+n
+
+2 +5
+Nalezněte limity posloupností (an )n∈N a (bn )n∈N definovaných an = nn+7
+2 +9 a bn =
+2n pro každé n ∈ N.
+
+34
+
+Totální diferenciál (3 body)
+
+Definujte totální diferenciál. Pro funkci f (x, y) = x2 + y 2 spočtěte totální diferenciál Df (x, y)(h1 , h2 ) obvyklou metodou a
+poté ověřte dosažený výsledek podle definice.
+
+35
+
+Plocha a objem (3 body)
+
+Pro křivky y = x2 − 2x a y = x určete:
+1. Plochu části roviny ohraničenou těmito křivkami.
+2. Objem tělesa získaného rotací tohoto útvaru kolem přímky y = 4.
+
+36
+
+Grafy (3 body)
+
+Uveďte definici vrcholové a hranové souvislosti grafu.
+Je pro k ≥ 2 každý k-regulární souvislý graf vrcholově 2-souvislý?
+
+37
+
+Konečné projektivní roviny (3 body)
+
+Mějme konečnou projektivní rovinu (KPR) na množině {1, 2, . . . , k}. O této KPR víme, že kromě jiných přímek obsahuje
+také přímky {1, 2, . . . , 10}, {10, 11, . . . , 19} a {19, 20, . . . , 27, 1}.
+1. Určete hodnotu neznámé k.
+2. Kolik je v této KPR přímek takových, že mají neprázdný průnik s množinou M = {1, 11, 21}?
+
+38
+
+Logika (3 body)
+
+1. Uveďte definici, kdy je formule ϕ nezávislá v teorii T .
+2. Uvažme (výrokovou) teorii T = {p ↔ ¬(q → r), ¬(¬p ∧ q) ∨ ¬r} nad množinou prvovýroků P = {p, q, r}. Určete její
+modely.
+3. Nalezněte příklad formule ϕ nad P, která je nezávislá v předchozí teorii T , nebo ukažte, že taková formule neexistuje.
+
+9
+
+Obrázek 1: Originální obraz
+
+Obrázek 2: DFT zoom
+
+10
+
+

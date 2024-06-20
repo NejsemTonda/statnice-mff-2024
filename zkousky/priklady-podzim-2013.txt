@@ -1,0 +1,224 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+podzim 2013
+
+1
+
+Hašovánı́
+1. Definujte pojmy hašovacı́ funkce“ a kolize“.
+”
+”
+2. Jaké vlastnosti by měla mı́t dobrá hašovacı́ funkce ?
+3. Vysvětlete, jak hašovánı́ s odděleně uloženými nesetřı́děnými řetězci řešı́ vkládánı́ prvků v přı́padě kolize. Odhadněte
+očekávanou délku řetězců a očekávaný počet porovnánı́ při úspěšném vyhledánı́ položky.
+
+2
+
+Organizace paměti
+
+Předpokládejte běžný programovacı́ jazyk s alokacı́ dat na zásobnı́ku a na heapu.
+1. Jakým způsobem je typicky obsah zásobnı́ku uložen v paměti ? Můžete ilustrovat napřı́klad na uloženı́ několika celočı́selných
+lokálnı́ch proměnných.
+2. Alokace konkrétnı́ho objektu na heapu zpravidla spotřebuje vı́ce volné paměti než kolik je velikost alokovaného objektu.
+Vysvětlete proč a odhadněte možnou velikost této prostorové režie.
+3. Jak se pozná, kdy se majı́ uvolnit data na zásobnı́ku ?
+4. Pokud heap spravuje garbage collector, jak se pozná, kdy se majı́ uvolnit data na heapu ?
+
+3
+
+Procesy, vlákna, plánovánı́
+1. Vysvětlete rozdı́l mezi vlákny a procesy.
+2. Pokud existuje vı́ce procesů, které jsou připraveny běžet, operačnı́ systém je zpravidla po nějaké době (kvantu) střı́dá.
+Jaká je typicky (stačı́ hrubý odhad) délka kvanta ? Může být v některých situacı́ch vhodnějšı́ spı́še delšı́ nebo spı́še kratšı́
+kvantum ?
+3. Jaké kroky musı́ udělat operačnı́ systém pro zmı́něné vystřı́dánı́ běžı́cı́ho procesu jiným (přeplánovánı́) ?
+4. Odhadněte dobu potřebnou na jednotlivé kroky z předchozı́ho bodu (opět stačı́ hrubý odhad) a z nich a délky kvanta
+určete režii plánovánı́, tedy procento strojového času strávené přeplánovánı́m.
+
+4
+
+Automaty
+1. Definujte formálně pojem konečný automat“.
+”
+2. Popište konstrukci konečného automatu, který pro přirozené n na abecedě složené z levé a pravé závorky bude přijı́mat
+pouze slova se správně párovanými závorkami s nejvyššı́ hloubkou vnořenı́ n. Jak souvisı́ n s počtem stavů automatu ?
+3. Do jaké třı́dy jazyků v Chomského hierarchii patřı́ jazyk přijı́maný automatem v předchozı́m bodě a proč ? Do jaké třı́dy
+jazyků v Chomského hierarchii by tento jazyk patřil bez omezenı́ hloubky vnořenı́ a proč ?
+
+5
+
+Automaty
+1. Definujte formálně pojem zásobnı́kový automat“.
+”
+2. Množina terminálů se skládá ze symbolů if“, else“, null“. Jazyk L je popsán touto gramatikou:
+”
+”
+”
+E → null
+E → if E
+E → if E else E
+Sestavte zásobnı́kový automat rozpoznávajı́cı́ tento jazyk.
+
+6
+
+Relačnı́ algebra
+1. Popište základnı́ operace relačnı́ algebry.
+Popište sémantiku následujı́cı́ch SQL přı́kazů pomocı́ operacı́ relačnı́ algebry.
+2. SELECT A,B FROM T WHERE A=1
+3. SELECT * FROM T1,T2
+4. SELECT * FROM T1 INNER JOIN T2 ON T1.A=T2.B
+5. SELECT * FROM T1 LEFT OUTER JOIN T2 ON T1.A=T2.B
+
+7
+
+Transakce
+1. Definujte relaci konfliktové ekvivalence nad transakčnı́mi rozvrhy.
+2. Mohou existovat konflikty ve správných (serializovatelných) rozvrzı́ch ?
+3. Mohou dva konfliktově ekvivalentnı́ rozvrhy operujı́cı́ se stejným počátečnı́m stavem databáze dospět k různým koncovým
+stavům ? Proč ?
+4. Uvažujte transakce T1: R(X)R(Y )W (X) a T2: R(X)R(Y )W (Y ). Je rozvrh R1 (X)R2 (X)R1 (Y )R2 (Y )W1 (X)W2 (Y ) serializovatelný a proč ?
+
+8
+
+Základy výrokové logiky
+1. Definujte jazyk výrokové logiky.
+2. Rozhodněte, zda je formule ¬(¬(A ∧ B) ∨ B) → C tautologie.
+3. Uvažujte množinu výrokových proměnných P = A, B, C a formuli ϕ = A → B. Kolik je neekvivalentnı́ch P -teoriı́ T
+takových, že T, ϕ je sporná teorie ? Zdůvodněte.
+
+9
+
+Principy implementace objektově orientovaných jazyků
+1. Předpokládejte existenci datových typů Executable a Printable. Na objektech typu Executable lze volat metodu execute().
+Na objektech typu Printable lze volat metodu print(). Jak byste definovali typ, který je současně Executable a Printable ?
+Zvolte si jeden z jazyků Java, C++ nebo C# a definici v něm zapište. Jde o použité typové konstrukce, drobné syntaktické
+chyby nehrajı́ roli.
+2. Pro jazyk zvolený v předchozı́m bodě napište, jaké možnosti nastavenı́ přı́stupu k prvkům třı́d (access modifiers, access
+specifiers) jsou k dispozici (název i funkci).
+3. V jakých situacı́ch je vhodné použı́t konstruktor s privátnı́m přı́stupem ?
+
+10
+
+Principy implementace objektově orientovaných jazyků
+
+1. Vysvětlete rozdı́l mezi běžnými a virtuálnı́mi metodami v C++. Může se rychlost volánı́ běžných a virtuálnı́ch metod lišit ?
+Proč ?
+2. Může mı́t třı́da virtuálnı́ konstruktor nebo virtuálnı́ destruktor ? Pokud ano, v jaké situaci se použı́vá ? Pokud ne, proč ?
+3. Uvažujte následujı́cı́ fragment kódu v C++.
+class A
+{
+public :
+v i r t u a l v o i d f ( ) { p r i n t f ( ”A. f \n ” ) ; }
+};
+class B : public A
+{
+public :
+v i r t u a l v o i d f ( ) { p r i n t f ( ”B . f \n ” ) ; }
+};
+i n t main ( v o i d )
+{
+A ∗u = new A ( ) ;
+A ∗v = new B ( ) ;
+B ∗w = new B ( ) ;
+u−>f ( ) ;
+v−>f ( ) ;
+w−>f ( ) ;
+( (A∗ ) w)−> f ( ) ;
+( (A) ( ∗w ) ) . f ( ) ;
+}
+Jaké funkce se zavolajı́ ?
+
+11
+
+Integrál
+
+1. Definujte pojem (určitý) Newtonův integrál“.
+”
+2. Vyslovte větu o výpočtu určitého integrálu pomocı́ substituce.
+3. Spočtěte integrál
+Z 2
+
+2
+
+xe−x dx.
+
+0
+
+12
+
+Integrál
+
+1. Definujte pojem Riemannův integrál“.
+”
+2. Vyslovte větu o výpočtu neurčitého integrálu metodou per partes.
+3. Spočtěte neurčitý integrál
+Z
+
+13
+
+x2 e−x dx.
+
+Determinant
+
+1. Definujte pojem determinant“.
+”
+2. Jaký je vztah determinantu matice A a k nı́ inverznı́ matice A−1 ?
+
+14
+
+Soustavy lineárnı́ch rovnic
+
+1. Spočı́tejte Gausovou eliminačnı́ metodou řešenı́ soustavy dané touto rozšı́řenou maticı́:
+
+
+1 1 1 1
+ 1 1 4 4
+1 2 3 4
+
+15
+
+Náhodné jevy
+
+1. V osudı́ se nalézá 10 černých a 10 bı́lých, jinak naprosto stejných, mı́čků. Vylosujeme 5 mı́čků, jeden po druhém bez
+vracenı́. Jaká je pravděpodobnost, že budou nejvýše dva černé ?
+2. Jaká bude pravděpodobnost, že budou nejvýše dva černé, pokud je budeme losovat jeden po druhém a vylosovaný mı́ček
+po zaznamenánı́ barvy vrátı́me zpět do osudı́ (tedy před každým losovánı́m budou v osudı́ vždy všechny mı́čky) ?
+
+16
+
+Náhodné jevy
+
+1. Hodı́me dvěma běžnými hracı́mi kostkami, modrou a zelenou. Jaká je pravděpodobnost, že na modré kostce padlo vı́ce než
+na zelené ?
+2. Jak se tato pravděpodobnost změnı́, pokud vı́me, že na zelené padlo sudé čı́slo ?
+
+17
+
+Grafy
+
+1. Uved’te tvrzenı́ o maximálnı́m počtu hran rovinného grafu.
+2. Jaký bude maximálnı́ počet hran v přı́padě rovinného bipartitnı́ho grafu?
+3. Pro které hodnoty m, n je úplný bipartitnı́ graf Km,n rovinný?
+
+18
+
+Grafy
+
+1. Vyslovte Eulerovu větu o kreslenı́ grafů jednı́m uzavřeným tahem.
+2. Charakterizujte grafy, které lze nakreslit jednı́m tahem, který ale nemusı́ být uzavřený.
+
+19
+
+Lineárnı́ zobrazenı́
+
+Dané lineárnı́ zobrazenı́ f : R3 → R3 zobrazı́ jednotkové vektory následovně: f (1, 0, 0) = (2, 0, 2), f (0, 1, 0) = (1, 1, 2) a f (0, 0, 1) =
+(−1, 3, 2). Najděte matici tohoto zobrazenı́ a bázi jádra (kernelu).
+
+20
+
+Lineárnı́ zobrazenı́
+
+Dané lineárnı́ zobrazenı́ f : R4 → R3 zobrazı́ vektor (a, b, c, d) na vektor (a + b, b + c, c + d). Rozhodněte, zda vektor (5, −2, −3)
+je obrazem nějakého vektoru z R4 a pokud ano, najděte alespoň jeden jeho vzor.
+
+

@@ -1,0 +1,197 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+léto 2013
+
+1
+
+Tok v sı́ti
+1. Definujte problém nalezenı́ maximálnı́ho toku v sı́ti.
+2. Napište pseudokód algoritmu pro hledánı́ maximálnı́ho toku v sı́ti.
+
+2
+
+Stránkovánı́
+
+Uvažujte architekturu s podporou stránkovánı́ a délkou virtuálnı́ a fyzické adresy 32 bitů. K překladu adres je použita dvouúrovňová
+stránkovacı́ tabulka, indexy do obou úrovnı́ majı́ šı́řku 10 bitů.
+1. Jak veliké stránky uvedená architektura použı́vá ? Je tato velikost obvyklá ?
+2. V následujı́cı́ tabulce najdete seznamy virtuálnı́ch adres, na které přistoupil běžı́cı́ program, spolu s fyzickými adresami,
+na které byly tyto adresy přeloženy. Vyznačte kombinace, které nedávajı́ smysl a vysvětlete proč.
+(a) 12345616 na 12345616 a 98765416 na 98765416
+(b) 12345616 na 98765416 a 98765416 na 12345616
+(c) 12345416 na 98765416 a 98765616 na 12345616
+(d) 12365416 na 98765416 a 98745616 na 12345616
+(e) 12765416 na 98765416 a 98345616 na 12345616
+(f) ABCDEF16 na DEF DEF16 a ABCCBA16 na F EDCBA16
+
+3
+
+Synchronizace
+1. Vysvětlete, co jsou to vlákna.
+2. Uvažujte následujı́cı́ implementaci sdı́leného čı́tače.
+class SharedCounter
+{
+boolean busy = false;
+long value = 0;
+long increment ()
+{
+while (busy) { };
+busy = true;
+long last = value;
+value ++;
+busy = false;
+return (last);
+}
+};
+Vysvětlete, proč tato implementace nemusı́ fungovat správně při volánı́ z vı́ce vláken.
+3. Upravte uvedenou implementaci tak, aby fungovala správně i při volánı́ z vı́ce vláken.
+
+4
+
+Vstupnı́ a výstupnı́ zařı́zenı́
+1. Načrtněte hrubou architekturu současného počı́tače (jako bloky stačı́ procesor, paměti, zařı́zenı́, sběrnice). Na tomto náčrtku
+vysvětlete, jak procesor komunikuje se vstupnı́mi a výstupnı́mi zařı́zenı́mi, konkrétně jak se vybere zařı́zenı́, se kterým
+procesor bude komunikovat a jak procesor zařı́zenı́ sdělı́, jakou operaci má vykonat.
+2. Uved’te přı́klad zařı́zenı́, které je vhodné obsluhovat s využitı́m přerušenı́. Vysvětlete proč.
+3. Uved’te přı́klad zařı́zenı́, které je vhodné obsluhovat s využitı́m přı́mého přı́stupu do paměti (DMA). Vysvětlete proč.
+
+5
+
+Jazyky
+1. Definujte formálně pojem jazyk“.
+”
+2. Popište jazyk L obsahujı́cı́ slova v abecedě {0, 1, X} taková, že uprostřed slova je vždy X a slovo je symetrické, tedy pro
+slovo délky n je na pozici i i na pozici n − i + 1 stejný znak, i ∈ 1 . . . n. K popisu použijte gramatiku.
+3. Sestavte automat rozpoznávajı́cı́ jazyk z předchozı́ho bodu.
+
+6
+
+SQL
+1. Navrhněte strukturu tabulek pro uloženı́ informacı́ o studentech a předmětech do databáze. U každého studenta se bude
+evidovat jeho jméno a přı́jmenı́, které nemusı́ být unikátnı́, u každého předmětu pak unikátnı́ název a seznam zapsaných
+studentů. V návrhu vyznačte datové typy jednotlivých sloupců.
+2. Napište SQL přı́kaz, který nad touto strukturou vypı́še seznam studentů, kteřı́ majı́ zapsaný alespoň jeden předmět.
+3. Napište SQL přı́kaz, který nad touto strukturou vypı́še počet zapsaných studentů pro každý předmět.
+4. Napište SQL přı́kaz, který nad touto strukturou vypı́še seznam studentů pro předmět daný názvem.
+
+7
+
+Binárnı́ vyhledávacı́ stromy
+1. Definujte AVL strom.
+2. Napište postup vkládánı́ nového prvku do AVL stromu včetně postupu vyvažovánı́. U vyvažovánı́ nenı́ potřeba psát odděleně
+symetrické přı́pady rotace.
+
+8
+
+Normálnı́ tvary formulı́
+1. Definujte normálnı́ konjunktivnı́ tvar formule.
+2. Je možné každou formuli převést do normálnı́ho konjunktivnı́ho tvaru ? Zdůvodněte.
+3. Napište formuli v normálnı́m konjunktivnı́m tvaru, která je ekvivalentnı́ formuli A ∧ (B ∨ (C ∧ D)).
+
+9
+
+Principy implementace objektově orientovaných jazyků
+1. Vysvětlete použitı́ výjimek jako prostředků pro řı́zenı́ toku programu v OO jazycı́ch. K popisu použijte konkrétnı́ syntaxi
+jazyka C#, C++ nebo Java.
+2. Uvažujte následujı́cı́ kód zpracovávajı́cı́ obsah souboru. Předpokládejte, že všechny volané metody mohou házet výjimky.
+Ošetřete je.
+Data SomeFunction ()
+{
+File f = File.open ("some.file");
+Data d = f.readall ();
+f.close ();
+
+return (d);
+}
+3. Vysvětlete, jak se ošetřenı́ v předchozı́m bodě lišı́ pro jazyky s a bez konstrukce finally.
+
+10
+
+Protokoly TCP/IP
+
+1. Jaké jsou možnosti překladu mezi IP adresami a linkovými (hardwarovými) adresami a na jaké předpoklady jsou vázány ?
+Vysvětlete proč je tento překlad potřeba a popište alespoň jeden k tomuto překladu použı́vaný protokol.
+2. Čı́m je omezena velikost IP paketů ?
+3. Protokol TCP rozlišuje flow control a congestion control. Vysvětlete jaký je mezi těmito pojmy rozdı́l.
+4. Protokol UDP má vlastnosti velmi podobné protokolu IP, proč se tedy vůbec zavádı́ ?
+
+11
+
+Tělesa
+
+1. Je Z4 (množina {0, 1, 2, 3} spolu s operacemi sčı́tánı́ a násobenı́ modulo 4) těleso ? Proč ?
+2. Lze na množině {0, 1, 2, 3} definovat operace sčı́tánı́ a násobenı́ tak, aby výsledná struktura byla tělesem ? Zdůvodněte.
+
+12
+
+Limita funkce
+
+1. Definujte pojem limita funkce“.
+”
+2. Rozhodněte, zda existuje limita a pokud ano, spočtěte ji, bxc značı́ dolnı́ celou část čı́sla x:
+√
+b nc
+lim √
+n→∞
+n
+
+13
+
+Limita funkce
+
+1. Definujte pojem limita funkce“.
+”
+2. Rozhodněte, zda existuje limita a pokud ano, spočtěte ji:
+√
+n+ n
+√
+lim
+n→∞ n −
+n
+
+14
+
+Zobrazenı́
+
+1. Definujte pojmy prostého zobrazenı́ (injektivnı́ho) a zobrazenı́ na (surjektivnı́ho).
+2. Necht’ X = {1, 2, 3} a Y = {1, 2, 3, 4, 5}. Rozhodněte, zda je vı́ce prostých zobrazenı́ X do Y nebo zobrazenı́ Y na X.
+
+15
+
+Nezávislost jevů
+
+1. Definujte nezávislost náhodných jevů. Očekává se definice platná i pro vı́ce než dva jevy.
+2. Necht’ Ω = {001, 010, 100, 111} ⊆ {0, 1}3 a pravděpodobnost každého elementárnı́ho jevu ω ∈ Ω je stejná. Pro i = 1, 2, 3
+označme Ai jev i-tý symbol je 0“.
+”
+Jsou jevy A1 , A2 a A3 po dvou nezávislé ?
+Jsou všechny tři jevy nezávislé ?
+
+16
+
+Podmı́něná pravděpodobnost
+
+1. Definujte podmı́něnou pravděpodobnost náhodných jevů.
+2. Lze spočı́tat pravděpodobnost jevu A za podmı́nky, že nastal jev B, pokud známe hodnoty P [A] > 0, P [B] > 0 a P [B|A] ?
+3. Při výrobě je 1/8 výrobků vadných. Každý výrobek se testuje, nicméně 1/4 z vadných výrobků test neodhalı́ a označı́ je
+za správné. Naopak, ze správných test označı́ 1/14 za vadné. Jaká je pravděpodobnost, že výrobek, o kterém test tvrdı́, že
+je v pořádku, je ve skutečnosti vadný ? Počı́tejte se zlomky.
+
+17
+
+Grafy
+
+1. Definujte pojmy dobrého obarvenı́ grafu a barevnosti grafu.
+2. Dokažte, že každý graf s právě jednou lichou kružnicı́ má barevnost rovnu 3.
+
+18
+
+Grafy
+
+1. Definujte pojem (neorientovaného) stromu v teorii grafů.
+2. Jaký je vztah mezi počtem vrcholů a hran stromu ?
+
+3. Necht’ T = (V, E) je strom s |V | ≥ 3 a e ∈ V2 \ E je nová hrana. Dokažte, že graf T + e = (V, E ∪ {e}) obsahuje právě
+jednu kružnici.
+
+

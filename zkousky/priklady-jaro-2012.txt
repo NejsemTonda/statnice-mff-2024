@@ -1,0 +1,120 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+jaro 2012
+
+1
+
+Stránkovánı́
+
+Uvažujte architekturu s podporou stránkovánı́ a délkou virtuálnı́ a fyzické adresy 32 bitů. Stránky majı́ velikost 4 kB, k překladu
+adres je použita dvouúrovňová stránkovacı́ tabulka. Stránkovacı́ tabulka prvnı́ úrovně a stránkovacı́ tabulka druhé úrovně majı́
+stejný počet položek.
+1. Program přistoupı́ bezprostředně za sebou na virtuálnı́ adresy 12345616 a 12365416 . Pokud vı́te, že při prvnı́m přı́stupu
+nedošlo k výpadku stránky, můžete usoudit, zda dojde k výpadku stránky u druhého přı́stupu ? Proč ?
+2. Jaká je nejmenšı́ nutná velikost stránkovacı́ch tabulek, pokud je potřeba namapovat pouze jednu stránku ? Proč ? Velikosti
+uvádějte v počtu položek stránkovacı́ch tabulek.
+3. Má stránkovánı́ vliv na počet přı́stupů do paměti, které procesor vykoná při běhu programu ? Proč ?
+
+2
+
+Jazyky
+1. Definujte formálně pojem jazyk“.
+”
+2. Popište jazyk Ln obsahujı́cı́ slova v abecedě {0, 1} taková, že na n-tém mı́stě od konce je pı́smeno 1 (n je přirozené čı́slo
+většı́ než 0). K popisu použijte některý známý formálnı́ systém (množinový zápis, regulárnı́ výraz, gramatiku a podobně).
+3. Ukažte, do jaké třı́dy v Chomského hierarchii patřı́ jazyk Ln, pokud je dáno pevné n, vysvětlete proč.
+
+3
+
+Modelovánı́ dat
+1. Vysvětlete rozdı́l mezi konceptuálnı́m a fyzickým modelem databáze.
+2. Jak převedete is-a“ hierarchii do relačnı́ho schématu ? Předpokládejte, že hierarchie má pouze 2 podtypy (napřı́klad is-a“
+”
+”
+hierarchie Osoba s podtypy Zaměstnanec a Zákaznı́k).
+3. Namodelujte (definujte entity a vztahy) pro situaci učitel učı́ několik studentů, student navštěvuje přednášky vı́ce učitelů“.
+”
+Jak vyřešit situaci, kdy chceme zachytit, že tentýž student může mı́t téhož učitele pro vı́ce předmětů ?
+
+4
+
+Transakce
+1. Definujte pojem transakce“ a vysvětlete vlastnosti ACID (atomicity, consistency, isolation, durability).
+”
+2. Definujte pravidla, pomocı́ kterých izoluje transakce dvoufázové zamykánı́.
+3. Napište přı́klad dvou transakcı́, jejichž současný běh může vést při použitı́ dvoufázového zamykánı́ k uváznutı́ (deadlock).
+Vysvětlete, jak může tento deadlock ve vámi zvoleném přı́kladě konkrétně vzniknout.
+
+5
+
+Objektově orientované programovánı́
+1. Co je polymorfismus v objektově orientovaných jazycı́ch ?
+2. Co jsou to virtuálnı́ metody ?
+
+3. Předpokládejte, že máte implementovat třı́du reprezentujı́cı́ setřı́děný seznam objektů a přitom co nejméně typově omezit
+prvky seznamu. Vaše implementace pochopitelně musı́ být schopna prvky seznamu porovnat, jaký objektově orientovaný
+mechanismus použijete ? Řešenı́ načrtněte ve vámi zvoleném staticky typovaném objektově orientovaném programovacı́m
+jazyce (vyžadujı́ se definice typů, nikoliv implementace metod seznamu).
+
+6
+
+Sı́tě
+1. Co vyjadřuje modulačnı́ rychlost, v čem se měřı́ a jaký má vztah k přenosové rychlosti ? Kdy je modulačnı́ rychlost čı́selně
+většı́ než rychlost přenosová ?
+2. Jak se dá při komunikaci zası́lánı́m paketů zajistit spolehlivost přenosu a proč je spolehlivost vždy relativnı́ a nikoli úplná ?
+3. Popište alespoň tři mechanismy detekce chyb v přenášených datech a srovnejte je podle jejich účinnosti. Jak účinnost
+hodnotı́te ?
+
+7
+
+Limita posloupnosti
+1. Definujte pojem supremum množiny reálných čı́sel“.
+”
+2. Definujte pojem limita posloupnosti reálných čı́sel“.
+”
+3. Definujte pojem cauchyovská posloupnost“ a vyslovte Bolzano–Cauchyovu větu o limitě cauchyovských posloupnostı́.
+”
+Dokažte alespoň jednu implikaci této věty.
+4. Rozhodněte, zda existuje limita a pokud ano, spočtěte ji:
+lim (−1)n
+
+n→∞
+
+8
+
+Systém různých reprezentantů
+
+Definujte systém různých reprezentantů množinového systému (Mi , i = 1, 2, . . . , n) a formulujte nutné a postačujı́cı́ podmı́nky
+pro jeho existenci (Hallova věta).
+Rozhodněte, která z následujı́cı́ch tvrzenı́ jsou pravdivá a odpovědi zdůvodněte.
+1. Má-li množinový
+systém (Mi , i = 1, 2, . . . , n) systém různých reprezentantů, potom platı́ ∀I ⊆ {1, 2, . . . , n}, 1 ≤ |I| ≤
+S
+n − 1 : | i∈I Mi | > |I|.
+2. Množinový
+systém (Mi , i = 1, 2, . . . , n) má systém různých reprezentantů, jestliže ∀I ⊆ {1, 2, . . . , n}, 1 ≤ |I| ≤ n − 1 :
+S
+| i∈I Mi | > |I|.
+3. Každý k-regulárnı́ bipartitnı́ graf (k ≥ 1) má perfektnı́ párovánı́.
+
+9
+
+Skalárnı́ součin
+1. Zformulujte Cauchy–Schwarzovu nerovnost o vztahu mezi skalárnı́m součinem dvou vektorů a jejich normami.
+2. Najděte ortogonálnı́ doplněk k prostoru generovanému vektory (3, −2, 2)T a (1, 2, 2)T při použitı́ standardnı́ho skalárnı́ho
+součinu.
+
+10
+
+Souvislost grafu
+
+Definujte hranovou (ke (G)) a vrcholovou (kv (G)) souvislost grafu G.
+Pokud δ(G) je minimálnı́ stupeň grafu G, najděte přı́klady grafů, pro které platı́:
+1. δ(G) = ke (G) = kv (G)
+2. δ(G) > ke (G) = kv (G)
+3. δ(G) = ke (G) > kv (G)
+
+4. δ(G) > ke (G) > kv (G)
+Dokažte nerovnost δ(G) ≥ ke (G) ≥ kv (G).
+
+

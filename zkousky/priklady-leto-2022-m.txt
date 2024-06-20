@@ -1,0 +1,117 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+léto 2022
+
+1
+
+Vlastní čísla (3 body)
+
+Buď A ∈ Rn×n symetrická matice.
+1. Ukažte, že matice A2 má nezáporná vlastní čísla.
+2. Ukažte, že hodnost matice A je rovna počtu jejích nenulových vlastních čísel (počítáno včetně násobností).
+
+2
+
+Charakteristický polynom (3 body)
+1. Definujte charkteristický polynom pA (λ) matice A ∈ Rn×n .
+
+
+1 1
+2. Spočtěte charakteristický polynom reálné matice
+.
+3 −1
+3. Najděte všechny symetrické reálné matice A s charakteristickým polynomem pA (λ) = λ2 − 4λ + 4.
+
+3
+
+Projekce (3 body)
+
+Najděte směrnici p ∈ R3 přímky, která prochází počátkem a víme, že všechny tři body u = (1, 2, 3)T , v = (0, 3, 1)T , w =
+(8, 1, 2)T se při projekci na tuto přímku zobrazí na stejný bod.
+
+4
+
+Částečná uspořádání (3 body)
+1. Definujte pojmy řetězec a antiřetězec (nezávislá množina) v částečném uspořádání.
+2. Zformulujte větu o vztahu velikosti nosné množiny částečného uspořádání vzhledem k délkám jejich řetězců a antiřetězců.
+3. Kolik nejdelších řetězců a antiřetězců má částečné uspořádání (X , ⊆), kde X = {A ⊆ {1, . . . , 10} : |A| ∈ {2, 3, 7}}?
+
+5
+
+Grafy (3 body)
+1. Definujte pojmy cesta, tah, sled, hamiltonovská cesta a eulerovký tah.
+2. Vyslovte větu o nutné a postačující podmínce pro existenci eulerovského tahu v orientovaných grafech.
+3. Pro každý ze tří grafů na obrázku určete počet různých Eulerovských tahů takových, že tah začíná vyznačenou dvojicí
+vrcholů v1 , v2 .
+
+1
+
+v2
+
+v2
+
+v1
+
+v1
+
+v1
+
+6
+
+v2
+
+Posloupnosti (3 body)
+
+Nechť (an ) = (a1 , a2 , . . .) je posloupnost reálných čísel.
+1. Definujte, co znamená, že (an ) konverguje.
+2. Definujte, co znamená, že (an ) je Cauchyova.
+3. Jaký je vztah mezi posloupnostmi v 1 a ve 2? Odpověď zdůvodněte.
+4. Definujte, co znamená, že (an ) je omezená.
+5. Dokažte, že když (an ) je Cauchyova, pak je omezená.
+
+7
+
+Řady (3 body)
+
+Nechť R :=
+
+P∞
+
+n=1 an je (nekonečná) řada reálných čísel.
+
+1. Definujte její n-tý částečný součet sn .
+2. Definujte její součet s.
+3. Dokažte, že když řada R konverguje (tj. R má konečný součet), pak limn→∞ an = 0.
+4. Uveďte příklad řady R, pro kterou limn→∞ an = 0, ale R má součet +∞. Odpověď zdůvodněte.
+
+8
+
+Derivace (3 body)
+
+Nechť δ > 0 a f : (a − δ, a + δ) → R je reálná funkce (definovaná na δ-okolí bodu a ∈ R).
+1. Definujte derivaci f 0 (a).
+2. Řekněme, že tato derivace existuje a f 0 (a) ∈ R. Čemu se potom rovná (f (x)2 )0 (a)?
+3. Řekněme, že tato derivace existuje, f 0 (a) ∈ R a f (a) 6= 0. Čemu se potom rovná (1/f (x))0 (a)?
+4. Spočtěte (xx )0 (1).
+Své odpovědi samozřejmě zdůvodněte.
+
+9
+
+Logika (3 body)
+1. Uveďte definici pojmu model teorie a znění věty o kompaktnosti ve výrokové logice.
+2. Nechť S = {Si ⊆ N | i ∈ N} je spočetně nekonečný systém konečných množin. Označme si jejich prvky Si =
+{ai1 , . . . , aisi }, kde si = |Si | ∈ N. Nechť prvovýrok pij znamená, že “číslo j bylo vybráno z množiny Si ”. Ukažte, jak
+pro S sestrojit výrokovou teorii TS nad P = {pij | i, j ∈ N} takovou, že TS má model, právě když S má systém různých
+reprezentantů (tedy z každé množiny lze vybrat nějaký prvek tak, že vybrané prvky budou navzájem různé).
+
+2
+
+3. Hallova věta pro konečný systém S konečných množin
+říká, že S má systém různých reprezentantů, právě když pro
+S
+každý konečný podsystém T ⊆ S platí, že |T | ≤ | S∈T S|. Pomocí věty o kompaktnosti dokažte, že stejná věta platí i
+pro spočetně nekonečný systém S konečných množin.
+
+3
+
+

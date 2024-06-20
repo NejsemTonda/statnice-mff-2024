@@ -1,0 +1,197 @@
+Bakalářské zkoušky (příklady otázek)
+
+jaro 2016
+
+1
+
+Fourierova transformace
+1. Definujte diskrétní Fourierovu transformaci nad tělesem C.
+2. Vypočtěte Fourierův obraz vektoru (1, 0, −1, 0).
+3. Jakou časovou a paměťovou složitost má algoritmus FFT?
+4. Jak vypadá inverze DFT?
+
+2
+
+Složitost a třídění
+1. V porovnávacím modelu nelze třídit rychleji než v čase Ω(n log n). Vyslovte tuto větu precizně, včetně toho, co přesně se
+myslí porovnávacím modelem.
+2. Popište třídicí algoritmus, který v porovnávacím modelu dosahuje časové složitosti O(n log n).
+3. Popište třídicí algoritmus, který dosahuje časové složitosti O(n). Které předpoklady věty nesplňuje?
+4. Co z věty plyne pro časovou složitost operací Insert a ExtractMin v haldě ?
+
+3
+
+Procesory
+1. Jaké základní typy instrukcí musí procesor podporovat ? Ke každému typu instrukce uveďte příklad a vysvětlete, co
+instrukce dělá (názvy instrukcí nejsou podstatné, ale nějaké vhodné uveďte).
+2. Minimálně jaké registry (názvy nejsou podstatné, ale nějaké vhodné uveďte) je možné v procesoru najít, a jakou má každý
+z nich funkci ?
+3. Jakým způsobem bude ve strojovém kódu procesoru zapsána následující konstrukce z vyššího programovacího jazyka ?
+Zapište v assembleru dle konvence zvolené v otázce výše (všechny použité proměnné jsou globální a jejich adresy si libovolně
+vhodně zvolte):
+if (a + b == 0) a = b; else b = a;
+
+4
+
+Architektura počítače
+1. Jaké základní signální vodiče bude mít nějaká paralelní systémová sběrnice se sběrnicovou topologií (bus/multidrop) a
+s podporou pro jednoho mastera (stačí bez podpory burst přenosů) ? Popište základní množinu kontrolních/řídících signálů,
+které bude muset taková sběrnice mít. Také jistě bude potřeba několik „rozmnožených“ signálů pro samotný paralelní přenos
+informací - kolik takových signálních vodičů bude použito v nějaké realistické situaci, a jak bude jejich počet ovlivňovat
+rychlost či jiné vlastnosti sběrnice ?
+Není nutné popsat přesně nějakou konkrétní reálnou sběrnici, ale bude jistě vhodné, pokud se inspirujete nějakou reálnou
+paralelní sběrnicí jako ISA nebo PCI. Také nejde o přesné pojmenování signálů ale o jejich význam.
+
+2. Předpokládejte, že na takové systémové sběrnici bude připojena současně operační paměť počítače (pomocí řadiče paměti)
+a několik řadičů zařízení. Jakým způsobem bude probíhat komunikace procesoru s pamětí a jakým se zařízeními ? Bude
+mezi těmito dvěma variantami komunikace na sběrnici nějaký rozdíl ?
+Na příkladu jednoduchého řadiče pevných disků ukažte, jakým způsobem bude probíhat základní operace zápisu jednoho
+sektoru, tedy jaký zhruba bude základní komunikační protokol řadiče pro tuto situaci a jaké transakce na sběrnici asi
+v souvislosti s přenosem proběhnou od momentu, kdy si ovladač disku bude chtít po řadiči vyžádat začátek přenosu až do
+jeho dokončení.
+3. Bylo by možné jako systémovou sběrnici použít sběrnici sériovou ? Pokud ano, tak popište a vysvětlete, jak bude principiálně
+na takové sběrnici vypadat transakce čtení z paměťového adresového prostoru mezi nějakým masterem a slavem, a jaké
+informace bude potřeba přenést. Pokud ne, tak detailně vysvětlete, proč to není možné.
+
+5
+
+Jazyky
+1. Definujte zásobníkový automat.
+2. Zařaďte do Chomského hierarchie jazyk L = {wwR |w ∈ {a, b}∗ } nad abecedou {a, b}. Odpověď dokažte.
+
+6
+
+Jazyky
+1. Vyslovte pumping lemma pro bezkontextové jazyky.
+2. Zařaďte do Chomského hierarchie jazyk L = {ai bj ck |i, j, k ∈ N0 ∧ i ≤ j ≤ k} nad abecedou {a, b, c}. Odpověď dokažte.
+
+7
+
+Relační datový model
+
+Mějme následující schéma: Pole(P_Id, Rozloha), Plodina(P_Id, Název), Sklizeň(S_Id, Datum, Pole_Id, Plodina_Id).
+1. Definujte základní operace dotazovacího jazyka relační algebry.
+2. Zapište dotaz v relační algebře, který vybere ID plodin, které zatím nebyly pěstovány.
+3. Zapište dotaz v relační algebře, který určí, na kterých polích s rozlohou větší než jeden hektar se pěstovala pšenice.
+
+8
+
+SQL
+
+Mějme následující schéma: Pole(P_Id, Rozloha), Plodina(P_Id, Název), Sklizeň(S_Id, Datum, Pole_Id, Plodina_Id).
+1. Vysvětlete základní syntaxi příkazu SELECT a jaký je rozdíl mezi WHERE a HAVING.
+2. Zapište dotaz v SQL, který vypíše ID sklizní od 1.6.2015 do 1.8.2015.
+3. Zapište dotaz v SQL, který vypíše plodiny sklizené alespoň na deseti polích.
+
+9
+
+Morfologická analýza (povinné téma vašeho zaměření)
+1. V kontextu zpracování přirozeného jazyka definujte pojmy morfologická analýza, tagování (tagging), parsování (parsing),
+anotovaný korpus (treebank).
+2. V následující české větě identifikujte slova, jejichž morfologická analýza není jednoznačná (a uveďte proč):
+Jan má na mysli hlavně vás.
+3. Popište hlavní myšlenku procedury tagování založené na Skrytých Markovových modelech. K popisu využijte větu z druhého
+bodu.
+4. Nakreslete závislostní strom pro větu z druhého bodu.
+
+10
+
+Rozklad polynomů
+
+1. Definujte pojem „ireducibilní polynom“.
+2. Najděte rozklad polynomu x4 − 1 na ireducibilní polynomy v Q[x].
+3. Najděte rozklad polynomu x4 − 1 na ireducibilní polynomy v Z5 [x].
+4. Najděte ireducibilní polynom stupně 2 v Z2 [x].
+
+11
+
+Derivace a extrémy funkce
+
+1. Definujte pojem „derivace funkce v bodě“ pro funkci jedné reálné proměnné.
+2. Rozhodněte o platnosti následujících tvrzení:
+(a) Pokud f 0 (a) = 0, tak f nabývá v bodě a maxima nebo minima.
+(b) Pokud f nabývá v bodě a maxima nebo minima, tak f 0 (a) = 0.
+3. Najděte extrémy funkce g(x) = x2 e−x .
+
+12
+
+Limita funkce v bodě
+
+1. Definujte pojem „limita funkce“ (jedné reálné proměnné).
+2. Vyslovte větu o limitě složené funkce.
+3. Rozhodněte, zda existuje následující limita. Pokud ano, spočtěte ji.
+sin x
+
+lim (cos x) x3
+
+x→0
+
+13
+
+Systém různých reprezentantů
+
+1. Definujte systém různých reprezentantů množinového systému (Mi , i = 1, 2, . . . , n) a formulujte nutné a postačující podmínky pro jeho existenci (Hallova věta).
+
+M
+2. Nechť M je nějaká množina s n prvky (n ≥ 2) a nechť n−1
+je množinový systém všech (n − 1)-prvkových podmnožin
+
+M
+množiny M . Ukažte, že n−1
+má systém různých reprezentantů.
+3. Mějme množinový systém {M1 , M2 , . . . , Mk }, kde Mi označuje množinu celých čísel {−i, −i + 1, ..., −1, 0, 1, ..., i − 1, i}.
+Kolik různých systémů různých reprezentantů má tento množinový systém?
+
+14
+
+Střední hodnota
+
+1. Definujte pojem střední hodnoty reálné náhodné proměnné (na konečném pravděpodobnostním prostoru).
+2. Vyslovte větu o linearitě střední hodnoty.
+3. Mějme šestistěnou hrací kostku očíslovanou 1–6 a proveďme s ní následující experiment. Nejprve hodíme jednou a výsledek
+označíme n. Poté jako X označíme součet n hodů kostkou. Určete střední hodnotu náhodné proměnné X.
+
+15
+
+Rovinné grafy
+
+Graf (s alespoň třemi vrcholy) nazýváme rovinnou triangulací, pokud v libovolném jeho rovinném nakreslení je každá stěna
+trojúhelník.
+1. Uveďte obecný horní odhad počtu hran rovinného grafu vzhledem k počtu jeho vrcholů. Jde počet hran rovinné triangulace
+upřesnit ?
+
+2. Dokažte, že pro každé n ≥ 3 existuje rovinná triangulace s n vrcholy.
+3. Pro která k existuje rovinný graf, jehož všechny vrcholy mají stupeň k ?
+
+16
+
+Lineární zobrazení
+
+1. Definujte jádro lineárního zobrazení f : U → V .
+2. Na vektorovém prostoru reálných polynomů stupně nanejvýš 5 definujme lineární zobrazení f představující druhou derivaci.
+Určete bázi jádra f a bázi obrazu f .
+3. Spočítejte hodnost matice zobrazení f vzhledem k bázi 7, 3 − x, x2 , x + x3 , 2 − x4 , 2 + 3x − x5 .
+
+17
+
+Ortogonální doplněk
+
+1. Napište definici ortogonálního doplňku množiny vektorů M do vektorového prostoru V .
+2. Najděte bázi ortogonálního doplňku k jádru matice
+
+1
+A = 2
+3
+
+1
+1
+2
+
+
+1
+0 .
+1
+
+3. Najděte všechny vektory, které náleží zároveň do jádra matice A a do řádkového prostoru matice A5 .
+
+

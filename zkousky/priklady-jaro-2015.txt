@@ -1,0 +1,97 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+jaro 2015
+
+1
+
+Binárnı́ stromy
+1. Definujte binárnı́ strom a binárnı́ vyhledávacı́ strom, jednak formálně, jednak jako třı́du ve zvoleném programovacı́m jazyce
+(C#, C++, Java, pouze signatury operacı́ a definice atributů, nikoliv implementace).
+2. Napište kdy je binárnı́ strom vyvážený a jaký je vztah mezi výškou a počtem uzlů vyváženého binárnı́ho stromu.
+3. Napište kód operace nalezenı́ prvku v binárnı́m vyhledávacı́m stromu.
+4. Napište podmı́nku vyváženı́ AVL stromu a vysvětlete, proč se tato varianta stromů uvažuje.
+
+2
+
+Procesy, vlákna, plánovánı́
+1. Vysvětlete termı́ny vlákno“ a proces“.
+”
+”
+2. Předpokládejte běžný operačnı́ systém, jehož jádro podporuje běh vı́ce procesů. Jakými hlavnı́mi způsoby může operačnı́
+systém zı́skat řı́zenı́ od běžı́cı́ho procesu, aby mohl přeplánovat ? Jako nápovědu uvažujte kooperativnı́ i preemptivnı́
+plánovánı́.
+3. Při přeplánovánı́ musı́ operačnı́ systém uschovat stav procesu, který právě přestává běžet, a obnovit stav procesu, který
+běžet začı́ná. Popište jaké základnı́ položky stav procesu obsahuje a zhruba jak je operačnı́ systém může ukládat a obnovovat.
+
+3
+
+SQL
+1. Navrhněte strukturu tabulek pro uloženı́ informacı́ o autorech a knihách do databáze. U každého autora se bude evidovat
+jeho jméno a přı́jmenı́, které nemusı́ být unikátnı́, a knihy, které napsal, u každé knihy pak název, který rovněž nemusı́ být
+unikátnı́, a seznam autorů, kteřı́ knihu napsali. V návrhu vyznačte datové typy jednotlivých sloupců.
+2. Napište SQL přı́kaz, který nad touto strukturou vypı́še seznam autorů, kteřı́ napsali alespoň jednu knihu.
+3. Napište SQL přı́kaz, který nad touto strukturou vypı́še počet autorů každé knihy.
+4. Napište SQL přı́kaz, který nad touto strukturou vypı́še seznam autorů pro knihu danou názvem.
+
+Dodrženı́ přesné syntaxe SQL nenı́ předmětem hodnocenı́, přiměřeně blı́zký přibližný zápis stačı́. Kde je to možné, zápis v syntaxi
+SQL můžete nahradit zápisem s použitı́m operacı́ relačnı́ algebry.
+
+4
+
+Principy implementace objektově orientovaných jazyků
+
+Pro následujı́cı́ otázky (a vaše odpovědi) si zvolte jeden z jazyků C#, C++, Java (vaši volbu vyznačte). Pokud otázky požadujı́
+psanı́ kódu, hodnotı́ se rámcová správnost, nikoliv detailnı́ syntaxe.
+1. Základnı́mi koncepty vašeho jazyka jsou třı́dy a objekty a jejich metody a atributy. Napište fragment kódu, který tyto
+koncepty ilustruje (definuje třı́du, vytvářı́ objekty, volá metody, použı́vá atributy).
+2. Váš jazyk podporuje statické metody a atributy. Napište fragment kódu, který ilustruje jejich použitı́ a vysvětlete, jak se
+lišı́ od běžných metod a atributů.
+
+3. Při objektovém modelovánı́ je často vhodné definovat typ zastřešujı́cı́ společné vlastnosti několika různých třı́d, napřı́klad
+typ reprezentujı́cı́ libovolnou iterovatelnou kolekci a samotné jednotlivé kolekce. Jak byste tuto situaci zapsali ve vašem
+jazyce (opět fragment kódu) ?
+
+5
+
+Taylorův polynom
+1. Definujte Taylorův polynom. Vyslovte některou z vět popisujı́cı́ chybu při aproximaci Taylorovým polynomem.
+√
+2. Napište Taylorův polynom třetı́ho stupně pro funkci x v okolı́ bodu 1.
+
+6
+
+Pravděpodobnost
+
+Mějme tři hracı́ kostky, dvě šestistěnné očı́slované 1–6 a jednu dvanáctistěnnou očı́slovanou 1–12. U každé kostky je pravděpodobnost
+1
+.
+hodů jednotlivých čı́sel stejná, t.j. u šestistěnné kostky 61 , u dvanáctistěnné 12
+Hodı́me všemi třemi kostkami najednou.
+1. Určete střednı́ hodnotu součtu hozených třı́ čı́sel.
+2. Jsou jevy součet všech třı́ hozených čı́sel je sudý“ a na dvanáctistěnné kostce padlo liché čı́slo“ závislé nebo nikoli ?
+”
+”
+3. Určete pravděpodobnost, že součet hodů na šestistěnných kostkách je většı́ nebo roven hodu na dvanáctistěnné kostce.
+
+7
+
+Grafy
+
+Uvažte dva grafy S a D. U obou grafů jsou vrcholy polı́čka šachovnice n × n. Hrany v S spojujı́ polı́čka, mezi kterými se lze
+dostat jednı́m tahem střelcem (střelec se pohybuje jen šikmo pod úhlem 45 stupňů) a hrany v D spojujı́ polı́čka, mezi kterými
+se lze dostat jednı́m tahem dámou (t.j. šikmo jako střelec nebo svisle či vodorovně).
+1. Definujte pojem barevnosti grafu.
+2. Určete barevnost grafu S.
+3. V závislosti na n rozhodněte, zdali jsou grafy S a D eulerovské.
+
+8
+
+Lineárnı́ závislost
+
+Uvažujme lineárnı́ zobrazenı́ f : R3 7→ R3 zadané jako f (x, y, z) = (x + y + z, y + 2z, 2x + y).
+1. Rozhodněte a zdůvodněte, zda je toto zobrazenı́ prosté (injektivnı́).
+2. Rozhodněte a zdůvodněte, zda je toto zobrazenı́ na (surjektivnı́).
+3. Rozhodněte a zdůvodněte, zda je pravdivé tvrzenı́ každý vektor v ∈ R3 má při zobrazenı́ f žádný nebo alespoň dva vzory“.
+”
+
+

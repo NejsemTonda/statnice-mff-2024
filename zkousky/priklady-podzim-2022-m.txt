@@ -1,0 +1,106 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+podzim 2022
+
+1
+
+Spojitost a derivace (3 body)
+1. Definujte spojitost funkce v bodě.
+2. Nechť f je definována jako
+(
+x sin x1 pro všechna x ̸= 0,
+f (x) =
+0 pro x = 0.
+– Ve kterých bodech je funkce f spojitá? Zdůvodněte.
+– Spočtěte derivaci funkce f ve všech bodech, ve kterých existuje. (Zejména zdůvodněte, zda existuje v bodě 0,
+případně jakou tam má hodnotu.)
+3. Nechť a ∈ R a f, g : R → R. Jaké implikace platí mezi následujícíma dvěma výroky? Zdůvodněte.
+P. Funkce f a g jsou spojité v bodě a.
+Q. Funkce f + g je spojitá v bodě a.
+
+2
+
+Určitý integrál (3 body)
+1. Napište definici horní a dolní Riemannovy sumy, horního a dolního Riemannova integrálu a Riemannova integrálu.
+2. Má následující funkce f Riemannův integrál na intervalu [1, 2]? Zdůvodněte.
+(
+x pro všechna x ∈ Q
+f (x) =
+−x pro všechna x ∈ R \ Q
+3. Spočtěte určitý integrál
+
+Z π
+
+x2 cos(2x)dx.
+
+0
+
+3
+
+Matice lineárního zobrazení (3 body)
+
+Uvažujme lineární zobrazení v rovině R2 , které zobrazí obdélník [0, 2] × [0, 1] na obdélník [−2, 0] × [−1, 0].
+1. Určete maticové vyjádření tohoto zobrazení.
+2. Určete vlastní čísla tohoto zobrazení (tj. této matice).
+3. Rozhodněte, zda vektor v = (2, 3)T je vlastním vektorem tohoto zobrazení.
+
+4
+
+Zobrazení na (3 body)
+1. Definujte prosté zobrazení a zobrazení, které je „na“ (surjektivní).
+2. Pro lineární zobrazení f : R3 7→ R3 platí, že pro každé tři vektory x, y, z ∈ R3 jsou vektory f (x), f (y), f (z) lineárně
+závislé. Dokažte, že zobrazení f není „na“ .
+
+1
+
+5
+
+Skalární součin (3 body)
+
+Uvažujme skalární součin v R2 daný předpisem:
+⟨x, y⟩ = 2x1 y1 + x2 y2 + x1 y2 + x2 y1 .
+1. Pro tento skalární součin zformulujte přesnou podobu Cauchyho–Schwarzovy nerovnosti.
+2. Pro tento skalární součin určete matici projekce na přímku generovanou vektorem (1, 0)T .
+
+6
+
+Princip inkluze a exkluze (3 body)
+1. Zformulujte, co říká princip inkluze a exkluze.
+2. Symbolem [n] označme množinu {1, 2, . . . , n}.
+(a) Kolik existuje funkcí f : [n] → [n] takových, že pro každé sudé x ∈ [n] platí f (x) ̸= x?
+(b) Kolik existuje prostých funkcí f : [n] → [n] takových, že pro každé sudé x ∈ [n] platí f (x) ̸= x?
+
+7
+
+Kostra grafu (3 body)
+1. Definujte pojem kostra grafu.
+2. Nechť G = (V, E) je souvislý graf. Nechť má každá hrana e ∈ E přiřazenu váhu w(e) ∈ R, přičemž žádné dvě různé
+hrany nemají stejnou váhu. Nechť T je minimální kostra grafu G, tj. kostra s nejmenším možným součtem vah hran.
+Dokažte, že pro každou hranu e grafu G jsou následující dvě tvrzení ekvivalentní:
+(a) Hrana e patří do kostry T .
+(b) Každá kružnice v grafu G, která obsahuje hranu e, obsahuje také aspoň jednu hranu, která má větší váhu než e.
+
+8
+
+Pravděpodobnost (3 body)
+
+Opakovaně házíme běžnou hrací kostkou (tj. šestistěnnou kostkou očíslovanou 1, . . . , 6). Označíme X pořadí hodu, kdy nám
+poprvé padla šestka. Dále označíme Y počet šestek, které padly při prvních sto hodech.
+1. Určete P(X = 10). Pojmenujte rozdělení náhodné veličiny X.
+2. Určete P(Y = 10). Pojmenujte rozdělení náhodné veličiny Y .
+3. Určete střední hodnoty E(X), E(Y ), a E(X + Y ).
+
+9
+
+Logika (3 body)
+1. Uveďte definice pro predikátovou logiku, kdy formule φ platí ve struktuře A, kdy φ platí v teorii T , a kdy φ je (logicky)
+platná.
+2. Uvažme teorii T = {P (x, x), P (x, y) → P (y, x), P (x, y) → (P (y, z) → P (x, z))} jazyka L = ⟨P ⟩ bez rovnosti.
+Nalezněte formuli φ jazyka L a tříprvkový model A teorie T takový, že φ platí v A a přitom φ neplatí v T . Uveďte
+zdůvodnění, proč má φ požadované vlastnosti.
+3. Nalezněte formuli ψ jazyka L takovou, že ψ platí v T a přitom ψ není logicky platná. Uveďte zdůvodnění, proč má ψ
+požadované vlastnosti, včetně formálního důkazu její platnosti v T pomocí nějakého dokazovacího systému.
+
+2
+
+

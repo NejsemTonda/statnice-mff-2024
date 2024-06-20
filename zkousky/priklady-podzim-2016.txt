@@ -1,0 +1,305 @@
+Bakalářské zkoušky (příklady otázek)
+
+podzim 2016
+
+1
+
+Morfologická a syntaktická analýza
+1. V kontextu zpracování přirozeného jazyka definujte pojmy tagování (tagging) a parsování (parsing).
+2. Proveďte ručně tagování a parsování věty „Time flies like an arrow.“
+3. Popište automatickou proceduru tagování založenou na Skrytých Markovových modelech. K ilustraci použijte větu z příkladu výše.
+4. Uveďte základní míry pro měření úspěšnosti procedury parsování. K ilustraci použijte větu z příkladu výše.
+
+2
+
+Architektura počítače
+1. Co nejefektivněji rozhodněte, která z následujících čísel jsou dělitelná 8. Stručně napište, jak jste postupovali.
+(a) 0xF13C1C50
+(b) 0x013C81C5
+(c) 0x125928FD
+(d) 0x5318C5E8
+(e) 0x831D79FF
+2. Předpokládejte, že máme dva zcela rozdílné postupy, tak spočítat nějakou stejnou cílovou hodnotu. V prvním řešení je
+výrazně nejčastěji prováděn následující řádek kódu:
+a = b / 99;
+Ve druhém řešení je opět výrazně nejčastěji, a to zhruba stejně často jako v předchozím, prováděn řádek:
+a = b / 4;
+V obou řešeních jsou proměnné a, b celočíselné bezznaménkové, operátor / je celočíselné dělení.
+Pokud se kód nakonec překládá do strojového kódu nějakého běžného procesoru nějakým typickým překladačem daného
+jazyka, tak rozhodněte, které řešení bude asi stran výkonosti lepší. Vysvětlete proč.
+3. Předpokládejte, že máme N bitové celé nezáporné číslo A, a M bitové celé nezáporné číslo B, kde N < 16 , M < 16. Víme,
+že číslo A je uložené v N spodních bitech proměnné iA, a číslo B je uložené v M spodních bitech proměnné iB. Obsah
+ostatních bitů proměnných iA a iB je neznámý. Dále máme v programu proměnné N a M, které určují rozsah A a B.
+Vaším úkolem je v jazyce C#, nebo C++, nebo Java napsat kód, který nastaví obsah proměnné oC tak, že v nejnižších N
+bitech je uložena hodnota A, v následujích M bitech (od N. bitu) je uložena hodnota B, zbývající (nejvyšší) bity proměnné
+oC mají být nulové. Všechny proměnné iA, iB, N, M, oC jsou 32-bitové.
+
+3
+
+Databáze
+1. Vysvětlete pojem „funkční závislosti atributů relace“ v relačním datovém modelu. Bude relace R(K1 ,K2 ,A,B), s klíčem
+(K1 ,K2 ), kde F ={K2 → B} vhodně navržená ? Pokud ne, jak by bylo vhodné návrh změnit a proč ?
+2. Uvažujte transakce T1 : R(A) W (B) W (C) a T2 : W (A) R(B) W (B). Je rozvrh S: R1 (A) W2 (A) W1 (B) R2 (B) W2 (B)
+W1 (C) serializovatelný (serializable) ? Proč ? Pokud ne, jak by bylo potřeba jej opravit ?
+
+3. Jak se bude lišit – pokud vůbec – sémantika modelu, pokud je binární vztah reprezentován poprvé relací R(K1 ,K2 ) a
+podruhé relací R(K1 ,K2 ) ?
+
+4
+
+Databáze
+1. Popište podmínky nutné pro to, aby relační schéma bylo ve druhé normální formě. Uveďte jednoduchý příklad relace, která
+v dané normální normě nebude. Jak by bylo potřeba návrh takové relace upravit ?
+2. Uvažujte transakce T1 : R(A) W (B) W (C) a T2 : W (A) R(B) W (B). Je rozvrh S: R1 (A) W2 (A) W1 (B) R2 (B) W2 (B)
+COM M IT2 W1 (C) COM M IT1 zotavitelný (recoverable) ? Pokud ano, proč ? Pokud ne, jak by bylo potřeba jej upravit,
+aby zotavitelný byl ?
+3. Jak lze nahradit – pokud vůbec – operaci sjednocení v relační algebře pomocí ostatních operací, které tento dotazovací
+jazyk nabízí ?
+
+5
+
+Barvy v počítačové grafice
+1. Vysvětlete, jak lidské oko vnímá barvy.
+2. Popište barevné technologie zobrazovacích zařízení a systémy pro ukládání barev na počítači (barevné prostory).
+3. Napište příklad barevného systému vhodného pro intuitivní zadávání barvy laickým uživatelem (zdůvodněte).
+
+6
+
+Halda
+1. Definujte „haldu“ (obyčejnou minimovou binární).
+2. Popište, kde všude se v haldě může nacházet nejmenší a kde největší prvek.
+3. Zapište pseudokód operace vložení prvku do haldy.
+4. Dokažte, že alespoň jedna z operací vložení prvku a smazání minima v n-prvkové haldě musí mít časovou složitost Ω(log n).
+
+7
+
+Mohutnost
+1. Napište definici pojmů „množina A má nejvýše tak velkou mohutnost jako množina B“ a „množiny A a B mají stejnou
+mohutnost“.
+2. Ukažte, že množiny přirozených a celých čísel mají stejnou mohutnost.
+3. Ukažte, že množiny přirozených a reálných čísel nemají stejnou mohutnost.
+
+8
+
+Voroného diagramy
+
+Nechť P je konečná množina bodů v obecné poloze v Rd a conv(P ) značí její konvexní obal.
+1. Definujte region reg(p) bodu p ∈ P a Voroného diagram množiny P .
+2. Navrhněte (libovolný) algoritmus, který pozná pro x ∈ Rd a p ∈ P , zda x patří do reg(p) a co nejlépe asymptoticky
+odhadněte časovou složitost navrženého algoritmu. (Můžete předpokládat, že aritmetické operace nad reálnými čísly jsou
+prováděny v jednotkovém čase.)
+Dále rozhodněte a zdůvodněte, zda pro p ∈ P platí:
+3. Pokud je reg(p) omezený, potom p patří do vnitřku conv(P ).
+4. Pokud p patří do vnitřku conv(P ), potom reg(p) ⊆ conv(P ).
+
+9
+
+Organizace paměti
+1. Je typická paměť RAM (SRAM nebo DRAM) „random access“ (tedy přístup na libovolnou adresu je prakticky stejně
+rychlý), a je typická paměť ROM „read-only“ (tedy obsah nelze měnit) ? Jaký je hlavní rozdíl mezi dnes běžnou pamětí
+typu RAM (SRAM nebo DRAM) a pamětí typu ROM (například EEPROM) ? Vysvětlete.
+2. Běžný desktopový počítač má operační paměť typu DRAM. Jak procesor takového počítače ví, jaký kód má po zapnutí
+napájení počítače provádět ? Kde takový kód vezme ?
+3. Vysvětlete, co to je boot loader a co rámcově provádí jeho kód. Kde procesor tento kód vezme a jak ví, že ho má provádět ?
+
+10
+
+Párování
+
+1. Určete velikost největšho párování v následujícím grafu.
+
+2. Zformulujte Tutteovu větu o existenci perfektního párování v obecném grafu.
+3. Dokažte, že každý 3-regulární 2-souvislý graf má perfektní párování.
+
+11
+
+Neprocedurální programování
+
+1. Mějme následující predikáty v Prologu:
+muz( adam ) .
+muz( hugo ) .
+zena ( eva ) .
+r o d i c ( adam , hugo ) .
+r o d i c ( eva , hugo ) .
+
+% adam j e muz
+% hugo j e muz
+% eva j e zena
+% adam j e rodicem huga
+% eva j e rodicem huga
+
+atd .
+Napište predikáty otec/2 a dedecek/2 s následujícím významem:
+o t e c ( Ot , Di )
+dedecek ( De , Di )
+
+% "Ot" j e otcem "Di"
+% "De" j e dedeckem "Di"
+
+2. Jak jsou v Prologu definovány seznamy ?
+3. Mějme predikát concat/3, který spojí dva seznamy:
+concat ( [ ] , L , L ) .
+concat ( [ X| T ] , L , [ X| S ] ) : − concat (T, L , S ) .
+Jaký bude výsledek volání predikátu r(+I,-O), který je definován následovně (+I značí zadaný vstup a -O nalezený výstup) ?
+r ([] ,[]).
+r ( [ X| T ] , L): − r (T, T1 ) , concat ( T1 , [ X] , L ) .
+4. Liší se nějak následující Prolog dotazy ?
+X = 1 + 3.
+X is 1 + 3.
+
+12
+
+Rozhraní pro synchronizaci
+
+1. Napište rozhraní zámku (mutex) jako objektu pro synchronizaci. Popište sémantiku metod.
+2. Načrtněte možnou implementaci zámku z předchozího bodu (stačí minimální funkční řešení).
+3. Napište rozhraní podmínkové proměnné (condition variable) jako objektu pro synchronizaci. Popište sémantiku metod.
+4. Vysvětlete, proč některé metody rozhraní podmínkové proměnné akceptují zámek jako parametr.
+
+13
+
+Vyhledávací stromy
+
+1. Definujte „binární vyhledávací strom“.
+2. Definujte „AVL strom“.
+3. Spočítejte nejmenší a největší počet vrcholů v obecném binárním vyhledávacím stromu výšky 3 a v AVL stromu téže výšky.
+Nakreslete příklady těchto extrémních stromů. (Výšku stromu definujeme jako maximální počet hran na cestě kořen-list.)
+4. Popište, kde se ve vyhledávacím stromu může nacházet následník daného vrcholu, tedy vrchol s nejmenším klíčem větším
+než daný.
+
+14
+
+Topologické uspořádání
+
+1. Definujte topologické uspořádání na orientovaném grafu.
+2. Charakterizujte grafy, které lze topologicky uspořádat. Volitelně, pokud topologické uspořádání grafu existuje, je pro daný
+graf určeno jednoznačně ?
+3. Jakou má asymptotickou složitost (v nejhorším případě) algoritmus pro určení topologického uspořádání ? Vyjádřete v
+závislosti na počtu vrcholů N a počtu hran M.
+4. Jakou má asymptotickou složitost (v nejhorším případě) nalezení nejkratších cest z daného vrcholu na topologicky uspořádaném grafu ? Popište ideu algoritmu, který dosáhne optimální složitosti.
+
+15
+
+Tvorba webových stránek
+
+Uvažme následující situaci (tato situace je společná pro všechny uvedené podotázky). Uživatel se přihlašuje do e-shopu klasickým
+autentizačním HTML formulářem (login, heslo). Po přihlášení si nechá zobrazit svůj nákupní košík, kde u každé vybrané položky
+je ikonka se symbolem křížku sloužící k odstranění položky z košíku.
+1. Popište možné bezpečnostní hrozby týkající se procesu autentizace ve webových aplikacích. Dále navrhněte, jak musí
+vypadat autentizační formulář a jak musí probíhat jeho zpracování (přenos dat, ověření hesla ...), aby mohl být považován
+za bezpečný z hlediska popsaných hrozeb.
+2. HTTP je bezstavový protokol. Jakým způsobem je možné zajistit, že si webová aplikace po úspěšné autentizaci zapamatuje
+přihlášeného uživatele (navrhněte alespoň jednu možnost).
+3. Navrhněte hrubou strukturu hlavní části HTML dokumentu reprezentující nákupní košík a zaměřte se především na to,
+jak bude realizována ikonka (resp. její funkce) pro mazání. Existuje více možností jak tento problém vyřešit, stačí popsat
+jedno libovolné korektní řešení a můžete použít i JavaScript. Dále popište, jak bude operace smazání položky z košíku
+obsloužena na straně serveru.
+Při hodnocení bude brán zřetel především na principy fungování, nikoliv na syntaktické detaily konkrétních jazyků.
+
+16
+
+JavaScript, AJAX, XML
+
+Uvažujme datovou strukturu pro zápis seznamu zájezdů. Pro zájezd umožňuje evidovat název, lokalitu a seznam termínů (vždy
+musí být uveden alespoň jeden termín). Pro každý termín umožňuje evidovat datum začátku a konce termínu.
+1. Vytvořte XML schéma popisující XML strukturu umožňující zápis této datové struktury. K XML schématu napište také
+příklad validního XML dokumentu (s alespoň jedním zájezdem).
+
+2. Lze tuto datovou strukturu zapisovat také ve formátu JSON ? Pokud ano, uveďte příklad JSON dokumentu s takovou
+strukturou. Uveďte jednu výhodu reprezentace ve formátu JSON a jednu výhodu reprezentace ve formátu XML.
+3. Nad výsledkem první otázky napište XPath výraz, který ve validním XML dokumentu nalezne seznam všech zájezdů do
+Řecka nebo do Francie.
+
+17
+
+Částečné uspořádání
+
+1. Definujte pojmy „řetězec“ a „antiřetězec“ v částečném uspořádání.
+2. Nechť množina X obsahuje všechny body s celočíselnými souřadnicemi náležící lichoběžníku s vrcholy A = (0, 0), B =
+(10, 0), C = (4, 4) a D = (0, 4). Částečné uspořádání na X je definováno předpisem (x, y) ≤ (x0 , y 0 ) ⇔ (x + y < x0 + y 0 ∨
+(x, y) = (x0 , y 0 )).
+Určete délku nejdelšího řetězce i největšího antiřetězce včetně důkazu jejich maximality.
+3. Zformulujte větu o řetězcích a antiřetězcích (větu o dlouhém a širokém) a uveďte hlavní ideu důkazu. Ilustrujte ji na
+částečném uspořádání z předchozí úlohy.
+
+18
+
+Newtonův integrál
+
+1. Definujte pojem „(určitý) Newtonův integrál“.
+2. Vyslovte větu o výpočtu určitého integrálu pomocí substituce.
+3. Spočtěte integrál
+
+Z √π/2
+
+x · sin(x2 ) dx
+
+0
+
+19
+
+Pravděpodobnost
+
+1. Definujte pojem náhodné reálné veličiny a její střední hodnotu na konečných pravděpodobnostních prostorech.
+2. Uveďte vztahy, které platí pro střední hodnotu součtu a střední hodnotu součinu dvou náhodných reálných veličin a
+naznačte, jak je lze dokázat.
+3. Maxmilián má v kapse tři dvacetikoruny, jednu desetikorunu, dvě pětikoruny, šest dvoukorun a tři jednokorunové mince (a
+žádné další).
+Náhodně ze své kapsy vytáhne trojici mincí. Určete střední hodnotu součtu hodnot těchto tří mincí.
+
+20
+
+Vektorové prostory
+
+1. Definujte bázi vektorového prostoru.
+2. Dokažte jednoznačnost souřadnic vektoru vzhledem k dané bázi.
+3. Buď
+
+
+
+1
+A= 5
+8
+Rozhodněte, zda
+(a) řádky jsou lineárně nezávislé,
+(b) řádky generují prostor R4 ,
+(c) sloupce jsou lineárně nezávislé,
+(d) sloupce generují prostor R3 .
+
+2
+6
+9
+
+3
+7
+0
+
+
+4
+0  .
+0
+
+21
+
+Vektorové prostory
+
+1. Definujte isomorfismus mezi vektorovými prostory.
+2. Uvažujme lineární zobrazení f : U → V mezi vektorovými prostory takové, že libovolná množina generátorů U se zobrazí
+na generátory V . Je f prosté ?
+3. Uvažujme lineární zobrazení f : R3 → R3 dané předpisem
+f (a, b, c) = (a + b + c, 2a + c, 2b + c).
+Určete
+(a) dimenzi obrazu f (R3 ),
+(b) dimenzi jádra Ker(f ),
+(c) zda f je prosté,
+(d) zda f je na.
+
+22
+
+Taylorův polynom
+
+1. Definujte pojem „Taylorův polynom“.
+2. Vyslovte některou z vět popisující chybu při aproximaci Taylorovým polynomem.
+3. Napište Taylorův polynom pátého stupně pro funkci danou předpisem f (x) = sin x · cos x v okolí bodu 0.
+
+

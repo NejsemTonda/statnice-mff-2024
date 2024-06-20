@@ -1,0 +1,134 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+léto 2014
+
+1
+
+Třı́děnı́ Merge Sort
+1. Napište pseudokód třı́dı́cı́ho algoritmu Merge Sort.
+2. Napište časovou složitost tohoto algoritmu pro n prvků v průměrném a nejhoršı́m přı́padě.
+3. Je váš algoritmus stabilnı́ ? Proč ?
+
+2
+
+Stránkovánı́
+
+Uvažujte architekturu s podporou stránkovánı́ a délkou virtuálnı́ i fyzické adresy 32 bitů. K překladu adres je použita dvouúrovňová
+stránkovacı́ tabulka, každá úroveň tabulky má 1024 položek.
+1. Rozdělte virtuálnı́ adresu 12AB34CD16 na indexy do obou úrovnı́ stránkovacı́ tabulky a offset v rámci stránky.
+2. Nakreslete obsah položek stránkovacı́ tabulky, který bude uvedenou virtuálnı́ adresu mapovat na fyzickou adresu AB1234CD16 .
+Všechna pole, která procesor použije k překladu této adresy, musı́ být vyplněna konkrétnı́mi hodnotami. Pokud zadánı́
+nějakou hodnotu neuvádı́, doplňte jı́ podle vlastnı́ho uváženı́.
+3. Pokud je obsah fyzické paměti na uvažované architektuře ukládán v cache s délkou řádku 64 bajtů, je v pořádku na
+uvedenou virtuálnı́ adresu uložit celočı́selnou proměnnou o délce 4 bajty ? Vysvětlete, o jakou úvahu se v odpovědi opı́ráte.
+
+3
+
+Automaty a gramatiky
+1. Napište gramatiku pro jazyk L = {0n 1n : n ∈ N}.
+2. Do jaké třı́dy Chomského klasifikace patřı́ vaše gramatika ?
+3. Sestavte vhodný typ automatu rozpoznávajı́cı́ jazyk L.
+4. Definujte formálně typ automatu z předchozı́ho kroku.
+
+4
+
+Principy implementace objektově orientovaných jazyků
+1. Předpokládejte následujı́cı́ definice třı́d a jejich použitı́ (z dostupných fragmentů kódu si vyberte jeden programovacı́ jazyk):
+Listing 1: Java
+c l a s s A { void M ( ) { System . out . p r i n t l n ( ”A : :M” ) ; } }
+c l a s s B extends A { void M ( ) { System . out . p r i n t l n ( ”B : :M” ) ; } }
+A a = new A ( ) ; B b = new B ( ) ; A ab = new B ( ) ;
+a .M ( ) ; b .M ( ) ; ab .M ( ) ;
+Listing 2: C++
+c l a s s A { public : v i r t u a l void M ( ) { s t d : : c o u t << ”A : :M” << s t d : : e n d l ; } } ;
+c l a s s B : public A { public : v i r t u a l void M ( ) { s t d : : c o u t << ”B : :M” << s t d : : e n d l ; } } ;
+A ∗a = new A ( ) ; B ∗b = new B ( ) ; A ∗ab = new B ( ) ;
+a−>M ( ) ; b−>M ( ) ; ab−>M ( ) ;
+
+Listing 3: C#
+c l a s s A { public v i r t u a l void M ( ) { C o n s o l e . WriteLine ( ”A : :M” ) ; } } ;
+c l a s s B : A { public override void M ( ) { C o n s o l e . WriteLine ( ”B : :M” ) ; } } ;
+A a = new A ( ) ; B b = new B ( ) ; A ab = new B ( ) ;
+a .M ( ) ; b .M ( ) ; ab .M ( ) ;
+Jaký výstup napı́še fragment kódu při spuštěnı́ ?
+2. Předpokládejte, že v předchozı́ch definicı́ch je navı́c ještě následujı́cı́:
+Listing 4: Java
+c l a s s A { A ( ) { System . out . p r i n t l n ( ”A” ) ; } . . .
+c l a s s B extends A { B ( ) { System . out . p r i n t l n ( ”B” ) ; } . . .
+Listing 5: C++
+c l a s s A { public : A ( ) { s t d : : c o u t << ”A” << s t d : : e n d l ; } . . .
+c l a s s B : public A { public : B ( ) { s t d : : c o u t << ”B” << s t d : : e n d l ; } . . .
+Listing 6: C#
+c l a s s A { public A ( ) { C o n s o l e . WriteLine ( ”A” ) ; } . . .
+c l a s s B : A { public B ( ) { C o n s o l e . WriteLine ( ”B” ) ; } . . .
+Změnı́ se nějak výstup vypsaný fragmentem kódu z prvnı́ho bodu a pokud ano, jaký bude ?
+3. Předpokládejte, že na konci všech metod přidaných v předchozı́m bodě je navı́c ještě volánı́ M (). Změnı́ se nějak výstup
+vypsaný fragmentem kódu z prvnı́ho bodu a pokud ano, jaký bude ?
+
+5
+
+DNS
+1. Stručně popište princip překladu doménového jména na IP adresu systémem DNS.
+2. Stručně popište princip reverznı́ho překladu IP adresy na doménové jméno systémem DNS.
+3. Vysvětlete rozdı́l mezi autoritativnı́mi a neautoritativnı́mi DNS servery. Co je primárnı́ a sekundárnı́ DNS server ?
+
+6
+
+Vlastnosti polynomů
+
+Necht’ P (x) je kubický polynom (polynom stupně tři) s reálnými koeficienty. Rozhodněte a náležitě zdůvodněte, která z
+následujı́cı́ch tvrzenı́ jsou pravdivá.
+1. P (x) má alespoň jeden a nejvýše tři kořeny v oboru komplexnı́ch čı́sel.
+2. P (x) má právě tři různé reálné kořeny.
+3. P (x) má alespoň jeden reálný kořen.
+4. Má-li P (x) právě jeden reálný kořen, je tento kořen vı́cenásobný.
+5. Má-li P (x) právě dva různé reálné kořeny, je jeden z nich vı́cenásobný.
+
+7
+
+Derivace a monotonie
+1. Definujte pojem derivace funkce“ pro funkci jedné reálné proměnné.
+”
+2. Popište souvislost derivace funkce s tečnou ke grafu funkce.
+3. Vyslovte Lagrangeovu větu o střednı́ hodnotě.
+4. Vyslovte větu o vztahu znaménka derivace a monotonie funkce. Naznačte postup důkazu alespoň jedné jejı́ větve.
+5. Zjistěte, na kterých intervalech je funkce xe−x rostoucı́ či klesajı́cı́.
+
+8
+
+Vlastnı́ čı́sla
+1. Zformulujte nutnou a postačujı́cı́ podmı́nku pro to, aby Jordanova normálnı́ forma matice byla diagonálnı́ matice.
+2. Najděte Jordanovu normálnı́ formu matice A.
+
+1
+0
+A=
+0
+0
+
+9
+
+0
+1
+0
+0
+
+0
+0
+2
+0
+
+
+3
+0
+
+0
+2
+
+Souvislost grafu
+1. Definujte vrcholovou a hranovou k-souvislost jako vlastnosti grafu.
+2. Jaký je vztah mezi k-souvislostı́ grafu a disjunktnı́mi cestami mezi dvojicemi vrcholů ?
+3. Dokažte, že pokud je 3-regulárnı́ graf (všechny jeho vrcholy majı́ stupeň roven 3) hranově k-souvislý, pak je také vrcholově
+k-souvislý.
+
+

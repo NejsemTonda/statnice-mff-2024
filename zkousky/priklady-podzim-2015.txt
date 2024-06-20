@@ -1,0 +1,243 @@
+Bakalářské zkoušky (příklady otázek)
+
+podzim 2015
+
+1
+
+Rozděl a panuj
+1. Jaká je základní myšlenka metody Rozděl a panuj ?
+2. Časová složitost algoritmů typu Rozděl a panuj se obvykle popisuje rekurentní rovnicí typu
+T (n) = a · T (n/b) + Θ(nc ).
+Jaký význam mají parametry a, b a c?
+3. Vyřešte rekurentní rovnici
+T (n) = 2 · T (n/2) + Θ(n)
+s okrajovou podmínkou T (1) = 1. Pokud jste při řešení použili nějakou větu, uveďte její znění.
+4. Uveďte příklad algoritmu, jehož složitost je touto rekurentní rovnicí popsána.
+
+2
+
+Tok v síti
+1. Definujte síť a tok.
+2. Formulujte v pseudokódu Fordův-Fulkersonův algoritmus pro hledání maximálního toku v síti.
+3. Jakou má tento algoritmus časovou složitost:
+(a) pro sítě s jednotkovými kapacitami,
+(b) pro sítě s celočíselnými kapacitami,
+(c) pro sítě s reálnými kapacitami ?
+
+3
+
+Organizace paměti
+
+Pro všechny body předpokládejte kontext nějakého běžného desktopového operačního systému.
+1. Předpokládejte proces s jedním vláknem, který vznikl spuštěním aplikace napsané v C++, C#, nebo Javě. Paměť takového
+procesu bude jistě obsahovat nějaký kód i nějaká data. V této otázce jde o data – na jaké hlavní části (lišící se způsobem
+alokace a dealokace dat) bude paměť procesu obsahující data rozčleněna ?
+Pro každou takovou část vysvětlete, jaká data se zde typicky nacházejí a kdy v ní dochází k alokaci a dealokaci dat. Ve
+vašem vysvětlení ilustrujte alokaci a dealokaci na fragmentu kódu v C++, C# nebo Javě.
+2. Předpokládejte, že výše uvedenou aplikaci spustíme dvakrát, a tedy získáme dva různé současně spuštěné a běžící procesy
+X a Y (každý stále s jedním vláknem). Pokud pak obě vlákna provedou alokaci nějakého bloku paměti, je možné, aby
+alokovaný blok ležel v každém procesu na přesně stejné adrese A, tedy že proměnná typu pointer či reference v procesu
+X ukazující na alokovaný blok dat bude obsahovat přesně stejné číslo jako obdobná proměnná v procesu Y ? Pokud ne,
+vysvětlete proč. Pokud ano, vysvětlete, zda mohou být obecně na adrese A v procesu X jiná data než na adrese A v procesu
+Y.
+3. Je možné, aby dva procesy spolu sdílely nějakou paměť ? Tedy aby zápis dat do paměti v kontextu nějakého procesu
+okamžitě způsobil viditelnost těchto dat někde v paměti jiného procesu ? Pokud ano, vysvětlete, jak by toho operační
+systém dosáhl. Pokud ne, vysvětlete proč.
+
+4
+
+Procesy a vlákna
+
+Pro všechny body předpokládejte kontext nějakého běžného desktopového operačního systému.
+1. Vysvětlete, co to je vlákno (thread). Co v procesu tvoří součást kontextu vlákna (tedy co má každé vlákno vlastní) ? Co z
+procesu naopak součástí kontextu vlákna není (tedy co všechna vlákna sdílejí) ?
+2. Vysvětlete, co to je preemptivní přepínání vláken. V jakých situacích může v systému dojít k přeplánování vlákna na jiné ?
+3. Vysvětlete, co to přesně znamená, že vlákno přejde do pasivního čekání. Jak takové pasivní čekání probíhá ? A jak probíhá
+ukončení pasivního čekání ? Uveďte příklad funkce, jejíž volání může typicky vést k pasivnímu čekání.
+
+5
+
+Modelování dat
+1. Navrhněte E–R model pro evidenci Projektů a jejich Řešitelů. Projekt je identifikovaný názvem a má striktní termín
+ukončení. Řešitel má jméno a příjmení (nemusí být unikátní) a specializaci. Na každém projektu se může podílet několik
+řešitelů a jeden řešitel může pracovat na více projektech.
+2. Převeďte E–R model z předchozího bodu do relačního databázového modelu. V návrhu vyznačte datové typy jednotlivých
+sloupců tabulek.
+3. Nad strukturou tabulek z předchozího bodu napište dotaz, který vypíše seznam projektů, na kterých pracuje alespoň jeden
+DB specialista.
+
+6
+
+Transakce
+1. Definujte relaci konfliktové ekvivalence nad transakčními rozvrhy.
+2. Jaký je vztah mezi konfliktovou uspořádatelností (conflict–serializability) rozvrhu a serializovatelností (serializability) ?
+3. Uvažujte transakce T1 : R(A) W (A) W (B) a T2 : R(A) W (A) R(B) a rozvrh S: R1 (A) W1 (A) R2 (A) W2 (A) R2 (B) W1 (B)
+C2 C1 . Je rozvrh S konfliktově uspořádatelný (conflict–serializable) ? Zdůvodněte a případně navrhněte minimální opravu
+(ve smyslu počtu přesouvaných operací) na konfliktově serializovatelný rozvrh.
+4. Definujte zotavitelný (recoverable) rozvrh. Rozhodněte o opraveném rozvrhu z předchozího bodu, zda je, či není zotavitelný.
+
+7
+
+Ramseyova čísla (povinné téma vašeho zaměření)
+1. Pro k, ` ∈ N definujte Ramseyovo číslo R(k, `).
+2. Uveďte co nejlepší vám známý odhad Ramseyova čísla R(k, `).
+3. Určete Ramseyovo číslo R(3, 4), případně uveďte co nejtěsnější horní a dolní odhad. Odpověď zdůvodněte.
+
+8
+
+Základy teorie informace (povinné téma vašeho zaměření)
+
+Vysvětlete koncept entropie a vzájemné informace a uveďte příklady jejich užití v modelování úloh počítačového zpracování
+přirozeného jazyka.
+
+9
+
+Aranžmá nadrovin (povinné téma vašeho zaměření)
+1. Definujte stěny aranžmá n nadrovin v Rd . Definujte buňky aranžmá n nadrovin v Rd .
+2. Kolik buněk má aranžmá n nadrovin v obecné poloze v Rd ? Odpověď nemusíte zdůvodňovat.
+3. Kolik vrcholů a 1-dimenzionálních stěn má aranžmá n rovin v obecné poloze v R3 ? Odpověď zdůvodněte.
+4. Kolik buněk má aranžmá 2n takových přímek v rovině, že žádné tři z nich se neprotínají v jednom bodě a každá z nich je
+rovnoběžná s právě jednou další přímkou (máme tedy n dvojic rovnoběžných přímek) ? Odpověď zdůvodněte.
+
+10
+
+Objektově orientované programování
+
+Pro vypracování otázky si zvolte jeden z jazyků C#, C++, Java. V odpovědi můžete vynechat nepodstatné syntaktické detaily,
+hodnotí se zejména použití vhodných nástrojů jazyka. Otázka se týká objektového modelu, očekává se tedy definice rozhraní tříd
+(hlavní metody a atributy), nikoliv implementace (těla metod).
+Virtuální stroj pracuje s pojmenovanými proměnnými a se zásobníkem, má instrukce pro přemisťování hodnot mezi proměnnými
+a vrcholem zásobníku, aritmetické instrukce odpovídající operátorům v postfixové notaci a instrukce (podmíněných) skoků pro
+realizaci větvení a cyklů v pseudokódu. Příklad kódu reprezentujícího výraz „a = b < c ? d - e : f“:
+0: PUSH b
+1: PUSH c
+2: JGE 7
+3: PUSH d
+4: PUSH e
+5: SUB
+6: JMP 8
+7: PUSH f
+8: POP a
+1. Navrhněte objektovou datovou strukturu pro reprezentaci pseudokódu virtuálního stroje. Datová struktura by měla umožňovat jednak provádění instrukcí, jednak výstup pseudokódu v textové podobě. Důraz je kladen na čistotu objektového
+návrhu a snadnou rozšiřitelnost množiny instrukcí, důležitá je i rychlost provádění instrukcí.
+2. Kde a jak budete reprezentovat stav stroje, tedy zásobník, hodnoty proměnných a ukazatel instrukcí ?
+3. Princip řešení vysvětlete podrobněji na reprezentaci instrukcí „PUSH v“ (uložení hodnoty proměnné v na zásobník) a „JGE
+x“ (porovnání dvou hodnot na vrcholu zásobníku a podmíněný skok na adresu x).
+4. Jak minimalizovat opakující se kód při implementaci podobných instrukcí (například binárních operací) ?
+
+11
+
+Šablony a generika
+
+Dva základní způsoby implementace kontejnerových typů (dynamická pole, vyhledávací stromy, hashovací tabulky ...) v objektových jazycích jako Java, C# nebo C++ jsou s využitím polymorfismu a s využitím šablon či generik.
+1. Ilustrujte oba způsoby implementace kontejnerových typů na návrhu rozhraní kontejneru reprezentujícího množinu objektů
+s uspořádáním. Zvolte si některý z jazyků Java, C# nebo C++, ve vaší implementaci stačí uvést veřejné rozhraní (třídy a
+metody) pro vkládání objektu a pro testování přítomnosti objektu.
+2. Srovnejte výhody a nevýhody obou přístupů.
+3. Co musí platit pro objekty, které budeme chtít vložit do kontejneru z prvního bodu (setříděná množina) ?
+4. Jak se požadavku z předchozí otázky docílí v kódu ?
+
+12
+
+Protokoly TCP/IP (povinné téma vašeho zaměření)
+
+1. Načrtněte lokální síť se třemi lokálními počítači a jednou bránou zodpovědnou za komunikaci s internetem pomocí NAT.
+Přidělte všem rozhraním konkrétní IPv4 adresy a u lokálních počítačů napište obsah jejich routovacích tabulek.
+2. V jednotlivých krocích popište přenos jednoho IPv4 datagramu mezi dvěma lokálními počítači. Předpokládejte, že počítače
+před zahájením přenosu nemají žádné ARP informace.
+3. V jednotlivých krocích popište odeslání jednoho IPv4 datagramu a přijetí jednoho IPv4 datagramu v rámci TCP spojení
+mezi lokálním počítačem a počítačem v internetu. Předpokládejte, že počítače mají všechny potřebné ARP informace,
+popisujte pouze akce lokálního počítače, brány a cílového počítače, nevěnujte se dalším počítačům na cestě. Detaily TCP
+protokolu popisujte pouze do té míry, do které je to nutné pro NAT.
+
+13
+
+Soubory mapované do paměti (povinné téma vašeho zaměření)
+
+1. Při použití souborů mapovaných do paměti (memory-mapped files) existují omezení na adresu a délku mapovaného bloku.
+Popište a zdůvodněte je.
+2. Kdy dochází při použití souborů mapovaných do paměti k přesunu dat z disku do paměti a kdy z paměti na disk ?
+3. Může proces měnit v paměti data mapovaného souboru ? Pokud ne, proč ? Pokud ano, zapíší se data do souboru ? Kdy ?
+4. Navrhněte rozhraní, pomocí kterého může proces nastavit a zrušit mapování souboru (například analogii volání mmap a
+munmap).
+5. Napište příklad alespoň jedné situace, ve které se mapování souborů do paměti typicky používá.
+
+14
+
+Grupa
+
+1. Definujte izomorfismus dvou grup.
+2. Uveďte příklad dvou konečných komutativních navzájem neizomorfních grup se stejným počtem prvků. Nezapomeňte
+ověřit, že uvedené grupy nejsou izomorfní.
+
+15
+
+Grupa
+
+1. Definujte podgrupu grupy.
+2. Rozhodněte, zda cyklická grupa Z6 obsahuje podgrupu izomorfní se Z2 , Z3 a Z4 . Pro každou z možností buď uveďte
+příslušnou podgrupu, nebo zdůvodnění, že daná podgrupa neexistuje.
+
+16
+
+Čísla
+
+1. Definujte pojem „limita posloupnosti reálných čísel“ (vlastní i nevlastní).
+2. Posloupnost (an ) je definovaná rekurentním předpisem
+a1 = 1
+
+an+1 =
+
+√
+
+2an + 3.
+
+Rozhodněte, zda posloupnost (an ) má limitu a pokud ano, tak ji spočtěte.
+
+17
+
+Uspořádané množiny
+
+1. Definujte vlastnosti, které musí mít binární relace, aby byla částečným uspořádáním.
+2. Rozhodněte, zda relace R na množině celých čísel definovaná R = {(x, y) ∈ Z2 : |x| ≤ |y|} je částečným uspořádáním.
+3. V závislosti na n ∈ N určete velikost maximálního řetězce v částečném uspořádání množiny {1, 2, . . . , n} pomocí relace
+dělitelnosti.
+
+18
+
+Determinant
+
+1. Zformulujte Laplaceův rozvoj determinantu podle prvního řádku.
+2. Lze použít tento rozvoj jako alternativní definici determinantu, popřípadě za jakých okolností ?
+3. Pro matici A platí A2 = A3 . Jaký je determinant matice A?
+4. Buď A ∈ Tn×(n−1) pevná. Rozhodněte a zdůvodněte, zda zobrazení v ∈ Tn 7→ det(A | v) je lineární.
+
+19
+
+Regulární matice
+
+1. Napište definici regulární reálné matice a uveďte souvislost regularity matice s jejím jádrem, determinantem a vlastními
+čísly.
+2. Dokažte, že pozitivně definitní reálné matice jsou regulární.
+3. Rozhodněte, zda pro regulární matici A ∈ Rn×n je zobrazení x ∈ Rn 7→ Ax + (1, . . . , 1)T prosté a na Rn . Zdůvodněte.
+
+20
+
+Metrické prostory
+
+1. Definujte pojem „metrický prostor“.
+2. Označme M = {(x, x) | x ∈ R}, tedy M je „úhlopříčná přímka“ v prostoru R2 s L∞ -metrikou. Rozhodněte, zda M je
+(a) uzavřená,
+(b) otevřená,
+(c) kompaktní.
+Zdůvodněte.
+
+21
+
+Grafy
+
+1. Definujte pojem bipartitního grafu (ne nutně úplného).
+2. Rozhodněte, pro která n ∈ N existuje bipartitní graf s n vrcholy, jehož doplněk je také bipartitní.
+3. Pro které hodnoty m, n ∈ N je úplný bipartitní graf Km,n rovinný ? Odpověď zdůvodněte.
+
+

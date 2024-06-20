@@ -1,0 +1,102 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+jaro 2014
+
+1
+
+Třı́děnı́ Heap Sort
+1. Napište pseudokód třı́dı́cı́ho algoritmu Heap Sort.
+2. Zdůvodněte, jaká je časová složitost tohoto algoritmu pro n prvků.
+3. Srovnejte časovou složitost tohoto algoritmu s časovou složitostı́ algoritmu Quick Sort.
+
+2
+
+Synchronizace
+1. Vysvětlete, co jsou to vlákna.
+2. Předpokládejte, že funkci AccumulateAverage může volat vı́ce vláken současně. Doplňte synchronizaci tak, aby funkce
+neobsahovala časově závislé chyby.
+int total = 0;
+int count = 0;
+void AccumulateAverage ()
+{
+int result = SomeLongComputation ();
+total += result;
+count += 1;
+}
+3. Kolik vláken by mělo volat funkci AccumulateAverage na multiprocesorovém hardware, pokud vı́te, že funkce SomeLongComputation sestává převážně z intenzivnı́ch výpočtů a chcete, aby byl hardware plně vytı́žen ? Jak se změnı́ váš odhad,
+pokud vı́te, že funkce SomeLongComputation trávı́ většinu času přı́stupem na disk ?
+
+3
+
+Jazyky
+1. Definujte formálně pojem jazyk“.
+”
+2. Popište pomocı́ gramatiky jazyk L obsahujı́cı́ slova {an bn , n ∈ N+ } nad abecedou {a, b}. Do jaké třı́dy Chomského klasifikace
+patřı́ vaše gramatika ?
+3. Popište pomocı́ gramatiky jazyk L obsahujı́cı́ slova {an bn cn , n ∈ N+ } nad abecedou {a, b, c}. Do jaké třı́dy Chomského
+klasifikace patřı́ vaše gramatika ?
+
+4
+
+Výroková logika
+1. Uved’te, co je důkaz ve výrokové teorii T a co znamená zápis T ` ϕ, je-li ϕ výrok teorie T .
+2. Uved’te, co je spor a vyvratitelná formule teorie T a co znamená, že teorie T je sporná či bezesporná.
+3. Uved’te, co je nezávislá formule výrokové teorie T .
+4. Dokažte ` A → A přı́mo z logických axiomů A → (B → A) a (A → (B → C)) → ((A → B) → (A → C)).
+
+5
+
+Objektově orientované programovánı́
+1. Kdy se v objektově orientovaných jazycı́ch označuje třı́da za abstraktnı́ a k čemu taková třı́da sloužı́ ?
+2. K čemu v objektově orientovaných jazycı́ch sloužı́ konstruktor a destruktor ?
+3. Které z výsledků “, A“, B“, AB“ a BA“ může vytisknout následujı́cı́ kód ?
+” ”
+”
+”
+”
+class A
+{
+public A () { System.out.print ("A"); }
+}
+class B extends A
+{
+public B () { System.out.print ("B"); }
+}
+Object o = new B ();
+4. Může konstruktor selhat ?
+
+6
+
+Grupa
+1. Definujte pojem grupa“.
+”
+2. Uvažujte algebry A = {0, 1, 2, 3, 4, 5} s operacı́ sčı́tánı́ modulo 6 a B = {1, 2, 3, 4, 5, 6} s operacı́ násobenı́ modulo 7. Ukažte,
+že A a B jsou grupy.
+3. Jsou A a B cyklické grupy ? Pokud ano, nalezněte u každé alespoň jeden generátor.
+4. Jsou A a B izomorfnı́ ?
+
+7
+
+Parciálnı́ derivace
+1. Definujte pojem parciálnı́ derivace funkce“.
+”
+2. Vyslovte nutnou podmı́nku pro lokálnı́ extrém funkce vı́ce proměnných.
+3. Nalezněte lokálnı́ a globálnı́ extrémy funkce f (x, y) = xy + 12/x + 18/y na množině (0, ∞)2 .
+
+8
+
+Grafy
+1. Definujte pojem kostra grafu“.
+”
+2. Pro která přirozená čı́sla n existuje graf s právě n různými kostrami ? Ukažte.
+
+9
+
+Lineárnı́ zobrazenı́
+
+Uvažujme lineárnı́ zobrazenı́ f : R3 7→ R3 zadané jako (a + b, b + c, c + a) 7→ (a − b, b − c, c − a) pro a, b, c ∈ R.
+1. Rozhodněte a zdůvodněte, zda je f dobře definované na celém R3 .
+2. Rozhodněte a zdůvodněte, zda je f zobrazenı́ na (surjektivnı́).
+3. Rozhodněte a zdůvodněte, zda je f zobrazenı́ prosté.
+
+

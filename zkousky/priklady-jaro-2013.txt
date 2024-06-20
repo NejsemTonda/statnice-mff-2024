@@ -1,0 +1,125 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+jaro 2013
+
+1
+
+Kostra grafu
+1. Napište pseudokód algoritmu pro hledánı́ minimálnı́ kostry ohodnoceného grafu.
+
+2
+
+Synchronizace
+1. Uvažujte třı́du implementujı́cı́ podmı́nkovou proměnnou s následujı́cı́ signaturou:
+class ConditionVariable
+{
+ConditionVariable (Lock lock);
+void wait ();
+void signal ();
+void broadcast ();
+};
+Popište sémantiku jednotlivých metod.
+2. Uvažujte dvě vlákna přistupujı́cı́ ke sdı́lené proměnné podle následujı́cı́ho náčrtku. Jedno čas od času zapisuje, druhé
+zobrazuje některé zapsané hodnoty. Operace nad sdı́lenou proměnnou jsou atomické.
+void WriterThreadBody ()
+{
+while (true)
+{
+shared_value = DoSomeCalculation ();
+}
+};
+void ReaderThreadBody ()
+{
+int last_value = NONEXISTENT_VALUE;
+while (true)
+{
+while (last_value == shared_value) { };
+DisplayValue (shared_value);
+last_value = shared_value;
+}
+};
+S použitı́m podmı́nkové proměnné a přı́padně dalšı́ch synchronizačnı́ch nástrojů upravte implementaci tak, aby čekala
+pasivně.
+
+3
+
+Transakce
+1. Definujte serializovatelný (serializable) rozvrh.
+
+2. Uvažujte transakce T1: R(X)R(Y )W (X) a T2: R(X)R(Y )W (Y ) a rozvrh H: R1 (X)R2 (X)R1 (Y )R2 (Y )W1 (X)W2 (Y )C1 C2 .
+Je rozvrh H serializovatelný (serializable) ? Zdůvodněte a přı́padně navrhněte opravu na serializovatelný rozvrh.
+3. Definujte zotavitelný (recoverable) rozvrh.
+4. Uvažujte transakce T1: R(X)W (Y ) a T2: R(Y )W (Z) a rozvrh H: R1 (X)W1 (Y )R2 (Y )W2 (Z)C2 C1 . Je rozvrh H zotavitelný
+(recoverable) ? Zdůvodněte a přı́padně navrhněte opravu na zotavitelný rozvrh.
+
+4
+
+Principy implementace objektově orientovaných jazyků
+1. Vysvětlete rozdı́l mezi běžnou a virtuálnı́ dědičnostı́ v jazyce C++.
+2. Uvažujte následujı́cı́ fragment kódu v C++.
+class A { int a; };
+class B : public A { int b; };
+A *a;
+B *b;
+a = b;
+b = a;
+a = dynamic_cast<A*> (b);
+b = dynamic_cast<B*> (a);
+Která z uvedených přiřazenı́ nelze provést a proč ?
+3. Popište cenu typových konverzı́ z předchozı́ otázky za běhu programu.
+
+5
+
+Neprocedurálnı́ programovánı́
+
+Uvažujte následujı́cı́ proceduru p/2 v jazyce Prolog.
+p([X],[X]).
+p([X|R],[Y,X|S]) :- p(R,[Y|S]).
+1. Vysvětlete, jaký bude výsledek volánı́ p(+I,-O), kde +I značı́ zadaný vstup a -O nalezený výstup.
+2. Je uvažovaná procedura deterministická ? Je to vhodné ?
+
+6
+
+Sı́tě
+1. Co vyjadřuje modulačnı́ rychlost, v čem se měřı́ a jaký má vztah k přenosové rychlosti ? Kdy je modulačnı́ rychlost čı́selně
+většı́ než rychlost přenosová ?
+2. Jak se dá při komunikaci zası́lánı́m paketů zajistit spolehlivost přenosu a proč je spolehlivost vždy relativnı́ a nikoli úplná ?
+3. Popište alespoň tři mechanismy detekce chyb v přenášených datech a srovnejte je podle jejich účinnosti. Jak účinnost
+hodnotı́te ?
+
+7
+
+Rozklad polynomů
+1. Definujte pojem ireducibilnı́ polynom“.
+”
+2. Najděte rozklad polynomu x4 − 1 na ireducibilnı́ polynomy v Q[x].
+3. Najděte rozklad polynomu x4 − 1 na ireducibilnı́ polynomy v Z5 [x].
+4. Najděte ireducibilnı́ polynom stupně 2 v Z2 [x].
+
+8
+
+Parciálnı́ derivace a totálnı́ diferenciál
+1. Definujte pojem parciálnı́ derivace funkce“.
+”
+2
+2
+2. Vypočı́tejte totálnı́ diferenciál funkce f (x, y) = xex +y v bodě (0, 0).
+3. Vysvětlete geometrickou interpretaci totálnı́ho diferenciálu funkce dvou proměnných.
+
+9
+
+Souvislost grafu
+1. Definujte hranovou souvislost ke (G) a vrcholovou souvislost kv (G) grafu G.
+2. Jaká nerovnost existuje mezi hranovou souvislostı́ ke (G) a vrcholovou souvislostı́ kv (G) grafu G ? Zdůvodněte.
+
+10
+
+Lineárnı́ zobrazenı́
+
+Uvažujme lineárnı́ zobrazenı́ f : R3 7→ R3 zadané jako f (x, y, z) = (x + y + z, y + 2z, 2x + y).
+1. Rozhodněte a zdůvodněte, zda je toto zobrazenı́ prosté (injektivnı́).
+2. Rozhodněte a zdůvodněte, zda je toto zobrazenı́ na (surjektivnı́).
+3. Rozhodněte a zdůvodněte, zda je pravdivé tvrzenı́ každý vektor v ∈ R3 má při zobrazenı́ f žádný nebo alespoň dva vzory“.
+”
+
+

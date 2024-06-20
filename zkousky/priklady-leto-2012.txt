@@ -1,0 +1,216 @@
+Bakalářské zkoušky (přı́klady otázek)
+
+léto 2012
+
+1
+
+Třı́děnı́ Heap Sort
+1. Napište pseudokód třı́dı́cı́ho algoritmu Heap Sort.
+2. Zdůvodněte, jaká je časová složitost tohoto algoritmu pro n prvků.
+3. Srovnejte časovou složitost tohoto algoritmu s časovou složitostı́ algoritmu Quick Sort.
+
+2
+
+Třı́děnı́ Quick Sort
+1. Napište pseudokód třı́dı́cı́ho algoritmu Quick Sort.
+2. Zdůvodněte, jaké jsou nejmenšı́ a největšı́ počty kroků a spotřeba paměti tohoto algoritmu pro n prvků.
+3. Napište průměrnou časovou složitost tohoto algoritmu pro n prvků. Odvozenı́ nenı́ požadováno.
+
+3
+
+Synchronizace
+1. Uvažujte třı́du implementujı́cı́ zámek s následujı́cı́ signaturou:
+class Lock
+{
+void lock ();
+void unlock ();
+};
+Popište sémantiku jednotlivých metod.
+2. Toto je návrh implementace zámku pomocı́ semaforu:
+class LockUsingSemaphore
+{
+Semaphore s;
+LockUsingSemaphore () { s = new Semaphore (1); }
+void lock () { s.down (); }
+void unlock () { s.up (); }
+};
+Vysvětlete, zda a proč je tato implementace správná.
+3. Máte k dispozici implementaci kolekce s následujı́cı́ signaturou:
+class SomeCollection
+{
+void insert (Key k, Item i);
+Item find (Key k);
+};
+Předpokládejte, že implementaci nenı́ dovoleno volat z vı́ce vláken současně. Jak můžete odstranit toto omezenı́ bez zásahu
+do implementace kolekce ? Diskutujte efektivitu tohoto řešenı́ na multiprocesorovém hardware.
+
+4
+
+Jazyky
+1. Definujte formálně pojem jazyk“.
+”
+2. Množina terminálů obsahuje symboly if“, else“, null“. Jazyk L je popsán touto gramatikou:
+”
+”
+”
+E → null
+E → if E
+E → if E else E
+Ukažte na přı́kladu slova s vı́ce derivačnı́mi stromy, že tato gramatika nenı́ jednoznačná.
+3. Upravte gramatiku tak, aby byla jednoznačná.
+
+5
+
+B-stromy
+1. Definujte B-strom (tedy zejména strukturu uzlů, pravidla pro obsazenı́ uzlů, pravidla pro vyváženı́ stromu).
+2. Popište algoritmus mazánı́ prvku s vyváženı́m z B-stromu, neuvažujte redundantnı́ prvky.
+
+6
+
+Relačnı́ datový model
+1. Popište relačnı́ datový model (tedy zejména koncept domén a relacı́, schéma, vztah těchto konceptů s tabulkami a řádky).
+2. Vysvětlete, proč se relačnı́ schémata upravujı́ do normálnı́ch forem.
+3. Napište, kdy je relačnı́ schéma ve třetı́ normálnı́ formě.
+4. Vymyslete přı́klad univerzálnı́ relace, ve které je porušena druhá a třetı́ normálnı́ forma. Použijte atributy IdUčitel, IdŠkola,
+JménoUčitel, AdresaŠkola, MěstoŠkola.
+
+7
+
+Výroková logika
+1. Uved’te, co je důkaz ve výrokové teorii T a co znamená zápis T ` ϕ, je-li ϕ výrok teorie T .
+2. Uved’te, co je spor a vyvratitelná formule teorie T a co znamená, že teorie T je sporná či bezesporná.
+3. Uved’te, co je nezávislá formule výrokové teorie T .
+4. Dokažte ` ϕ → ϕ přı́mo z logických axiomů.
+
+8
+
+Výroková logika
+1. Zformulujte větu o úplnosti výrokové logiky. Uved’te hlavnı́ body jejı́ho důkazu.
+
+9
+
+Principy implementace objektově orientovaných jazyků
+1. Vysvětlete použitı́ výjimek jako prostředků pro řı́zenı́ toku programu v OO jazycı́ch. K popisu použijte konkrétnı́ syntaxi
+jazyka C#, C++ nebo Java.
+2. Jak ošetřı́te situaci, kdy bez ohledu na to, zda byla nebo nebyla hozena výjimka, potřebujete před opuštěnı́m funkce uvolnit
+přidělený prostředek ? Uvažujte napřı́klad tuto skicu kódu:
+void SomeFunction ()
+{
+File f = open ("some.file");
+FunctionThatCanThrow ();
+f.close ()
+}
+
+3. Co udělá běhová podpora OO jazyka v přı́padě, že dojde k hozenı́ výjimky, kterou kód programu neošetřuje ?
+
+10
+
+Protokoly TCP/IP
+
+1. Jaké jsou možnosti překladu mezi IP adresami a linkovými (hardwarovými) adresami a na jaké předpoklady jsou vázány ?
+Popište alespoň jeden k tomuto překladu použı́vaný protokol.
+2. Proč vzniká fragmentace a v čem se lišı́ jejı́ řešenı́ u IPv4 a IPv6 ?
+3. Co je směrovacı́ tabulka a jakou hraje roli, jak vypadajı́ jednotlivé záznamy ? V jakém pořadı́ se při směrovánı́ tyto záznamy
+prohledávajı́ ?
+
+11
+
+Tělesa
+
+1. Definujte pojem těleso“.
+”
+2. Jsou množiny Z, Q a R s obvykle definovanými operacemi sčı́tánı́ a násobenı́ tělesa ?
+3. Sestavte těleso nad množinou o třech prvcı́ch.
+
+12
+
+Spojitost a derivace
+
+1. Definujte pojem spojitost funkce v bodě“.
+”
+2. Definujte pojem derivace funkce“.
+”
+3. Zjistěte, na kterých intervalech je funkce xe−x rostoucı́ a klesajı́cı́.
+
+13
+
+Spojitost a limita funkce v bodě
+
+1. Definujte pojem limita funkce“.
+”
+2. Definujte pojem spojitost funkce v bodě“.
+”
+3. Pokud limx→a f (x) = F ∈ R a limx→a g(x) = G ∈ R, pak limx→a (f (x) + g(x)) = F + G. Dokažte.
+
+14
+
+Taylorův polynom
+
+1. Definujte Taylorův polynom a vyslovte větu o zbytku Taylorova polynomu. Podejte přı́klad praktického využitı́ Taylorova
+polynomu.
+2. Použijte Taylorovy polynomy stupňů 3, 4 a 5 pro výpočet hodnoty sin(2). Použijte rozvoj v takovém bodě, ve kterém je
+výpočet numericky dostatečně snadný. Okomentujte vaše výsledky, pokud vı́te, že sin(2) ≈ 0.9092974.
+
+15
+
+Vlastnı́ čı́sla
+
+1. Necht’ matice A řádu n má navzájem různá vlastnı́ čı́sla λ1 , . . . , λn a jim přı́slušejı́cı́ vlastnı́ vektory v1 , . . . , vn . Jaká vlastnı́
+čı́sla a vektory má matice A3 ?
+2. Najděte všechny vlastnı́ vektory následujı́cı́ matice:
+
+3
+0
+0
+
+2
+3
+0
+
+4
+1
+2
+3
+
+16
+
+Metrické prostory
+
+1. Definujte pojmy metrika“ a metrický prostor“. Doplňte přı́klad metrického prostoru.
+”
+”
+2. Rozhodněte o následujı́cı́ch množinách, zda jsou otevřené a zda jsou uzavřené v metrickém prostoru reálných čı́sel s
+eukleidovskou metrikou. O jedné z těchto množin vaše tvrzenı́ dokažte.
+• (0, 1)
+• (0, 1i
+• h0, ∞)
+3. Uvažujte neorientovaný graf G =< V, E > s množinou vrcholů V a množinou hran E ⊆ {{u, v}, u, v ∈ V, u 6= v}. Na grafu
+je definována vzdálenost uzlů d(u, v) jako počet hran v nejkratšı́ cestě mezi u a v. Tvořı́ dvojice (V, d) metrický prostor ?
+Dokažte.
+
+17
+
+Bodové odhady a testovánı́ hypotéz
+
+1. Definujte střednı́ hodnotu diskrétnı́ náhodné veličiny.
+2. Jak odhadnete střednı́ hodnotu náhodné veličiny s rozdělenı́m F , pokud máte k dispozici pozorovánı́ náhodného výběru s
+rozdělenı́m F ? Dokažte, že je tento odhad nestranný.
+3. Vysvětlete postup statistického testovánı́ hypotéz. Ve vašem vysvětlenı́ definujte pojmy nulová hypotéza“ a hladina
+”
+”
+spolehlivosti“.
+4. Uvažujte šestici (1, 2, 2, 3, 3, 3) jako pozorovánı́ náhodného výběru s normálnı́m rozdělenı́m. Chcete zjistit, zda by střednı́
+hodnota tohoto rozdělenı́ mohla být rovna 2.2. Použijete t-test, p-hodnota je p ≈ 0.7, jaký závěr učinı́te ?
+
+18
+
+Rovinné grafy
+
+1. Definujte pojmy oblouk“ a nakreslenı́ grafu“.
+”
+”
+2. Najděte přı́klad souvislého grafu, který splňuje rovnost |E| = 3|V | − 6, ale nenı́ rovinný.
+3. Rovinné nakreslenı́ grafu je triangulace, jestliže je hranice každé stěny trojúhelnı́k. Dokažte, že rovinný graf G = (V, E) s
+alespoň 3 vrcholy je triangulacı́ právě tehdy, když |E| = 3|V | − 6.
+
+

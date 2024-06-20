@@ -1,0 +1,123 @@
+Bakalářské zkoušky (příklady otázek z matematiky)
+
+podzim 2019
+
+1
+
+Limity funkcí (3 body)
+1. Definujte limitu funkce v bodě.
+2. Nechť f je funkce definovaná na R.
+Uvažujme následující dvě tvrzení P a Q:
+P: limx→∞ f (x) = 0
+Q: Posloupnost (an )∞
+n=1 definovaná jako an = f (n) pro každé n ∈ N má limitu nula.
+Rozhodněte, zda P implikuje Q a zda Q implikuje P, pokud:
+(a) f je libovolná funkce,
+(b) f je monotónní fukce,
+(c) f je spojitá funkce.
+Svá tvrzení nemusíte zdůvodňovat.
+3. Spočtěte limitu
+1 − sin x
+.
+x→π/2 1 + cos 2x
+lim
+
+2
+
+Určitý integrál (3 body)
+1. Formulujte větu o substituci pro určitý integrál.
+2. Spočtěte určitý integrál
+Z 2
+1
+
+3x + 2
+dx
+32x + 3x
+
+3. Rozhodněte, ve kterém z intervalů leží výsledek: (−∞, 0], (0, 1/2], (1/2, 1], (1, 3], (3, ∞]. (Správné řešení lze nalézt i bez
+počítání integrálu – numerické chyby při výpočtu neomlouvají chybné určení intervalu.)
+
+3
+
+Metrické prostory (3 body)
+
+Nechť (X, d) je metrický prostor, |X| ≥ 2.
+1. Rozhodněte, zda je (X, d0 ) metrický prostor pro d0 definovanou jako
+d0 (x, y) = min(d(x, y), 1)
+pro všechna x, y ∈ X. Zdůvodněte své rozhodnutí.
+2. Vzdálenost mezi dvěma neprázdnými podmnožinami A a B metrického prostoru (X, d) definujeme jako
+D(A, B) =
+
+inf
+
+a∈A,b∈B
+
+d(a, b).
+
+Ukažte, že D není metrika na P(X) \ {∅} (kde P(X) označuje potenční množinu X).
+1
+
+4
+
+Lineární zobrazení (3 body)
+
+Buďte f, g : U → V lineární zobrazení. Rozhodněte a zdůvodněte, zda platí:
+1. Ker(f ) ∩ Ker(g) ⊆ Ker(f + g),
+2. f (U ) + g(U ) = (f + g)(U ).
+
+5
+
+Cauchyho–Schwarzova nerovnost (3 body)
+1. Definujte pojem “norma indukovaná skalárním součinem”.
+2. Zformulujte Cauchyho–Schwarzovu nerovnost.
+3. Dokažte, že pro lineárně závislé vektory se obě strany Cauchyho–Schwarzovy nerovnosti rovnají.
+
+6
+
+Náhodný graf (3 body)
+
+Mějme náhodný graf na vrcholech {1, 2, . . . , 100} kde pravděpodobnost výběru hrany je 1/3 nezávisle pro každou hranu.
+1. Jaká je pravděpodobnost, že podgraf indukovaný náhodně vybranými čtyřmi vrcholy bude izomorfní C4 ?
+2. Jaká je pravděpodobnost, že podgraf indukovaný vrcholy {10, 20, 30, 40} bude izomorfní C4 , za předpokladu, že dvojice
+vrcholů {10, 30} a {20, 40} netvoří hranu?
+3. Určete střední hodnotu počtu indukovaných podgrafů izomorfních C4 .
+Výsledky není třeba důsledně vyčíslovat, komb. čísla, faktoriály, mocniny atd. lze ponechat.
+
+7
+
+Binární relace (3 body)
+1. Definujte, co znamená, že binární relace f ⊆ X × X je reflexivní, symetrická a tranzitivní.
+2. Rozhodněte, zda má tyto vlastnosti (určete které) relace f1 ⊆ N × N definovaná
+(a, b) ∈ f1 ⇔ a, b jsou soudělná.
+3. Rozhodněte, zda má tyto vlastnosti (určete které) relace f2 ⊆ N × N definovaná
+(a, b) ∈ f2 ⇔ a dělí b.
+
+8
+
+Kostry grafů (3 body)
+
+Mějme graf G na vrcholech {u1 , . . . , u100 , v1 , . . . , v5 }, přičemž vrcholy u1 , . . . , u100 indukují úplný graf, vrcholy v1 , . . . , v5
+indukují cyklus (v tomto pořadí), graf obsahuje hranu u1 , v1 a žádné další hrany v grafu G nejsou.
+Váha libovolné hrany ui uj pro 1 ≤ i < j ≤ 100 je 5, váha hrany vi vj pro j = (i mod 5) + 1 je max{i, j} a váha hrany u1 v1
+je 10.
+1. Definujte pojem “kostra grafu” a “minimální kostra grafu” (včetně předpokladů úlohy hledání minimální kostry).
+2. Určete váhu minimální kostry grafu G.
+3. Určete počet všech koster grafu G a počet minimálních koster grafu G.
+
+2
+
+9
+
+Logika (3 body)
+1. Uveďte definici, co je bezesporná teorie (v predikátové logice).
+2. Vyjádřete následující tvrzení jako výroky ϕ1 , ϕ2 , ϕ3 nad P = {r, s, t}, kde prvovýroky r, s, t reprezentují (po řadě), že
+“Radka / Sára / Tom je ve škole”.
+(a) Není-li Tom ve škole, není tam ani Sára.
+(b) Radka bez Sáry do školy nechodí.
+(c) Není-li Radka ve škole, je tam Tom.
+3. Zjistěte, zda je teorie T = {ϕ1 , ϕ2 , ϕ3 } bezesporná pomocí tablo metody, implikačního grafu, či rezolučního uzávěru.
+Tedy nestačí pouze vyzkoušet pravdivostní ohodnocení.
+
+3
+
+
