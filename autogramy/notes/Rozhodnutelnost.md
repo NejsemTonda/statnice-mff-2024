@@ -1,0 +1,3 @@
+# Rozhodnutelnost
+
+#TODO
