@@ -1,0 +1,1 @@
+# Časová složitostsubtopicsubtopic1

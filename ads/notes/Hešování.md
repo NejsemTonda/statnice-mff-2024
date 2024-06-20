@@ -1,0 +1,3 @@
+# Hešování
+
+Hešování s otevřenou adresací znamená, že hašujeme h(x, 0) a když se to nepodaří teak h(x, i+1)... 
