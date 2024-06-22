@@ -12,5 +12,3 @@ To znamená, že loss klíďo můžeme přpsat na
 
 $$L = \frac{1}{N} \sum_{i=1}^M \sum_{i=M+1}^D (x_i - \hat{x})^T(x_i - \hat{x})^2 = \sum_{i=M+1}^D u_1^T S u_1$$
 
-To znamená, že chci zapomenout ty nejmenší vlastní čísla kovarianční matice.
-
