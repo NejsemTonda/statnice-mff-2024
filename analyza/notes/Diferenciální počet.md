@@ -1,1 +1,0 @@
-# Diferenciální počet
