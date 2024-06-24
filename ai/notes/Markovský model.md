@@ -15,6 +15,7 @@ Pokud proměnné $X$ přímo nepozorujeme, ale máme k dispozici pozorvání $P(
 
 **DEF** Vysvětlení: To samé jako vysvětlení ale nezískává distribuci přes stavi ale jenom nejpravděpodobnější cestu $argmax_{x_{1:t}} P(x_{1:t} | E_{1:t})$
 
+
 ### Dynamické Bayesovské sítě
 
 ???

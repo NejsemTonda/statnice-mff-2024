@@ -1,31 +1,33 @@
-# Bayesovská síť
+# Zpětovazební učení
 
-* Vrcholy jsou množiny náhodných jevů
-* Hrany jsou závislosti proměnných
+## Pasivní učení
 
-Vztah ke sdružené pravděpodobnosti: Takto můžeme uvažovat díky řetězovému pravidlu. $P(x_1, \dots x_n) = \prod_i P(x_i | x_{i-1}, \dots, x_n)$
+Policy je fixní, učíme se jenom Utility stavů
 
-Pro síť `rains -> wet -> slip` se můžeme ptát na pravděpodobnost $P(r, w, s) = P(r) P(w | r) P(s | w)$
+* Direct Utility Estiamtion:
+    * Jendoduše necháme agenta, aby provedl několik průchodů prostorem a stavům přiřadíme přůměr z utilit
+* Adaptive Dynamic Programing
+    * To samé jako DUE, ale utility vždy přepočítáme na základě Belmanových rovnic
+    * $U^{\pi}(s) = R(s) + \gamma \sum_{s'} P(s' | s, \pi{s}) U(s')$
+* Teporal-difference Learning
+    * Nemusím přepočívat úplně všehcny utility, jenom ty, které se mohli změnit
+    * $U^{\pi}(s) = U^{\pi}(s) + \alpha (R(s) + \gamma U^{\pi}(s') - U^{\pi}(s)$
 
-Pro síť `rains -> wet <- car wash --> slip` $P(r,w,c,s) = P(r) P(c) P(w | r,c) P(s| w)$
+## Aktivní učení
 
-### Inference enumerací
+Polici upravujem podle toho, jak se nám to zrovna líbí. Musíme udržovat exploraci a exploataci abychom nedostali greedy agenta. Preferujeme nové stavy před starými.
 
-$$P(r|s) = \sum_w \sum_c p(r,w,c,s) / P(s)$$
-$$P(r|s) \propto \sum_w \sum_c p(r,w,c,s)$$
-$$P(r|s) \propto \sum_w \sum_c P(r) P(c) P(w | r,c) P(s| w)$$
-$$P(r|s) \propto P(r) \sum_w P(s| w) \sum_c  P(c) P(w | r,c) $$
+### Q-Learning a SARSA
 
-To vede na exponenciální složitost protože některé proměné se opakují
+Najednou máme matici Q, takovou, že $Q(s,a)$ říká jakou hodnotu má provedení $a$ v $s$
 
-### eliminace proměnných
+$$U(s) = max_a Q(s,a)$$
 
-$$P(r|s) \propto \sum_w \sum_c P(r) P(c) P(w | r,c) P(s| w)$$
-$$f_c(w) = \sum_c P(c) P(w | r,c)$$
-$$P(r|s) \propto \sum_w \sum_c P(r) f_c(w) P(s| w)$$
-$$f_w(s) = \sum_w f_c(w) P(s|w)$$
-$$P(r|s) \propto \sum_w \sum_c P(r) f_w(s)$$
+Update learningu provadíme
+$$Q(s,a) = Q(s,a) + \alpha(R(s) \gamma max_{a'} Q(s', a') - Q(s,a)$$
 
-### Aproxoimace
+Pro SARSu update vypadá
 
-Pomocí monte-carlo metod
+$$Q(s,a) = Q(s,a) + \alpha(R(s) \gamma  Q(s', a') - Q(s,a)$$
+
+
