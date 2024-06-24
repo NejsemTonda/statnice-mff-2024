@@ -1,6 +1,6 @@
 # Podobnost
 
-**DEF** Matice $A$ a $B$ jsou si podobné, pokud existuje regulární matice $S$, takže $A = SBS^{-1}
+**DEF** Matice $A$ a $B$ jsou si podobné, pokud existuje regulární matice $S$, takže $A = SBS^{-1}$
 
 **THM** Podobné matice mají stejná vlastní čísla
 

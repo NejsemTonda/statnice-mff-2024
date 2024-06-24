@@ -3,7 +3,7 @@
 ### Studentův t-test
 
 * Nejdříve musíme najít t-hodnotu
-* $t = \frac{|\hat{x_1} - \hat{x_2}|}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}
+* $t = \frac{| \hat{x_1} - \hat{x_2}|}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$
 * Stanovíme konfidenční interval $\alpha$
 * Stanovíme stupně volnosti
 * Kouknu se do tabulek (asi)

@@ -1,11 +1,11 @@
-# Cholského rozklad
+# Podobnost
 
-**THM** Pro každkou positivně definitní matici $A \in R^{n \times n}$ existuje právě jedna dolní trojuuhelníková matice $L \in R^{n \times n}$ s kladnou diagonálou, že $A = LL^T$
+**DEF** Matice $A$ a $B$ jsou si podobné, pokud existuje regulární matice $S$, takže $A = SBS^{-1}$
 
+**THM** Podobné matice mají stejná vlastní čísla
 
-Cholského rozklad není těžké najít. Jde to velmi rychle $O(n^3)$. Můžeme si ušitřit nějaký čas třeba při hledání řešení rovnice $Ax = b$. Nejdřív najdeme řežení $Ly = b$ a pak $L^Tx = y$. 
+**DEF** Diagonalizovatelná je taková matice, která je podobná nějaké diagonální matici. Tzn $A = S \Lambda S^{-1}$ kde $\Lambda$ je diagonální matice. Tomutu rozkladu se říká spektrální rozklad
 
-Dále platí, že operace je skalárním součinem, právě když $<x, y>$ lze vyjádřit jako $<x,y> = x^TAy$ pro nějakou pozitivně semidefinitní matici $A$.
+**THM** Nechť $A \in R^{n \times n}$ a má $n$ různých vlastních čísel, pak diagonalizovatelná
 
-
-
+Z toho vyplývá například to, že $A = S \Lambda S^{-1}$, tak $A^k = S \Lambda^k S^{-1}$

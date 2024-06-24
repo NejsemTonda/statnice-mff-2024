@@ -1,27 +1,31 @@
-# Zpětovazební učení
+# Bayesovská síť
 
-### Direct utility estimation
+* Vrcholy jsou množiny náhodných jevů
+* Hrany jsou závislosti proměnných
 
-Prostě to několikrát zkusíme a spočítáme reward-to-go. Utility jednotlivých stavů odhadneme průměrem.
+Vztah ke sdružené pravděpodobnosti: Takto můžeme uvažovat díky řetězovému pravidlu. $P(x_1, \dots x_n) = \prod_i P(x_i | x_{i-1}, \dots, x_n)$
 
-### ADP
-.
-Adaptive dynamic programing. Pasivní učení.
+Pro síť `rains -> wet -> slip` se můžeme ptát na pravděpodobnost $P(r, w, s) = P(r) P(w | r) P(s | w)$
 
-Děláme kroky náhodně pomocí naší naučené policy. Pokaždé uděláme policy update. Iterací bychom se měli dostat k optimální policy.
+Pro síť `rains -> wet <- car wash --> slip` $P(r,w,c,s) = P(r) P(c) P(w | r,c) P(s| w)$
 
-### TD
+### Inference enumerací
 
-Temporal-difference learning. Pasivní učení.
+$$P(r|s) = \sum_w \sum_c p(r,w,c,s) / P(s)$$
+$$P(r|s) \propto \sum_w \sum_c p(r,w,c,s)$$
+$$P(r|s) \propto \sum_w \sum_c P(r) P(c) P(w | r,c) P(s| w)$$
+$$P(r|s) \propto P(r) \sum_w P(s| w) \sum_c  P(c) P(w | r,c) $$
 
-Při trénování policy vůbec nepoužíváme, jenom provádíme update utilit.
-$$U^{\pi}(s) = U^{\pi}(s) + \alpha(R(s) + \gamma U^{\pi}(s') - U^{\pi}(s)$$
+To vede na exponenciální složitost protože některé proměné se opakují
 
-### Q-učení + SARSA
+### eliminace proměnných
 
-Matice $Q(s,a)$ uakzuje hodnotu provedení akce $a$ ve stavu $s$. To znamená, že $U(s) = max_a Q(s,a)$. Potom můžeme bellmanovu rovnici přepsat na
-$$Q(s,a) = R(s) + \gamma \sum_{s'} P(s' | s,a) max_{a'} Q(s', a')$$
-$$Q(s,a) = Q(s,a) + \alpha( R(s) + \gamma max_{a'} Q(s',a') - Q(s,a))$$
+$$P(r|s) \propto \sum_w \sum_c P(r) P(c) P(w | r,c) P(s| w)$$
+$$f_c(w) = \sum_c P(c) P(w | r,c)$$
+$$P(r|s) \propto \sum_w \sum_c P(r) f_c(w) P(s| w)$$
+$$f_w(s) = \sum_w f_c(w) P(s|w)$$
+$$P(r|s) \propto \sum_w \sum_c P(r) f_w(s)$$
 
-State-action-revard-state-action (SARSA) pak dělá jenom
-$$Q(s,a) = Q(s,a) + \alpha( R(s) + \gamma Q(s',a') - Q(s,a))$$
+### Aproxoimace
+
+Pomocí monte-carlo metod

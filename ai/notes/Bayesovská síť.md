@@ -3,7 +3,7 @@
 * Vrcholy jsou množiny náhodných jevů
 * Hrany jsou závislosti proměnných
 
-Vztah ke sdružené pravděpodobnosti: Takto můžeme uvažovat díky řetězovému pravidlu. $P(x_1, \dots x_n) = \prog_i P(x_i | x_{i-1}, \dots, x_n)$
+Vztah ke sdružené pravděpodobnosti: Takto můžeme uvažovat díky řetězovému pravidlu. $P(x_1, \dots x_n) = \prod_i P(x_i | x_{i-1}, \dots, x_n)$
 
 Pro síť `rains -> wet -> slip` se můžeme ptát na pravděpodobnost $P(r, w, s) = P(r) P(w | r) P(s | w)$
 
